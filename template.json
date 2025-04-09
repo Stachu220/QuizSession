@@ -1,0 +1,26 @@
+{"quiz":[{
+    "name":"Quiz Name",
+    "description":"Quiz Description",
+    "questions":[{
+        "questionID":"1",
+        "question":"Is he going to give you up?",
+        "answers":[
+            {"answer": "Yes", "isCorrect": false},
+            {"answer": "No", "isCorrect": false},
+            {"answer": "Maybe", "isCorrect": false},
+            {"answer": "Never", "isCorrect": true}
+        ]
+    },
+    {
+        "questionID":"2",
+        "question":"Is he going to let you down?",
+        "answers":[
+            {"answer": "Yes", "isCorrect": false},
+            {"answer": "No", "isCorrect": false},
+            {"answer": "Maybe", "isCorrect": false},
+            {"answer": "Never", "isCorrect": true}
+        ]
+    }]
+}]
+
+}
