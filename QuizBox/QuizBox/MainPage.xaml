@@ -18,6 +18,19 @@
                 Text="Quiz List" 
                 Clicked="goToQuizList"
                 HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="goToQuizCreatorBtn"
+                Text="Quiz Creator" 
+                Clicked="goToQuizCreator"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="goToImportBtn"
+                Text="Import" 
+                Clicked="goToImport"
+                HorizontalOptions="Fill" />
+            
         </VerticalStackLayout>
     </ScrollView>
 

@@ -5,8 +5,20 @@
              Title="QuizCreatorPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Create your quiz"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Entry
+            x:Name="TitleEntry"
+            Placeholder="Title"
+            />
+        <Entry
+            x:Name="DescriptionEntry"
+            Placeholder="Description"
+            />
+        <Button
+            Text="Add Questions"
+            Clicked="onAddQuestionsClicked"
+            />
     </VerticalStackLayout>
 </ContentPage>
