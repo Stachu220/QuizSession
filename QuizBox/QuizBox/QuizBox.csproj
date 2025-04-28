@@ -66,16 +66,28 @@
 	  <MauiXaml Update="ImportPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="QuestionCreatorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="QuizCreatorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="QuizListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="QuizStartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Quizes\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="QuizStartPage.xaml.cs">
+	    <DependentUpon>QuizStartPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

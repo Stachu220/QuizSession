@@ -27,4 +27,14 @@
         ContentTemplate="{DataTemplate local:ImportPage}"
         Route="ImportPage" />
 
+    <ShellContent
+        Title="Question Creator"
+        ContentTemplate="{DataTemplate local:QuestionCreatorPage}"
+        Route="QuestionCreatorPage" />
+
+    <ShellContent
+        Title="Quiz Start Page"
+        ContentTemplate="{DataTemplate local:QuizStartPage}"
+        Route="QuizStartPage" />
+
 </Shell>

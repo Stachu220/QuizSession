@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizBox.QuizStartPage"
+             Title="QuizStartPage">
+    <VerticalStackLayout 
+        Loaded="VerticalStackLayout_Loaded">
+        <Button
+            x:Name="GoBack"
+            Clicked="onGoBack" />
+        <Label 
+            x:Name="QuizTitle"
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label
+            x:Name="QuizDesc"
+            Text=""
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+        <Label
+            Text="Number of questions:"
+            />
+        <Button
+            x:Name="QNo6"
+            Text="6"
+            Clicked="onQNo6" />
+        <Button
+            x:Name="QNo10"
+            Text="10"
+            Clicked="onQNo10" />
+        <Button
+            x:Name="QNo15"
+            Text="15"
+            Clicked="onQNo15" />
+        <Button
+            x:Name="QNo20"
+            Text="20"
+            Clicked="onQNo20" />
+    </VerticalStackLayout>
+</ContentPage>

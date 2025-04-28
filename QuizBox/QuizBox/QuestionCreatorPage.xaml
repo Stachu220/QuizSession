@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizBox.QuestionCreatorPage"
+             Title="QuestionCreatorPage">
+    <VerticalStackLayout>
+        <Entry
+            x:Name="QuestionEntry"
+            Placeholder="Enter your question here"
+            />
+        <Button 
+            x:Name="AddQuestionImage"
+            Clicked="onAddQuestionImage" />
+        <Grid
+            WidthRequest="400" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+            <Entry
+                x:Name="AnswerEntry1"
+                Placeholder="Enter answer 1"
+                Grid.Row="0"
+                Grid.Column="0" />
+            <Button
+                x:Name="AddAnswerImage1"
+                Clicked="onAddAnswerImage1"
+                Grid.Row="0"
+                Grid.Column="1" />
+            <Entry
+                x:Name="AnswerEntry2"
+                Placeholder="Enter answer 2"
+                Grid.Row="1"
+                Grid.Column="0" />
+            <Button
+                x:Name="AddAnswerImage2"
+                Clicked="onAddAnswerImage2"
+                Grid.Row="1"
+                Grid.Column="1" />
+            <Entry
+                x:Name="AnswerEntry3"
+                Placeholder="Enter answer 3"
+                Grid.Row="2"
+                Grid.Column="0" />
+            <Button
+                x:Name="AddAnswerImage3"
+                Clicked="onAddAnswerImage3"
+                Grid.Row="2"
+                Grid.Column="1" />
+            <Entry
+                x:Name="AnswerEntry4"
+                Placeholder="Enter answer 4"
+                Grid.Row="3"
+                Grid.Column="0" />
+            <Button
+                x:Name="AddAnswerImage4"
+                Clicked="onAddAnswerImage4"
+                Grid.Row="3"
+                Grid.Column="1" />
+        </Grid>
+        <Button
+            x:Name="PrevQuestion"
+            Text="Previous Question"
+            Clicked="onPrevQuestionClicked" />
+        <Button
+            x:Name="NextQuestion"
+            Text="Next Question"
+            Clicked="onNextQuestionClicked" />
+        <Button
+            x:Name="FinishQuiz"
+            Text="Finish Quiz"
+            Clicked="onFinishQuizClicked" />
+    </VerticalStackLayout>
+</ContentPage>

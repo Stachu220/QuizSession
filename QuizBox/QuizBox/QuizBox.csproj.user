@@ -11,10 +11,16 @@
     <MauiXaml Update="ImportPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="QuestionCreatorPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="QuizCreatorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="QuizListPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="QuizStartPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

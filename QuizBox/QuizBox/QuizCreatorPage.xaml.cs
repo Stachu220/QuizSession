@@ -7,6 +7,7 @@ public partial class QuizCreatorPage : ContentPage
 	private string? quizTitle;
     private string? quizDescription;
     private string? path;
+    private string? folderPath;
 
     public QuizCreatorPage()
 	{
@@ -18,13 +19,22 @@ public partial class QuizCreatorPage : ContentPage
         quizTitle = TitleEntry.Text;
         quizDescription = DescriptionEntry.Text;
 
+        if (File.Exists(path))
+        {
+
+        }
+
         if (!string.IsNullOrEmpty(quizTitle) && !string.IsNullOrEmpty(quizDescription))
         {
-            path = quizTitle + ".json";
+            folderPath = FileSystem.AppDataDirectory;
+            string temp = quizTitle + ".json";
+            path = Path.Combine(folderPath, temp);
 
-            var quiz = new
+            if (!File.Exists(path))
             {
-                quiz = new[]
+                var quiz = new
+                {
+                    quiz = new[]
                 {
                     new
                     {
@@ -33,12 +43,17 @@ public partial class QuizCreatorPage : ContentPage
                         questions = new List<object>()
                     }
                 }
-            };
-            var json = JsonSerializer.Serialize(quiz, new JsonSerializerOptions { WriteIndented = true });
-            //TODO: Fix file path
-            File.WriteAllText(path, json);
+                };
+                var json = JsonSerializer.Serialize(quiz, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(path, json);
 
-            await Shell.Current.GoToAsync("///QuestionCreatorPage");
+                await Shell.Current.GoToAsync($"///QuestionCreatorPage?param={path}");
+                //await Shell.Current.GoToAsync($"mysecondpage?param=HelloWorld");
+            }
+            else
+            {
+                await DisplayAlert("Error", "A quiz with this title already exists. Please choose a different title.", "OK");
+            }
         }
         else
         {
