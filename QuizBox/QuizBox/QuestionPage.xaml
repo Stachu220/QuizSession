@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizBox.QuestionPage"
+             Title="QuestionPage">
+    <VerticalStackLayout
+        Loaded="VerticalStackLayout_Loaded" >
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Grid
+            x:Name="allText"
+            WidthRequest="400">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="QuestionLabel"
+                Text="Question"
+                Grid.Row="0" />
+            <Button
+                x:Name="Answer1"
+                Text=""
+                Clicked="onAnswer1_Clicked"
+                Grid.Row="1" />
+            <Button
+                x:Name="Answer2"
+                Text=""
+                Clicked="onAnswer2_Clicked"
+                Grid.Row="2" />
+            <Button
+                x:Name="Answer3"
+                Text=""
+                Clicked="onAnswer3_Clicked"
+                Grid.Row="3" />
+            <Button
+                x:Name="Answer4"
+                Text=""
+                Clicked="onAnswer4_Clicked"
+                Grid.Row="4" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

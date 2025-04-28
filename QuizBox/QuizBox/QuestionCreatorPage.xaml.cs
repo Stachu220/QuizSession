@@ -18,26 +18,31 @@ public partial class QuestionCreatorPage : ContentPage
     private void onAddQuestionImage(object sender, EventArgs e)
     {
         QuestionImage = ImageToBase64("path");
+        AddAnswerImage1.Text = QuestionImage;
     }
 
     private void onAddAnswerImage1(object sender, EventArgs e)
     {
         AnswerImage1 = ImageToBase64("path");
+        AddAnswerImage1.Text = AnswerImage1;
     }
 
     private void onAddAnswerImage2(object sender, EventArgs e)
     {
         AnswerImage2 = ImageToBase64("path");
+        AddAnswerImage2.Text = AnswerImage2;
     }
 
     private void onAddAnswerImage3(object sender, EventArgs e)
     {
         AnswerImage3 = ImageToBase64("path");
+        AddAnswerImage3.Text = AnswerImage3;
     }
 
     private void onAddAnswerImage4(object sender, EventArgs e)
     {
         AnswerImage4 = ImageToBase64("path");
+        AddAnswerImage4.Text = AnswerImage4;
     }
 
     private void onPrevQuestionClicked(object sender, EventArgs e)

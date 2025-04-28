@@ -14,6 +14,9 @@
     <MauiXaml Update="QuestionCreatorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="QuestionPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="QuizCreatorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

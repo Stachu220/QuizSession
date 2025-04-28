@@ -46,6 +46,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.QuestionCreatorPag
 build_metadata.AdditionalFiles.TargetPath = QuestionCreatorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = QuestionCreatorPage.xaml
 
+[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/QuestionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.QuestionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = QuestionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = QuestionPage.xaml
+
 [C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/QuizCreatorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.QuizCreatorPage.xaml
