@@ -8,6 +8,7 @@ public partial class QuizStartPage : ContentPage
 {
 	public string? Path { get; set; }
     private int QNo = 0;
+    private int SetOfQuestions = 0;
     public static Root RootToPass;
     public static List<Question> QuestionsRandomized = new List<Question>();
     private List<Question> questionList = new List<Question>();
@@ -19,19 +20,28 @@ public partial class QuizStartPage : ContentPage
 
     private async void onQNo6(object sender, EventArgs e)
 	{
-
+        SetOfQuestions = 6;
+        await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
     private async void onQNo10(object sender, EventArgs e)
     {
-
+        SetOfQuestions = 10;
+        await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
     private async void onQNo15(object sender, EventArgs e)
     {
-
+        SetOfQuestions = 15;
+        await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
     private async void onQNo20(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
+        SetOfQuestions = 20;
+        await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
+    }
+
+    private void onGoBack(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync($"///QuizListPage");
     }
 
     private void VerticalStackLayout_Loaded(object sender, EventArgs e)

@@ -17,44 +17,48 @@ public partial class QuestionPage : ContentPage
         randomizedQuestions = QuizStartPage.QuestionsRandomized;
     }
 
-    private async void onAnswer1_Clicked(object sender, EventArgs e)
+    private void onAnswer1_Clicked(object sender, EventArgs e)
     {
         if (randomizedQuestions[currQuestion].Answers[0].IsCorrect)
         {
             correctAnswers++;
         }
-            currQuestion++;
-            await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
+        currQuestion++;
+        NextQuestion();
+        //await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
     }
 
-    private async void onAnswer2_Clicked(object sender, EventArgs e)
+    private void onAnswer2_Clicked(object sender, EventArgs e)
     {
         if (randomizedQuestions[currQuestion].Answers[1].IsCorrect)
         {
             correctAnswers++;
         }
-            currQuestion++;
-            await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
+        currQuestion++;
+        NextQuestion();
+        //await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
     }
 
-    private async void onAnswer3_Clicked(object sender, EventArgs e)
+    private void onAnswer3_Clicked(object sender, EventArgs e)
     {
         if (randomizedQuestions[currQuestion].Answers[2].IsCorrect)
         {
             correctAnswers++;
         }
-            currQuestion++;
-            await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
+        currQuestion++;
+        NextQuestion();
+        //await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
     }
 
-    private async void onAnswer4_Clicked(object sender, EventArgs e)
+    private void onAnswer4_Clicked(object sender, EventArgs e)
     {
         if (randomizedQuestions[currQuestion].Answers[3].IsCorrect)
         {
             correctAnswers++;
         }
-            currQuestion++;
-            await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
+        currQuestion++;
+        NextQuestion();    
+            //await Shell.Current.GoToAsync($"///QuestionPage?param={QNo}&paramPath={Path}");
     }
 
     private void VerticalStackLayout_Loaded(object sender, EventArgs e)
@@ -64,5 +68,17 @@ public partial class QuestionPage : ContentPage
         Answer2.Text = randomizedQuestions[currQuestion].Answers[1].AnswerText;
         Answer3.Text = randomizedQuestions[currQuestion].Answers[2].AnswerText;
         Answer4.Text = randomizedQuestions[currQuestion].Answers[3].AnswerText;
+    }
+
+    private void NextQuestion()
+    {
+        if (currQuestion < QNo)
+        {   
+            QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
+            Answer1.Text = randomizedQuestions[currQuestion].Answers[0].AnswerText;
+            Answer2.Text = randomizedQuestions[currQuestion].Answers[1].AnswerText;
+            Answer3.Text = randomizedQuestions[currQuestion].Answers[2].AnswerText;
+            Answer4.Text = randomizedQuestions[currQuestion].Answers[3].AnswerText;
+        }
     }
 }

@@ -19,10 +19,6 @@ public partial class QuizCreatorPage : ContentPage
         quizTitle = TitleEntry.Text;
         quizDescription = DescriptionEntry.Text;
 
-        if (File.Exists(path))
-        {
-
-        }
 
         if (!string.IsNullOrEmpty(quizTitle) && !string.IsNullOrEmpty(quizDescription))
         {
