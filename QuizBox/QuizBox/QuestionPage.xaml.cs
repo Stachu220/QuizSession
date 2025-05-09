@@ -70,7 +70,7 @@ public partial class QuestionPage : ContentPage
         Answer4.Text = randomizedQuestions[currQuestion].Answers[3].AnswerText;
     }
 
-    private void NextQuestion()
+    private async void NextQuestion()
     {
         if (currQuestion < QNo)
         {   
@@ -79,6 +79,10 @@ public partial class QuestionPage : ContentPage
             Answer2.Text = randomizedQuestions[currQuestion].Answers[1].AnswerText;
             Answer3.Text = randomizedQuestions[currQuestion].Answers[2].AnswerText;
             Answer4.Text = randomizedQuestions[currQuestion].Answers[3].AnswerText;
+        }
+        else
+        {
+            await Shell.Current.GoToAsync($"///ResultPage?param={correctAnswers}&paramPath={Path}&QuestionParam={QNo}");
         }
     }
 }

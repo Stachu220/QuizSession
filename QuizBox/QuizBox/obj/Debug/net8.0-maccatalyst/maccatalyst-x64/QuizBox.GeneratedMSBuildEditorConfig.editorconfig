@@ -81,3 +81,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/ResultPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.ResultPage.xaml
+build_metadata.AdditionalFiles.TargetPath = ResultPage.xaml
+build_metadata.AdditionalFiles.RelativePath = ResultPage.xaml

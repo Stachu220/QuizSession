@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizBox.ResultPage"
+             Title="ResultPage">
+    <VerticalStackLayout>
+        <Label 
+            x:Name="CorrectNo"
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <StackLayout
+            x:Name="CorrectAnswersStackLayout"
+            Loaded="CorrectAnswer_Loaded"
+            >
+            
+        </StackLayout>
+        <Button
+            x:Name="GoBack"
+            Text="Go Back"
+            Clicked="onGoBack" />
+    </VerticalStackLayout>
+</ContentPage>

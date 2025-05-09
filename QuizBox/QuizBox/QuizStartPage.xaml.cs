@@ -53,6 +53,10 @@ public partial class QuizStartPage : ContentPage
         Quiz quiz = root.Quiz.FirstOrDefault();
         if (quiz != null)
         {
+            QNo6.IsEnabled = true;
+            QNo10.IsEnabled = true;
+            QNo15.IsEnabled = true;
+            QNo20.IsEnabled = true;
             QuizTitle.Text = quiz.Name;
             QuizDesc.Text = quiz.Description;
             foreach (var question in quiz.Questions)
@@ -86,7 +90,8 @@ public partial class QuizStartPage : ContentPage
     {
         //roll questions in random order from questionList to QuestionsRandomized
         Random random = new Random();
-        for (int i = 0; i < questionList.Count; i++)
+        int questionListCount = questionList.Count;
+        for (int i = 0; i < questionListCount; i++)
         {
             int randomIndex = random.Next(0, questionList.Count);
             QuestionsRandomized.Add(questionList[randomIndex]);
@@ -101,8 +106,19 @@ public partial class QuizStartPage : ContentPage
         Shell.Current.GoToAsync($"///QuizListPage");
     }
 
-    private void onExport(object sender, EventArgs e)
+    private async void onExport(object sender, EventArgs e)
     {
-        
+        if (string.IsNullOrEmpty(Path) || !File.Exists(Path))
+        {
+            await DisplayAlert("Error", "Quiz file not found.", "OK");
+            return;
+        }
+
+        await Share.RequestAsync(new ShareFileRequest
+        {
+            Title = "Share Quiz JSON",
+            File = new ShareFile(Path)
+        });
     }
+
 }

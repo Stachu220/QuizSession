@@ -42,4 +42,9 @@
         ContentTemplate="{DataTemplate local:QuestionPage}"
         Route="QuestionPage" />
 
+    <ShellContent
+        Title="Result Page"
+        ContentTemplate="{DataTemplate local:ResultPage}"
+        Route="ResultPage" />
+
 </Shell>
