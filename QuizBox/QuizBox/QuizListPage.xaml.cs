@@ -12,6 +12,11 @@ public partial class QuizListPage : ContentPage
         string path = FileSystem.AppDataDirectory;
         string[] files = Directory.GetFiles(path, "*.json");
 
+        if (QuizListStack.Children.Count != 0)
+        {
+            QuizListStack.Children.Clear();
+        }
+
         foreach (string file in files)
         {
             string fileName = Path.GetFileNameWithoutExtension(file);
@@ -33,5 +38,10 @@ public partial class QuizListPage : ContentPage
             };
             QuizListStack.Children.Add(quizButton);
         }
+    }
+
+    private void onGoBack(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync($"///MainPage");
     }
 }

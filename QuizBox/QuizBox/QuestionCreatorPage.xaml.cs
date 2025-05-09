@@ -161,11 +161,15 @@ public partial class QuestionCreatorPage : ContentPage
 
     private void CorrectAnswer_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        foreach (var radioButton in new[] { CorrectAnswer1, CorrectAnswer2, CorrectAnswer3, CorrectAnswer4 })
+        var targetButton = sender as CheckBox;
+        if (targetButton.IsChecked)
         {
-            if (radioButton != sender)
+            foreach (var radioButton in new[] { CorrectAnswer1, CorrectAnswer2, CorrectAnswer3, CorrectAnswer4 })
             {
-                radioButton.IsChecked = false;
+                if (radioButton != targetButton)
+                {
+                    radioButton.IsChecked = false;
+                }
             }
         }
     }

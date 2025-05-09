@@ -8,6 +8,10 @@
         <Button
             x:Name="GoBack"
             Clicked="onGoBack" />
+        <Button
+            x:Name="Export"
+            Text="Export Quiz"
+            Clicked="onExport" />
         <Label 
             x:Name="QuizTitle"
             Text=""
@@ -37,5 +41,9 @@
             x:Name="QNo20"
             Text="20"
             Clicked="onQNo20" />
+        <Button
+            x:Name="DeleteQuiz"
+            Text="Delete Quiz"
+            Clicked="onDeleteQuiz" />
     </VerticalStackLayout>
 </ContentPage>

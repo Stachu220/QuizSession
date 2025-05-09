@@ -93,4 +93,16 @@ public partial class QuizStartPage : ContentPage
             questionList.RemoveAt(randomIndex);
         }
     }
+
+    private void onDeleteQuiz(object sender, EventArgs e)
+    {
+        //delete quiz from json file
+        File.Delete(Path);
+        Shell.Current.GoToAsync($"///QuizListPage");
+    }
+
+    private void onExport(object sender, EventArgs e)
+    {
+        
+    }
 }
