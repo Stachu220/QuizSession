@@ -3,34 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\resultpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\resultpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\questionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\questionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\resultpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\resultpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\quizstartpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizstartpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\importpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\importpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\quizstartpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizstartpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\quizcreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizcreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\questioncreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\questioncreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,8 +11,24 @@
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\importpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\importpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\questioncreatorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\questioncreatorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\quizcreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizcreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\quizcreatorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizcreatorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\quizstartpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizstartpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\stach\\documents\\github\\quizsession\\quizbox\\quizbox\\quizstartpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizstartpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,50 +38,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 240,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QuestionPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuestionPage.xaml.cs",
-              "RelativeDocumentMoniker": "QuizBox\\QuestionPage.xaml.cs",
-              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuestionPage.xaml.cs",
-              "RelativeToolTip": "QuizBox\\QuestionPage.xaml.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAswFQAAAB4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:05:05.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ResultPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\ResultPage.xaml.cs",
-              "RelativeDocumentMoniker": "QuizBox\\ResultPage.xaml.cs",
-              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\ResultPage.xaml.cs",
-              "RelativeToolTip": "QuizBox\\ResultPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:02:03.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ResultPage.xaml",
-              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\ResultPage.xaml",
-              "RelativeDocumentMoniker": "QuizBox\\ResultPage.xaml",
-              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\ResultPage.xaml",
-              "RelativeToolTip": "QuizBox\\ResultPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "QuizCreatorPage.xaml",
+              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizCreatorPage.xaml",
+              "RelativeDocumentMoniker": "QuizBox\\QuizCreatorPage.xaml",
+              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizCreatorPage.xaml",
+              "RelativeToolTip": "QuizBox\\QuizCreatorPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-09T19:47:41.236Z",
+              "WhenOpened": "2025-05-10T18:36:44.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "QuizCreatorPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizCreatorPage.xaml.cs",
+              "RelativeDocumentMoniker": "QuizBox\\QuizCreatorPage.xaml.cs",
+              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizCreatorPage.xaml.cs",
+              "RelativeToolTip": "QuizBox\\QuizCreatorPage.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T18:20:54.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "QuizStartPage.xaml",
               "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizStartPage.xaml",
               "RelativeDocumentMoniker": "QuizBox\\QuizStartPage.xaml",
@@ -106,77 +81,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "QuizStartPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizStartPage.xaml.cs",
               "RelativeDocumentMoniker": "QuizBox\\QuizStartPage.xaml.cs",
               "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizStartPage.xaml.cs",
               "RelativeToolTip": "QuizBox\\QuizStartPage.xaml.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAADwv1sAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAIwGsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T18:27:21.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "QuizListPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizListPage.xaml.cs",
-              "RelativeDocumentMoniker": "QuizBox\\QuizListPage.xaml.cs",
-              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizListPage.xaml.cs",
-              "RelativeToolTip": "QuizBox\\QuizListPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T18:14:10.204Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "QuizCreatorPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizCreatorPage.xaml.cs",
-              "RelativeDocumentMoniker": "QuizBox\\QuizCreatorPage.xaml.cs",
-              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizCreatorPage.xaml.cs",
-              "RelativeToolTip": "QuizBox\\QuizCreatorPage.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T18:13:55.26Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ImportPage.xaml",
-              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\ImportPage.xaml",
-              "RelativeDocumentMoniker": "QuizBox\\ImportPage.xaml",
-              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\ImportPage.xaml",
-              "RelativeToolTip": "QuizBox\\ImportPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-09T18:11:13.94Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ImportPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\ImportPage.xaml.cs",
-              "RelativeDocumentMoniker": "QuizBox\\ImportPage.xaml.cs",
-              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\ImportPage.xaml.cs",
-              "RelativeToolTip": "QuizBox\\ImportPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T18:11:11.526Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "QuestionCreatorPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml.cs",
               "RelativeDocumentMoniker": "QuizBox\\QuestionCreatorPage.xaml.cs",
               "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml.cs",
               "RelativeToolTip": "QuizBox\\QuestionCreatorPage.xaml.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAADwv6AAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALgAAAAAAAAAAAAAAOIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T17:26:09.733Z"
+              "WhenOpened": "2025-05-09T17:26:09.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QuestionCreatorPage.xaml",
+              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml",
+              "RelativeDocumentMoniker": "QuizBox\\QuestionCreatorPage.xaml",
+              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml",
+              "RelativeToolTip": "QuizBox\\QuestionCreatorPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-10T17:42:13.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuizListPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizListPage.xaml.cs",
+              "RelativeDocumentMoniker": "QuizBox\\QuizListPage.xaml.cs",
+              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\QuizSession\\QuizBox\\QuizBox\\QuizListPage.xaml.cs",
+              "RelativeToolTip": "QuizBox\\QuizListPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T18:14:10.204Z",
+              "EditorCaption": ""
             }
           ]
         }

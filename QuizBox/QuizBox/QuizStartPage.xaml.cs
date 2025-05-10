@@ -51,6 +51,7 @@ public partial class QuizStartPage : ContentPage
         RootToPass = root;
 
         Quiz quiz = root.Quiz.FirstOrDefault();
+        QNo = 0;
         if (quiz != null)
         {
             QNo6.IsEnabled = true;
@@ -90,6 +91,8 @@ public partial class QuizStartPage : ContentPage
     {
         //roll questions in random order from questionList to QuestionsRandomized
         Random random = new Random();
+        if (QuestionsRandomized.Count != 0)
+            QuestionsRandomized.Clear();
         int questionListCount = questionList.Count;
         for (int i = 0; i < questionListCount; i++)
         {

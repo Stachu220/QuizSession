@@ -21,21 +21,52 @@ public partial class ImportPage : ContentPage
         //import quiz from file -> in reality copy it to working folder
         //for now read first json file from working folder
         string path = FileSystem.AppDataDirectory;
-
-
-
-
-        string[] files = Directory.GetFiles(path, "*.json");
-        //deserialize first json file and display it as displayalert
-        var file = files[0];
-
-        string jsonString = File.ReadAllText(file);
-        Root root = JsonSerializer.Deserialize<Root>(jsonString);
-        await DisplayAlert("Quiz", $"Title: {root.Quiz[0].Name}\nDescription: {root.Quiz[0].Description}", "OK");
-        await DisplayAlert("Quiz", $"Questions: {root.Quiz[0].Questions.Count}", "OK");
-        for (int i = 0; i < root.Quiz[0].Questions.Count; i++)
+        try
         {
-            await DisplayAlert("Quiz", $"Question {i + 1}: {root.Quiz[0].Questions[i].QuestionText}\n anwers and bools \n {root.Quiz[0].Questions[i].Answers[0].AnswerText} - {root.Quiz[0].Questions[i].Answers[0].IsCorrect}\n {root.Quiz[0].Questions[i].Answers[1].AnswerText} - {root.Quiz[0].Questions[i].Answers[1].IsCorrect}\n {root.Quiz[0].Questions[i].Answers[2].AnswerText} - {root.Quiz[0].Questions[i].Answers[2].IsCorrect}\n {root.Quiz[0].Questions[i].Answers[3].AnswerText} - {root.Quiz[0].Questions[i].Answers[3].IsCorrect}", "OK");
+            var result = await FilePicker.PickAsync(new PickOptions
+            {
+                PickerTitle = "Please select a quiz file",
+                FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+                {
+                    { DevicePlatform.Android, new[] { "application/json" } },
+                    { DevicePlatform.iOS, new[] { "public.json" } },
+                    { DevicePlatform.WinUI, new[] { ".json" } }
+                })
+            });
+
+            if (result != null)
+            {
+                //read file content
+                using var stream = await result.OpenReadAsync();
+
+                //validate file content
+                using var reader = new StreamReader(stream);
+                string json = await reader.ReadToEndAsync();
+
+                Root? imported = JsonSerializer.Deserialize<Root>(json);
+
+                if (imported.Quiz.FirstOrDefault() == null || imported.Quiz.Count == 0 || imported.Quiz[0].Name == null || imported.Quiz[0].Description == null ||
+                    imported.Quiz[0].Questions == null || imported.Quiz[0].Questions.Count == 0 || imported.Quiz[0].Questions[0].QuestionText == null || imported.Quiz[0].Questions[0].Answers == null)
+                {
+                    await DisplayAlert("Error", "Invalid quiz file format.", "OK");
+                    return;
+                }
+
+                //Define destination path
+                string fileName = Path.GetFileName(result.FullPath);
+                string destinationPath = Path.Combine(path, fileName);
+
+                //using var OutputStream = File.Create(destinationPath);
+                //await stream.CopyToAsync(OutputStream);
+                File.WriteAllText(destinationPath, json);
+
+                await DisplayAlert("Success", $"File {fileName} imported successfully!", "OK");
+            }
         }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
+        }
+
     }
 }

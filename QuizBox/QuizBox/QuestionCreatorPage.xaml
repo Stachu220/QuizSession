@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QuizBox.QuestionCreatorPage"
              Title="QuestionCreatorPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Loaded="onStackLayout_loaded"
+        >
         <Entry
             x:Name="QuestionEntry"
             Placeholder="Enter your question here"
@@ -38,7 +40,7 @@
                 x:Name="CorrectAnswer1"
                 Grid.Row="0"
                 Grid.Column="2" 
-                CheckedChanged="CorrectAnswer_CheckedChanged"/>
+                CheckedChanged="correctAnswer_CheckedChanged"/>
             <Entry
                 x:Name="AnswerEntry2"
                 Placeholder="Enter answer 2"
@@ -53,7 +55,7 @@
                 x:Name="CorrectAnswer2"
                 Grid.Row="1"
                 Grid.Column="2" 
-                CheckedChanged="CorrectAnswer_CheckedChanged"/>
+                CheckedChanged="correctAnswer_CheckedChanged"/>
             <Entry
                 x:Name="AnswerEntry3"
                 Placeholder="Enter answer 3"
@@ -68,7 +70,7 @@
                 x:Name="CorrectAnswer3"
                 Grid.Row="2"
                 Grid.Column="2" 
-                CheckedChanged="CorrectAnswer_CheckedChanged"/>
+                CheckedChanged="correctAnswer_CheckedChanged"/>
             <Entry
                 x:Name="AnswerEntry4"
                 Placeholder="Enter answer 4"
@@ -83,7 +85,7 @@
                 x:Name="CorrectAnswer4"
                 Grid.Row="3"
                 Grid.Column="2" 
-                CheckedChanged="CorrectAnswer_CheckedChanged"/>
+                CheckedChanged="correctAnswer_CheckedChanged"/>
         </Grid>
         <Button
             x:Name="PrevQuestion"

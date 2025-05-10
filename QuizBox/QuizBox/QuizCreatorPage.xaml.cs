@@ -14,6 +14,12 @@ public partial class QuizCreatorPage : ContentPage
 		InitializeComponent();
 	}
 
+    private void onStackLayout_Loaded(object sender, EventArgs e)
+    {
+        TitleEntry.Text = "";
+        DescriptionEntry.Text = "";
+    }
+
     private async void onAddQuestionsClicked(object sender, EventArgs e)
     {
         quizTitle = TitleEntry.Text;
@@ -44,7 +50,6 @@ public partial class QuizCreatorPage : ContentPage
                 File.WriteAllText(path, json);
 
                 await Shell.Current.GoToAsync($"///QuestionCreatorPage?param={path}");
-                //await Shell.Current.GoToAsync($"mysecondpage?param=HelloWorld");
             }
             else
             {

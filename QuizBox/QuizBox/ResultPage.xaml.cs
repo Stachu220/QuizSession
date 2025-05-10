@@ -20,6 +20,7 @@ public partial class ResultPage : ContentPage
 
     private void CorrectAnswer_Loaded(object sender, EventArgs e)
     {
+        CorrectAnswersStackLayout.Children.Clear(); // Clear previous content if any
         // Display the number of correct answers
         CorrectNo.Text = $"You got {CorrectAnswers} out of {QNo} questions correct!";
 

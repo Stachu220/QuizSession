@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QuizBox.QuizCreatorPage"
              Title="QuizCreatorPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Loaded="onStackLayout_Loaded">
         <Label 
             Text="Create your quiz"
             VerticalOptions="Center" 
