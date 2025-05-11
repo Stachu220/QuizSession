@@ -5,7 +5,7 @@
   <Properties>
     <DisplayName>QuizBox</DisplayName>
     <PublisherDisplayName>User Name</PublisherDisplayName>
-    <Logo>appiconStoreLogo.png</Logo>
+    <Logo>icon_512StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
@@ -16,8 +16,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
-      <uap:VisualElements DisplayName="QuizBox" Description="QuizBox" Square150x150Logo="appiconMediumTile.png" Square44x44Logo="appiconLogo.png" BackgroundColor="transparent">
-        <uap:DefaultTile Square71x71Logo="appiconSmallTile.png" Wide310x150Logo="appiconWideTile.png" Square310x310Logo="appiconLargeTile.png" ShortName="QuizBox">
+      <uap:VisualElements DisplayName="QuizBox" Description="QuizBox" Square150x150Logo="icon_512MediumTile.png" Square44x44Logo="icon_512Logo.png" BackgroundColor="transparent">
+        <uap:DefaultTile Square71x71Logo="icon_512SmallTile.png" Wide310x150Logo="icon_512WideTile.png" Square310x310Logo="icon_512LargeTile.png" ShortName="QuizBox">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
             <uap:ShowOn Tile="wide310x150Logo" />

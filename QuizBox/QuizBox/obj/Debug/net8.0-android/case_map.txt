@@ -15,6 +15,10 @@ layout\navigationlayout;layout\navigationlayout
 layout\shellcontent;compatibility\Android\Resources\layout\shellcontent
 layout\tabbar;android\Resources\layout\Tabbar
 layout\toolbar;android\Resources\layout\Toolbar
+mipmap\appicon;mipmap\appicon
+mipmap\appicon_background;mipmap\appicon_background
+mipmap\appicon_foreground;mipmap\appicon_foreground
+mipmap\appicon_monochrome;mipmap\appicon_monochrome
 values\attr;values\attr
 values\attrs;android\Resources\values\attrs
 values\colors;values\colors

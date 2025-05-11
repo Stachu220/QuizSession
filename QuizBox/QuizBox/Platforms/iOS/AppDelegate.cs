@@ -1,4 +1,6 @@
 ﻿using Foundation;
+using UIKit;
+using static Microsoft.Maui.LifecycleEvents.iOSLifecycle;
 
 namespace QuizBox
 {

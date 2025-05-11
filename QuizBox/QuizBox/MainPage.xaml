@@ -1,17 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="QuizBox.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior
+            StatusBarStyle="DarkContent"
+            StatusBarColor="White"
+        />
+    </ContentPage.Behaviors>
 
-            <Label
-                Text="WELCOME TO QUIZ BOX!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+    <Grid>
+        <!-- Define two rows: one for the centered text and one for the buttons -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Centered text in the middle -->
+        <Label
+            Text="WELCOME TO QUIZ BOX!"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Grid.Row="0" />
+
+        <!-- Buttons at the bottom -->
+        <VerticalStackLayout
+            Padding="30,10"
+            Spacing="10"
+            Grid.Row="1"
+            HorizontalOptions="Fill"
+            VerticalOptions="End">
 
             <Button
                 x:Name="goToQuizListBtn"
@@ -30,8 +52,13 @@
                 Text="Import" 
                 Clicked="goToImport"
                 HorizontalOptions="Fill" />
-            
+
+            <Button
+     x:Name="exitBtn"
+     Text="Exit" 
+     Clicked="exitBtn_Clicked"
+     HorizontalOptions="Fill" />
         </VerticalStackLayout>
-    </ScrollView>
+    </Grid>
 
 </ContentPage>

@@ -40,7 +40,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+        <MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'android' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'ios'" Include="Resources\AppIcon\icon_512.svg" Color="#FFFFFF"/>
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -54,6 +54,30 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-anydpi-v26\appicon.xml" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\appicon.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\appicon_background.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\appicon_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\appicon_monochrome.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\appicon.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\appicon_background.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\appicon_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\appicon_monochrome.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\appicon.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\appicon_background.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\appicon_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\appicon_monochrome.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\appicon.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\appicon_background.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\appicon_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\appicon_monochrome.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\appicon.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\appicon_background.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\appicon_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\appicon_monochrome.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -88,6 +112,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Platforms\iOS\Resources\Assets.xcassets\AppIcon.appiconset\" />
 	  <Folder Include="Quizes\" />
 	</ItemGroup>
 

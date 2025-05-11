@@ -21,6 +21,15 @@
         {
             await Shell.Current.GoToAsync("///ImportPage");
         }
+
+        private async void exitBtn_Clicked(object sender, EventArgs e)
+        {
+            bool answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
+            if(answer)
+            {
+                Application.Current.Quit();
+            }
+        }
     }
 
 }

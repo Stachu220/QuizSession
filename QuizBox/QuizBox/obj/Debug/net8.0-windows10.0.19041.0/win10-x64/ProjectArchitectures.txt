@@ -1,1 +1,1 @@
-C:\Users\stach\Documents\GitHub\QuizSession\QuizBox\QuizBox\QuizBox.csproj;x64
+C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\QuizBox.csproj;x64

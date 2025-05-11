@@ -3,8 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\quizbox.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizbox.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Chareq\\.nuget\\packages\\microsoft.maui.resizetizer\\8.0.100\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Chareq\\.nuget\\packages\\communitytoolkit.maui\\9.1.1\\ReadMe.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +29,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\MainPage.xaml",
-              "RelativeDocumentMoniker": "QuizBox\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\MainPage.xaml",
-              "RelativeToolTip": "QuizBox\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-08T10:17:16.625Z",
+              "Title": "QuizBox",
+              "DocumentMoniker": "C:\\Users\\Chareq\\Source\\Repos\\QuizSession\\QuizBox\\QuizBox\\QuizBox.csproj",
+              "RelativeDocumentMoniker": "QuizBox\\QuizBox.csproj",
+              "ToolTip": "C:\\Users\\Chareq\\Source\\Repos\\QuizSession\\QuizBox\\QuizBox\\QuizBox.csproj",
+              "RelativeToolTip": "QuizBox\\QuizBox.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-11T15:26:09.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Microsoft.Maui.Resizetizer.After.targets",
+              "DocumentMoniker": "C:\\Users\\Chareq\\.nuget\\packages\\microsoft.maui.resizetizer\\8.0.100\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\microsoft.maui.resizetizer\\8.0.100\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "ToolTip": "C:\\Users\\Chareq\\.nuget\\packages\\microsoft.maui.resizetizer\\8.0.100\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\microsoft.maui.resizetizer\\8.0.100\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "ViewState": "AgIAAEwCAAAAAAAAAAAAAG8CAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-05-11T14:42:31.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReadMe.txt",
+              "DocumentMoniker": "C:\\Users\\Chareq\\.nuget\\packages\\communitytoolkit.maui\\9.1.1\\ReadMe.txt",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\communitytoolkit.maui\\9.1.1\\ReadMe.txt",
+              "ToolTip": "C:\\Users\\Chareq\\.nuget\\packages\\communitytoolkit.maui\\9.1.1\\ReadMe.txt",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\communitytoolkit.maui\\9.1.1\\ReadMe.txt",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-05-10T19:12:59.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-10T19:07:50.215Z",
               "EditorCaption": ""
             }
           ]
