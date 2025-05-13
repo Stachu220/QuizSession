@@ -1,3 +1,5 @@
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using QuizBox.Model;
 using System.Text.Json;
 
@@ -21,21 +23,25 @@ public partial class QuizStartPage : ContentPage
     private async void onQNo6(object sender, EventArgs e)
 	{
         SetOfQuestions = 6;
+        await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
         await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
     private async void onQNo10(object sender, EventArgs e)
     {
         SetOfQuestions = 10;
+        await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
         await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
     private async void onQNo15(object sender, EventArgs e)
     {
         SetOfQuestions = 15;
+        await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
         await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
     private async void onQNo20(object sender, EventArgs e)
     {
         SetOfQuestions = 20;
+        await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
         await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
 
@@ -106,6 +112,7 @@ public partial class QuizStartPage : ContentPage
     {
         //delete quiz from json file
         File.Delete(Path);
+        Toast.Make("Selected Quiz was deleted!", ToastDuration.Short).Show();
         Shell.Current.GoToAsync($"///QuizListPage");
     }
 
@@ -123,5 +130,4 @@ public partial class QuizStartPage : ContentPage
             File = new ShareFile(Path)
         });
     }
-
 }

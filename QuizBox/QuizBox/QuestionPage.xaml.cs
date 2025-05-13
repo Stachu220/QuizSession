@@ -1,4 +1,4 @@
-using QuizBox.Model;
+﻿using QuizBox.Model;
 
 namespace QuizBox;
 

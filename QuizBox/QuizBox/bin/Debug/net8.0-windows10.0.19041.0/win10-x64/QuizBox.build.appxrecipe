@@ -40,20 +40,23 @@
     <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
-      <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashiconSplashScreen.scale-100.png">
+      <PackagePath>splashiconSplashScreen.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
-      <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashiconSplashScreen.scale-125.png">
+      <PackagePath>splashiconSplashScreen.scale-125.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
-      <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashiconSplashScreen.scale-150.png">
+      <PackagePath>splashiconSplashScreen.scale-150.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
-      <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashiconSplashScreen.scale-200.png">
+      <PackagePath>splashiconSplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
-      <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashiconSplashScreen.scale-400.png">
+      <PackagePath>splashiconSplashScreen.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\materialdesignicons-webfont.ttf">
+      <PackagePath>materialdesignicons-webfont.ttf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -61,20 +64,14 @@
     <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
-      <PackagePath>dotnet_bot.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\background.scale-100.jpg">
+      <PackagePath>background.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
-      <PackagePath>dotnet_bot.scale-125.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\background2.scale-100.jpg">
+      <PackagePath>background2.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
-      <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
-      <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
-      <PackagePath>dotnet_bot.scale-400.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\background3.scale-100.jpg">
+      <PackagePath>background3.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_512.ico">
       <PackagePath>icon_512.ico</PackagePath>
@@ -214,6 +211,24 @@
     <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_512WideTile.scale-400.png">
       <PackagePath>icon_512WideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logout.scale-100.png">
+      <PackagePath>logout.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logout.scale-125.png">
+      <PackagePath>logout.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logout.scale-150.png">
+      <PackagePath>logout.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logout.scale-200.png">
+      <PackagePath>logout.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logout.scale-400.png">
+      <PackagePath>logout.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\quiz.scale-100.png">
+      <PackagePath>quiz.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\QuizBox.deps.json">
       <PackagePath>QuizBox.deps.json</PackagePath>
     </AppxPackagedFile>
@@ -228,6 +243,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Chareq\.nuget\packages\communitytoolkit.maui.core\9.1.1\lib\net8.0-windows10.0.19041\CommunityToolkit.Maui.Core.dll">
       <PackagePath>CommunityToolkit.Maui.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\.nuget\packages\fluenticons.common\1.1.298\lib\netstandard2.1\FluentIcons.Common.dll">
+      <PackagePath>FluentIcons.Common.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Chareq\.nuget\packages\fluenticons.maui\1.1.298\lib\net8.0-windows10.0.19041\FluentIcons.Maui.dll">
+      <PackagePath>FluentIcons.Maui.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Chareq\.nuget\packages\microsoft.extensions.configuration\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>

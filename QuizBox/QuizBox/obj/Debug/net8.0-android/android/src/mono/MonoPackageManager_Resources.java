@@ -5,6 +5,8 @@ public class MonoPackageManager_Resources {
 		"QuizBox.dll",
 		"CommunityToolkit.Maui.dll",
 		"CommunityToolkit.Maui.Core.dll",
+		"FluentIcons.Common.dll",
+		"FluentIcons.Maui.dll",
 		"GoogleGson.dll",
 		"Microsoft.Extensions.Configuration.dll",
 		"Microsoft.Extensions.Configuration.Abstractions.dll",

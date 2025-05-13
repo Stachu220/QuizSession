@@ -36,6 +36,33 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -2273,6 +2300,33 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
             "related": ".xml"
           }
         }
@@ -4518,6 +4572,33 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -6755,6 +6836,33 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
             "related": ".xml"
           }
         }
@@ -9000,6 +9108,33 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -11237,6 +11372,33 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
             "related": ".xml"
           }
         }
@@ -13482,6 +13644,33 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -15719,6 +15908,33 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/FluentIcons.Maui.dll": {
             "related": ".xml"
           }
         }
@@ -17964,6 +18180,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -18417,6 +18656,29 @@
           "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -18874,6 +19136,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -19327,6 +19612,29 @@
           "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -19784,6 +20092,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -20237,6 +20568,29 @@
           "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -20694,6 +21048,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -21147,6 +21524,29 @@
           "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -21604,6 +22004,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -22057,6 +22480,29 @@
           "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -22514,6 +22960,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -22967,6 +23436,29 @@
           "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -23424,6 +23916,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -23877,6 +24392,29 @@
           "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -24334,6 +24872,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -24787,6 +25348,29 @@
           "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -25243,6 +25827,29 @@
           "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -25888,6 +26495,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -26483,6 +27113,29 @@
           "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -27082,6 +27735,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -27677,6 +28353,29 @@
           "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -28276,6 +28975,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -28873,6 +29595,29 @@
           }
         }
       },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -29468,6 +30213,29 @@
           "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "FluentIcons.Common/1.1.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentIcons.Common.dll": {}
+        }
+      },
+      "FluentIcons.Maui/1.1.298": {
+        "type": "package",
+        "dependencies": {
+          "FluentIcons.Common": "[1.1.298]",
+          "Microsoft.Maui.Controls": "8.0.3",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/8.0.0": {
@@ -30090,6 +30858,40 @@
         "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.xml",
         "lib/net8.0/CommunityToolkit.Maui.Core.dll",
         "lib/net8.0/CommunityToolkit.Maui.Core.xml"
+      ]
+    },
+    "FluentIcons.Common/1.1.298": {
+      "sha512": "4kQ253QD6d95mpRneOxB5r4HklLYIbC/bh7xg3jSOUD2N+030E/r1mwHGL/j6d6zn2N0EVqV8WYbbk8hx7iUKw==",
+      "type": "package",
+      "path": "fluenticons.common/1.1.298",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "fluenticons.common.1.1.298.nupkg.sha512",
+        "fluenticons.common.nuspec",
+        "lib/netstandard2.0/FluentIcons.Common.dll",
+        "lib/netstandard2.1/FluentIcons.Common.dll"
+      ]
+    },
+    "FluentIcons.Maui/1.1.298": {
+      "sha512": "bIoB7aUZA57wW2R16u9UlAgQ3zzR901VchaiH1WGKbNfNPXDij8AnvwC3QAafjAq1QgfW7dUInQI2ZDph7uNoA==",
+      "type": "package",
+      "path": "fluenticons.maui/1.1.298",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "fluenticons.maui.1.1.298.nupkg.sha512",
+        "fluenticons.maui.nuspec",
+        "lib/net8.0-android34.0/FluentIcons.Maui.dll",
+        "lib/net8.0-android34.0/FluentIcons.Maui.xml",
+        "lib/net8.0-ios18.0/FluentIcons.Maui.dll",
+        "lib/net8.0-maccatalyst18.0/FluentIcons.Maui.dll",
+        "lib/net8.0-tizen10.0/FluentIcons.Maui.dll",
+        "lib/net8.0-windows10.0.19041/FluentIcons.Maui.dll"
       ]
     },
     "GoogleGson/2.10.1.4": {
@@ -34415,6 +35217,7 @@
   "projectFileDependencyGroups": {
     "net8.0-android34.0": [
       "CommunityToolkit.Maui >= 9.1.1",
+      "FluentIcons.Maui >= 1.1.298",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
@@ -34422,6 +35225,7 @@
     ],
     "net8.0-ios18.0": [
       "CommunityToolkit.Maui >= 9.1.1",
+      "FluentIcons.Maui >= 1.1.298",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
@@ -34429,6 +35233,7 @@
     ],
     "net8.0-maccatalyst18.0": [
       "CommunityToolkit.Maui >= 9.1.1",
+      "FluentIcons.Maui >= 1.1.298",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
@@ -34436,6 +35241,7 @@
     ],
     "net8.0-windows10.0.19041": [
       "CommunityToolkit.Maui >= 9.1.1",
+      "FluentIcons.Maui >= 1.1.298",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100"
@@ -34512,6 +35318,10 @@
             "target": "Package",
             "version": "[9.1.1, )"
           },
+          "FluentIcons.Maui": {
+            "target": "Package",
+            "version": "[1.1.298, )"
+          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.1, )"
@@ -34581,6 +35391,10 @@
             "target": "Package",
             "version": "[9.1.1, )"
           },
+          "FluentIcons.Maui": {
+            "target": "Package",
+            "version": "[1.1.298, )"
+          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.1, )"
@@ -34637,6 +35451,10 @@
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[9.1.1, )"
+          },
+          "FluentIcons.Maui": {
+            "target": "Package",
+            "version": "[1.1.298, )"
           },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
@@ -34695,6 +35513,10 @@
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[9.1.1, )"
+          },
+          "FluentIcons.Maui": {
+            "target": "Package",
+            "version": "[1.1.298, )"
           },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",

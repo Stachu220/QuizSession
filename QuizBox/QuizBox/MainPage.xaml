@@ -2,63 +2,209 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="QuizBox.MainPage">
+             xmlns:helpers="clr-namespace:QuizBox.Helpers"
+             x:Class="QuizBox.MainPage"
+            >
 
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior
-            StatusBarStyle="DarkContent"
-            StatusBarColor="White"
+            StatusBarStyle="LightContent"
+            StatusBarColor="Transparent"
         />
     </ContentPage.Behaviors>
 
     <Grid>
-        <!-- Define two rows: one for the centered text and one for the buttons -->
+        <Image
+            Source="background.jpg"
+            Aspect="AspectFill"
+            IsVisible="True"
+            Grid.RowSpan="4" />
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!-- Centered text in the middle -->
-        <Label
-            Text="WELCOME TO QUIZ BOX!"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1"
+        <StackLayout Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" Spacing="4">
+            <StackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="Android" Value="25,65,25,0"/>
+                    <On Platform="iOS" Value="25,113,25,0"/>
+                    <On Platform="WinUI" Value="25,25,25,0" />
+                </OnPlatform>
+            </StackLayout.Margin>
+            
+            <Label
+                Text="QuizBox"
+                FontSize="36"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Center"/>
+            
+            <Label
+                Text="Codziennie ucz się czegoś nowego!"
+                FontSize="16"
+                TextColor="White"
+                Opacity="0.8"
+                HorizontalOptions="Center"/>
+        </StackLayout>
+        
+        <Image
+            Source="quiz.png"
+            HeightRequest="256"
+            WidthRequest="256"
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            Grid.Row="0" />
+            Grid.Row="1"/>
 
-        <!-- Buttons at the bottom -->
-        <VerticalStackLayout
-            Padding="30,10"
-            Spacing="10"
-            Grid.Row="1"
-            HorizontalOptions="Fill"
-            VerticalOptions="End">
+        <Border StrokeThickness="0"
+            StrokeShape="RoundRectangle 25,25,25,25"
+            BackgroundColor="{StaticResource RichBlack}"
+            Grid.Row="2"
+            Padding="25"
+            Margin="25,25,25,0"
+            HorizontalOptions="Fill">
+            <VerticalStackLayout
+                Spacing="10"
+                HorizontalOptions="Fill"
+                VerticalOptions="End">
+                <Frame
+                     x:Name="goToQuizListFrame"
+                    Padding="12"
+                    Margin="10"
+                    BackgroundColor="#2196F3"
+                    BorderColor="#1976D2"
+                    CornerRadius="12"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                        <HorizontalStackLayout
+                            Spacing="8"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ListBoxOutline}"
+                                FontSize="24"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                            
+                            <Label
+                                Text="Quiz List"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                 VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="goToQuizList" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </Frame>
+
+                <Frame
+                    x:Name="goToQuizCreatorFrame"
+                    Padding="12"
+                    Margin="10"
+                    BackgroundColor="#2196F3"
+                    BorderColor="#1976D2"
+                    CornerRadius="12"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                        <HorizontalStackLayout
+                            Spacing="8"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.PencilOutline}"
+                                FontSize="24"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Text="Quiz Creator"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="goToQuizCreator" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </Frame>
+
+                <Frame
+                    x:Name="goToImportFrame"
+                    Padding="12"
+                    Margin="10"
+                    BackgroundColor="#2196F3"
+                    BorderColor="#1976D2"
+                    CornerRadius="12"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                        <HorizontalStackLayout
+                            Spacing="8"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.DatabaseImportOutline}"
+                                FontSize="24"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Text="Import Quiz"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="goToImport" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+        </Border>
+
+        <AbsoluteLayout Grid.Row="3" Margin="25" AbsoluteLayout.LayoutBounds="0.5, 1, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
             <Button
-                x:Name="goToQuizListBtn"
-                Text="Quiz List" 
-                Clicked="goToQuizList"
-                HorizontalOptions="Fill" />
+                x:Name="exitBtn"
+                WidthRequest="50"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="exitBtn_Clicked"
+                AbsoluteLayout.LayoutBounds="1, 0.5, AutoSize, AutoSize"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                FontSize="30"
+                Padding="0"
+                FontFamily="MaterialDesignIcons" 
+                Background="Red"
+                Text="{x:Static helpers:MaterialDesignIconsFonts.ExitToApp}"
+            >
+            </Button>
 
-            <Button
-                x:Name="goToQuizCreatorBtn"
-                Text="Quiz Creator" 
-                Clicked="goToQuizCreator"
-                HorizontalOptions="Fill" />
-
-            <Button
-                x:Name="goToImportBtn"
-                Text="Import" 
-                Clicked="goToImport"
-                HorizontalOptions="Fill" />
-
-            <Button
-     x:Name="exitBtn"
-     Text="Exit" 
-     Clicked="exitBtn_Clicked"
-     HorizontalOptions="Fill" />
-        </VerticalStackLayout>
+        </AbsoluteLayout>
     </Grid>
 
 </ContentPage>

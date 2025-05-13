@@ -1,4 +1,7 @@
-﻿namespace QuizBox
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+
+namespace QuizBox
 {
     public partial class MainPage : ContentPage
     {
@@ -24,10 +27,11 @@
 
         private async void exitBtn_Clicked(object sender, EventArgs e)
         {
-            bool answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
+            bool answer = await DisplayAlert("Exit", "Would you like to exit the app", "Yes", "No");
             if(answer)
             {
                 Application.Current.Quit();
+                await Toast.Make("Exiting the app!", ToastDuration.Short).Show();
             }
         }
     }

@@ -1,103 +1,337 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QuizBox.QuestionCreatorPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:helpers="clr-namespace:QuizBox.Helpers"
              Title="QuestionCreatorPage">
-    <VerticalStackLayout
-        Loaded="onStackLayout_loaded"
-        >
-        <Entry
-            x:Name="QuestionEntry"
-            Placeholder="Enter your question here"
-            />
-        <Button 
-            x:Name="AddQuestionImage"
-            Clicked="onAddQuestionImage" />
-        <Grid
-            WidthRequest="400" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300" />
-                <ColumnDefinition Width="50" />
-                <ColumnDefinition Width="50" />
-            </Grid.ColumnDefinitions>
-            <Entry
-                x:Name="AnswerEntry1"
-                Placeholder="Enter answer 1"
-                Grid.Row="0"
-                Grid.Column="0" />
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior
+         StatusBarStyle="LightContent"
+         StatusBarColor="Transparent"
+     />
+    </ContentPage.Behaviors>
+
+
+    <Grid RowDefinitions="Auto,*,Auto" Loaded="onStackLayout_loaded">
+        <Image
+            Source="background.jpg"
+            Aspect="AspectFill"
+            IsVisible="True"
+            Grid.RowSpan="3" />
+
+        <VerticalStackLayout Grid.Row="0" HorizontalOptions="Start" Spacing="2">
+            <VerticalStackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="Android" Value="25,65,25,0"/>
+                    <On Platform="iOS" Value="25,113,25,0"/>
+                    <On Platform="WinUI" Value="25,25,25,0" />
+                </OnPlatform>
+            </VerticalStackLayout.Margin>
+
+            <Label Text="Quiz Creator" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+            <Label Text="What you will create today?" TextColor="Gray"/>
+        </VerticalStackLayout>
+        
+        <Border Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Background="{StaticResource RichBlack}" StrokeThickness="0" StrokeShape="RoundRectangle 25,25,25,25" Padding="25">
+            <VerticalStackLayout>
+                <Entry x:Name="QuestionEntry" TextColor="White"
+                       Placeholder="Enter your question here"
+                />
+
+                <Frame
+                    x:Name="importQuizFrame"
+                    Padding="12"
+                    Margin="10"
+                    BackgroundColor="#2196F3"
+                    BorderColor="#1976D2"
+                    CornerRadius="12"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Grid.Row="1">
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">   
+                        <VerticalStackLayout
+                            Spacing="8"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
+                                FontSize="24"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Text="Add image"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="onAddQuestionImage" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </Frame>
+                
+                <Label Text="Answers:" FontAttributes="Bold" Margin="0,16,0,0" TextColor="White"/>
+                <Grid ColumnSpacing="8" RowSpacing="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Answer 1 -->
+                    <Entry x:Name="AnswerEntry1"
+                           Placeholder="Answer 1"
+                           Grid.Row="0" Grid.Column="0" TextColor="White"/>
+                    <Frame
+                        Grid.Row="0" Grid.Column="1" 
+                        Padding="0"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        BackgroundColor="#2196F3"
+                        BorderColor="#1976D2"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <Grid>
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
+                                FontSize="24"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onAddAnswerImage1" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <CheckBox x:Name="CorrectAnswer1"
+                              Grid.Row="0" Grid.Column="2"
+                              CheckedChanged="correctAnswer_CheckedChanged" />
+
+                    <!-- Answer 2 -->
+                    <Entry x:Name="AnswerEntry2"
+                           Placeholder="Answer 2"
+                           Grid.Row="1" Grid.Column="0" TextColor="White" />
+                    <Frame
+                        Grid.Row="1" Grid.Column="1" 
+                        Padding="0"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        BackgroundColor="#2196F3"
+                        BorderColor="#1976D2"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <Grid>
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
+                                FontSize="24"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onAddAnswerImage2" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <CheckBox x:Name="CorrectAnswer2"
+                              Grid.Row="1" Grid.Column="2"
+                              CheckedChanged="correctAnswer_CheckedChanged" />
+
+                    <!-- Answer 3 -->
+                    <Entry x:Name="AnswerEntry3"
+                           Placeholder="Answer 3" TextColor="White"
+                           Grid.Row="2" Grid.Column="0" />
+                    <Frame
+                        Grid.Row="2" Grid.Column="1" 
+                        Padding="0"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        BackgroundColor="#2196F3"
+                        BorderColor="#1976D2"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <Grid>
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
+                                FontSize="24"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onAddAnswerImage3" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <CheckBox x:Name="CorrectAnswer3"
+                              Grid.Row="2" Grid.Column="2"
+                              CheckedChanged="correctAnswer_CheckedChanged" />
+
+                    <!-- Answer 4 -->
+                    <Entry x:Name="AnswerEntry4"
+                           Placeholder="Answer 4"
+                           TextColor="White"
+                           Grid.Row="3" Grid.Column="0" />
+                    <Frame
+                        Grid.Row="3" Grid.Column="1" 
+                        Padding="0"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        BackgroundColor="#2196F3"
+                        BorderColor="#1976D2"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <Grid>
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
+                                FontSize="24"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onAddAnswerImage4" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <CheckBox x:Name="CorrectAnswer4"
+                             Grid.Row="3" Grid.Column="2"
+                             CheckedChanged="correctAnswer_CheckedChanged" />
+                </Grid>
+
+                <HorizontalStackLayout Spacing="24" Margin="0,24,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Frame
+                        Padding="0"
+                        WidthRequest="48"
+                        HeightRequest="48"
+                        BackgroundColor="#2196F3"
+                        BorderColor="#1976D2"
+                        CornerRadius="24"
+                        HasShadow="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <Grid>
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ChevronLeft}"
+                                FontSize="28"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onPrevQuestionClicked" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+
+                    <Frame
+                        Padding="0"
+                        WidthRequest="120"
+                        HeightRequest="48"
+                        BackgroundColor="#4CAF50"
+                        BorderColor="#388E3C"
+                        CornerRadius="24"
+                        HasShadow="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <Grid>
+                            <HorizontalStackLayout Spacing="8" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label
+                                    FontFamily="MaterialDesignIcons"
+                                    Text="{x:Static helpers:MaterialDesignIconsFonts.Check}"
+                                    FontSize="24"
+                                    TextColor="White"
+                                    VerticalOptions="Center" />
+                                
+                                <Label
+                                    Text="Zakończ"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onFinishQuizClicked" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+
+                    <Frame
+                        Padding="0"
+                        WidthRequest="48"
+                        HeightRequest="48"
+                        BackgroundColor="#2196F3"
+                        BorderColor="#1976D2"
+                        CornerRadius="24"
+                        HasShadow="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <Grid>
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ChevronRight}"
+                                FontSize="28"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onNextQuestionClicked" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Border>
+
+        <AbsoluteLayout Grid.Row="2" Margin="25">
             <Button
-                x:Name="AddAnswerImage1"
-                Clicked="onAddAnswerImage1"
-                Grid.Row="0"
-                Grid.Column="1" />
-            <CheckBox
-                x:Name="CorrectAnswer1"
-                Grid.Row="0"
-                Grid.Column="2" 
-                CheckedChanged="correctAnswer_CheckedChanged"/>
-            <Entry
-                x:Name="AnswerEntry2"
-                Placeholder="Enter answer 2"
-                Grid.Row="1"
-                Grid.Column="0" />
-            <Button
-                x:Name="AddAnswerImage2"
-                Clicked="onAddAnswerImage2"
-                Grid.Row="1"
-                Grid.Column="1" />
-            <CheckBox
-                x:Name="CorrectAnswer2"
-                Grid.Row="1"
-                Grid.Column="2" 
-                CheckedChanged="correctAnswer_CheckedChanged"/>
-            <Entry
-                x:Name="AnswerEntry3"
-                Placeholder="Enter answer 3"
-                Grid.Row="2"
-                Grid.Column="0" />
-            <Button
-                x:Name="AddAnswerImage3"
-                Clicked="onAddAnswerImage3"
-                Grid.Row="2"
-                Grid.Column="1" />
-            <CheckBox
-                x:Name="CorrectAnswer3"
-                Grid.Row="2"
-                Grid.Column="2" 
-                CheckedChanged="correctAnswer_CheckedChanged"/>
-            <Entry
-                x:Name="AnswerEntry4"
-                Placeholder="Enter answer 4"
-                Grid.Row="3"
-                Grid.Column="0" />
-            <Button
-                x:Name="AddAnswerImage4"
-                Clicked="onAddAnswerImage4"
-                Grid.Row="3"
-                Grid.Column="1" />
-            <CheckBox
-                x:Name="CorrectAnswer4"
-                Grid.Row="3"
-                Grid.Column="2" 
-                CheckedChanged="correctAnswer_CheckedChanged"/>
-        </Grid>
-        <Button
-            x:Name="PrevQuestion"
-            Text="Previous Question"
-            Clicked="onPrevQuestionClicked" />
-        <Button
-            x:Name="NextQuestion"
-            Text="Next Question"
-            Clicked="onNextQuestionClicked" />
-        <Button
-            x:Name="FinishQuiz"
-            Text="Finish Quiz"
-            Clicked="onFinishQuizClicked" />
-    </VerticalStackLayout>
+                x:Name="CancelButton"
+                WidthRequest="50"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="CancelButton_Clicked"
+                FontSize="30"
+                Padding="0"
+                FontFamily="MaterialDesignIcons" 
+                BackgroundColor="Red"
+                Text="{x:Static helpers:MaterialDesignIconsFonts.Close}"
+            >
+            </Button>
+        </AbsoluteLayout>
+    </Grid>
 </ContentPage>

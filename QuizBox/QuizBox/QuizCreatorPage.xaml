@@ -1,25 +1,102 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QuizBox.QuizCreatorPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:helpers="clr-namespace:QuizBox.Helpers"
              Title="QuizCreatorPage">
-    <VerticalStackLayout
-        Loaded="onStackLayout_Loaded">
-        <Label 
-            Text="Create your quiz"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Entry
-            x:Name="TitleEntry"
-            Placeholder="Title"
-            />
-        <Entry
-            x:Name="DescriptionEntry"
-            Placeholder="Description"
-            />
-        <Button
-            Text="Add Questions"
-            Clicked="onAddQuestionsClicked"
-            />
-    </VerticalStackLayout>
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior
+             StatusBarStyle="LightContent"
+             StatusBarColor="Transparent"
+        />
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions="Auto,*,Auto" Loaded="onStackLayout_Loaded">
+
+        <Image
+            Source="background.jpg"
+            Aspect="AspectFill"
+            IsVisible="True"
+            Grid.RowSpan="3" />
+
+        <VerticalStackLayout Grid.Row="0" HorizontalOptions="Start" Spacing="2">
+            <VerticalStackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="Android" Value="25,65,25,0"/>
+                    <On Platform="iOS" Value="25,113,25,0"/>
+                    <On Platform="WinUI" Value="25,25,25,0" />
+                </OnPlatform>
+            </VerticalStackLayout.Margin>
+            
+            <Label Text="Quiz Creator" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+            <Label Text="What you will create today?" TextColor="Gray"/>
+        </VerticalStackLayout>
+
+        <Border Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Background="{StaticResource RichBlack}" StrokeThickness="0" StrokeShape="RoundRectangle 25,25,25,25" Padding="25">
+            <VerticalStackLayout Loaded="onStackLayout_Loaded">
+            <Label Text="Quiz Title" FontAttributes="Bold" TextColor="White"/>
+            <Entry x:Name="TitleEntry" Placeholder="Title" WidthRequest="300" TextColor="White"/>
+            
+            <Label Text="Quiz Description" FontAttributes="Bold" TextColor="White" Margin="0,25,0,0"/>
+            <Entry x:Name="DescriptionEntry" Placeholder="Description" TextColor="White"/>
+
+                <Frame
+                    x:Name="goToQuizListFrame"
+                    Padding="12"
+                    Margin="10,25,10,10"
+                    BackgroundColor="#2196F3"
+                    BorderColor="#1976D2"
+                    CornerRadius="12"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                        <HorizontalStackLayout
+                            Spacing="8"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.Plus}"
+                                FontSize="24"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Text="Create Quiz"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                VerticalOptions="Center" />    
+                        </HorizontalStackLayout>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="onAddQuestionsClicked" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+        </Border>
+
+        <AbsoluteLayout Grid.Row="2" Margin="25">
+            <Button
+                x:Name="CancelButton"
+                WidthRequest="50"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="CancelButton_Clicked"
+                FontSize="30"
+                Padding="0"
+                FontFamily="MaterialDesignIcons" 
+                BackgroundColor="Red"
+                Text="{x:Static helpers:MaterialDesignIconsFonts.Close}"
+            >
+            </Button>
+        </AbsoluteLayout>
+    </Grid>
 </ContentPage>

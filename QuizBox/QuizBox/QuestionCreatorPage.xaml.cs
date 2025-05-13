@@ -1,3 +1,5 @@
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using QuizBox.Model;
 using System.Text.Json;
 
@@ -7,6 +9,7 @@ namespace QuizBox;
 public partial class QuestionCreatorPage : ContentPage
 {
     public string? Path { get; set; }
+
     private string? QuestionImage;
     private string? AnswerImage1;
     private string? AnswerImage2;
@@ -40,131 +43,121 @@ public partial class QuestionCreatorPage : ContentPage
     private void onAddQuestionImage(object sender, EventArgs e)
     {
         QuestionImage = ImageToBase64();
-        AddAnswerImage1.Text = QuestionImage;
+        //AddAnswerImage1.Text = QuestionImage;
     }
 
     private void onAddAnswerImage1(object sender, EventArgs e)
     {
         AnswerImage1 = ImageToBase64();
-        AddAnswerImage1.Text = AnswerImage1;
+        //AddAnswerImage1.Text = AnswerImage1;
     }
 
     private void onAddAnswerImage2(object sender, EventArgs e)
     {
         AnswerImage2 = ImageToBase64();
-        AddAnswerImage2.Text = AnswerImage2;
+        //AddAnswerImage2.Text = AnswerImage2;
     }
 
     private void onAddAnswerImage3(object sender, EventArgs e)
     {
         AnswerImage3 = ImageToBase64();
-        AddAnswerImage3.Text = AnswerImage3;
+       // AddAnswerImage3.Text = AnswerImage3;
     }
 
     private void onAddAnswerImage4(object sender, EventArgs e)
     {
         AnswerImage4 = ImageToBase64();
-        AddAnswerImage4.Text = AnswerImage4;
+        //AddAnswerImage4.Text = AnswerImage4;
     }
 
     private async void onPrevQuestionClicked(object sender, EventArgs e)
     {
-        //save questuion to json file then go to
-        //the same page, but with data from the question with number one lower
-        //if the question number is 0, go to the quiz creator page
+        if (QNo <= 0)
+        {
+            await DisplayAlert("Info", "To jest pierwsze pytanie.", "OK");
+            return;
+        }
+
         if (!string.IsNullOrEmpty(QuestionEntry.Text))
         {
             if (QNo == LatestQNo)
-            {
                 compileQuestion();
-            }
             else
-            {
                 updateQuestion();
-            }
-        
-            QNo--;
-            if (QNo < 0)
+        }
+
+        QNo--;
+
+        string json = File.ReadAllText(Path);
+        var quizData = JsonSerializer.Deserialize<Root>(json);
+        var quiz = quizData.Quiz.FirstOrDefault();
+        if (quiz != null)
+        {
+            var question = quiz.Questions.FirstOrDefault(q => q.QuestionID == QNo.ToString());
+            if (question != null)
             {
-                QNo = 0;
-                File.Delete(Path);
-                await Shell.Current.GoToAsync($"///QuizCreatorPage");
-            }
-            else
-            {
-                string json = File.ReadAllText(Path);
-                var quizData = JsonSerializer.Deserialize<Root>(json);
-                var quiz = quizData.Quiz.FirstOrDefault();
-                if (quiz != null)
-                {
-                    var question = quiz.Questions.FirstOrDefault(q => q.QuestionID == QNo.ToString());
-                    if(question != null)
-                    {
-                        QuestionEntry.Text = question.QuestionText;
-                        AnswerEntry1.Text = question.Answers[0].AnswerText;
-                        CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
-                        AnswerEntry2.Text = question.Answers[1].AnswerText;
-                        CorrectAnswer2.IsChecked = question.Answers[1].IsCorrect;
-                        AnswerEntry3.Text = question.Answers[2].AnswerText;
-                        CorrectAnswer3.IsChecked = question.Answers[2].IsCorrect;
-                        AnswerEntry4.Text = question.Answers[3].AnswerText;
-                        CorrectAnswer4.IsChecked = question.Answers[3].IsCorrect;
-                    }
-                }
+                QuestionEntry.Text = question.QuestionText;
+                AnswerEntry1.Text = question.Answers[0].AnswerText;
+                CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
+                AnswerEntry2.Text = question.Answers[1].AnswerText;
+                CorrectAnswer2.IsChecked = question.Answers[1].IsCorrect;
+                AnswerEntry3.Text = question.Answers[2].AnswerText;
+                CorrectAnswer3.IsChecked = question.Answers[2].IsCorrect;
+                AnswerEntry4.Text = question.Answers[3].AnswerText;
+                CorrectAnswer4.IsChecked = question.Answers[3].IsCorrect;
             }
         }
     }
 
     private async void onNextQuestionClicked(object sender, EventArgs e)
     {
-        //save questions to json file then go to
-        //the same page but resseted, prolly with incremented question number
-        if (!string.IsNullOrEmpty(QuestionEntry.Text))
+        if (string.IsNullOrEmpty(QuestionEntry.Text))
         {
-            if (QNo == LatestQNo)
-            {
-                compileQuestion();
-                LatestQNo++;
-            }
-            else
-            {
-                updateQuestion();
-            }
+            await DisplayAlert("Error", "Please fill in the question text.", "OK");
+            return;
+        }
 
+        if (QNo == LatestQNo)
+        {
+            compileQuestion();
+            LatestQNo++;
+        }
+        else
+        {
+            updateQuestion();
+        }
+
+        QNo++;
+
+        string json = File.ReadAllText(Path);
+        var quizData = JsonSerializer.Deserialize<Root>(json);
+        var quiz = quizData.Quiz.FirstOrDefault();
+        var question = quiz?.Questions.FirstOrDefault(q => q.QuestionID == QNo.ToString());
+
+        if (question != null)
+        {
+            QuestionEntry.Text = question.QuestionText;
+            AnswerEntry1.Text = question.Answers[0].AnswerText;
+            CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
+            AnswerEntry2.Text = question.Answers[1].AnswerText;
+            CorrectAnswer2.IsChecked = question.Answers[1].IsCorrect;
+            AnswerEntry3.Text = question.Answers[2].AnswerText;
+            CorrectAnswer3.IsChecked = question.Answers[2].IsCorrect;
+            AnswerEntry4.Text = question.Answers[3].AnswerText;
+            CorrectAnswer4.IsChecked = question.Answers[3].IsCorrect;
+        }
+        else
+        {
+            // Nowe pytanie - wyczyść pola
+            QuestionEntry.Text = "";
             AnswerEntry1.Text = "";
             AnswerEntry2.Text = "";
             AnswerEntry3.Text = "";
             AnswerEntry4.Text = "";
-            QuestionEntry.Text = "";
             CorrectAnswer1.IsChecked = false;
             CorrectAnswer2.IsChecked = false;
             CorrectAnswer3.IsChecked = false;
             CorrectAnswer4.IsChecked = false;
-
-            string json = File.ReadAllText(Path);
-            var quizData = JsonSerializer.Deserialize<Root>(json);
-            var quiz = quizData.Quiz.FirstOrDefault();
-            if (quiz != null)
-            {
-                var question = quiz.Questions.FirstOrDefault(q => q.QuestionID == (QNo+1).ToString());
-                if (question != null)
-                {
-                    QuestionEntry.Text = question.QuestionText;
-                    AnswerEntry1.Text = question.Answers[0].AnswerText;
-                    CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
-                    AnswerEntry2.Text = question.Answers[1].AnswerText;
-                    CorrectAnswer2.IsChecked = question.Answers[1].IsCorrect;
-                    AnswerEntry3.Text = question.Answers[2].AnswerText;
-                    CorrectAnswer3.IsChecked = question.Answers[2].IsCorrect;
-                    AnswerEntry4.Text = question.Answers[3].AnswerText;
-                    CorrectAnswer4.IsChecked = question.Answers[3].IsCorrect;
-                }
-            }
-            QNo++;
-        }
-        else
-        {
-            await DisplayAlert("Error", "Please fill in the question text.", "OK");
         }
     }
 
@@ -188,6 +181,8 @@ public partial class QuestionCreatorPage : ContentPage
                 compileQuestion();
             }
         }
+
+        await Toast.Make("Quiz was created successfully!", ToastDuration.Short).Show();
         await Shell.Current.GoToAsync($"///MainPage");
     }
 
@@ -288,5 +283,27 @@ public partial class QuestionCreatorPage : ContentPage
 
         string updatedJson = JsonSerializer.Serialize(quizData, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(Path, updatedJson);
+    }
+
+    private async void CancelButton_Clicked(object sender, EventArgs e)
+    {
+        bool answer = await DisplayAlert("Cancel", "Would you like to cancel the creation of quiz?", "Yes", "No");
+        if (answer)
+        {
+            AnswerEntry1.Text = "";
+            AnswerEntry2.Text = "";
+            AnswerEntry3.Text = "";
+            AnswerEntry4.Text = "";
+            QuestionEntry.Text = "";
+
+            CorrectAnswer1.IsChecked = false;
+            CorrectAnswer2.IsChecked = false;
+            CorrectAnswer3.IsChecked = false;
+            CorrectAnswer4.IsChecked = false;
+
+            File.Delete(Path);
+            await Shell.Current.GoToAsync("///MainPage");
+            await Toast.Make("Canceling the creation of quiz!", ToastDuration.Short).Show();
+        }
     }
 }

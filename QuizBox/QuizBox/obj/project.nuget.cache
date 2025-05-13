@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "IKAN8bOfoZQ=",
+  "dgSpecHash": "AGit3C7t/NE=",
   "success": true,
   "projectFilePath": "C:\\Users\\Chareq\\Source\\Repos\\QuizSession\\QuizBox\\QuizBox\\QuizBox.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Chareq\\.nuget\\packages\\communitytoolkit.maui\\9.1.1\\communitytoolkit.maui.9.1.1.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\communitytoolkit.maui.core\\9.1.1\\communitytoolkit.maui.core.9.1.1.nupkg.sha512",
+    "C:\\Users\\Chareq\\.nuget\\packages\\fluenticons.common\\1.1.298\\fluenticons.common.1.1.298.nupkg.sha512",
+    "C:\\Users\\Chareq\\.nuget\\packages\\fluenticons.maui\\1.1.298\\fluenticons.maui.1.1.298.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

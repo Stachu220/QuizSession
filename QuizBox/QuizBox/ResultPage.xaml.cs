@@ -1,3 +1,4 @@
+﻿using Microsoft.Maui.Controls.Shapes;
 using QuizBox.Model;
 
 namespace QuizBox;
@@ -34,21 +35,40 @@ public partial class ResultPage : ContentPage
                 var questionLabel = new Label
                 {
                     Text = $"Question {i + 1}: {question.QuestionText}",
-                    FontSize = 20,
+                    FontSize = 16,
+                    TextColor = Colors.White,
+                    FontAttributes = FontAttributes.Bold,
                     HorizontalOptions = LayoutOptions.Start,
-                    VerticalOptions = LayoutOptions.CenterAndExpand
+                    VerticalOptions = LayoutOptions.Center
                 };
 
                 var correctAnswerLabel = new Label
                 {
                     Text = $"Correct Answer: {correctAnswer.AnswerText}",
-                    FontSize = 18,
+                    FontSize = 14,
+                    TextColor = Colors.White,
                     HorizontalOptions = LayoutOptions.Start,
-                    VerticalOptions = LayoutOptions.CenterAndExpand
+                    VerticalOptions = LayoutOptions.Center
                 };
 
-                CorrectAnswersStackLayout.Children.Add(questionLabel);
-                CorrectAnswersStackLayout.Children.Add(correctAnswerLabel);
+                var border = new Border
+                {
+                    BackgroundColor = Color.FromHex("#005f80"),
+                    StrokeThickness = 0,
+                    StrokeShape = new RoundRectangle
+                    {
+                        CornerRadius = new CornerRadius(12)
+                    },
+                    Margin = new Thickness(0, 0, 0, 12),
+                    Padding = new Thickness(16, 12),
+                    Content = new VerticalStackLayout
+                    {
+                        Spacing = 2,
+                        Children = { questionLabel, correctAnswerLabel }
+                    }
+                };
+
+                CorrectAnswersStackLayout.Children.Add(border);
             }
         }
 

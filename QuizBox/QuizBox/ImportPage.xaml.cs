@@ -1,3 +1,5 @@
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using QuizBox.Model;
 using System.Text.Json;
 
@@ -60,7 +62,7 @@ public partial class ImportPage : ContentPage
                 //await stream.CopyToAsync(OutputStream);
                 File.WriteAllText(destinationPath, json);
 
-                await DisplayAlert("Success", $"File {fileName} imported successfully!", "OK");
+                await Toast.Make($"File {fileName} imported successfully!", ToastDuration.Short).Show();
             }
         }
         catch (Exception ex)
