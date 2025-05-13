@@ -38,9 +38,15 @@ public partial class QuizStartPage : ContentPage
         await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
         await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
-    private async void onQNo20(object sender, EventArgs e)
+    private async void onQNoCustom(object sender, EventArgs e)
     {
-        SetOfQuestions = 20;
+        string temp = await DisplayPromptAsync("Tell us how long the quiz should be", "");
+        int.TryParse(temp, out SetOfQuestions);
+        if (SetOfQuestions < 1 && SetOfQuestions > QNo)
+        {
+            await DisplayAlert("Error", "Please enter a valid number of questions.", "OK");
+            return;
+        }
         await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
         await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
     }
@@ -63,7 +69,7 @@ public partial class QuizStartPage : ContentPage
             QNo6.IsEnabled = true;
             QNo10.IsEnabled = true;
             QNo15.IsEnabled = true;
-            QNo20.IsEnabled = true;
+            QNoCustom.IsEnabled = true;
             QuizTitle.Text = quiz.Name;
             QuizDesc.Text = quiz.Description;
             foreach (var question in quiz.Questions)
@@ -82,10 +88,6 @@ public partial class QuizStartPage : ContentPage
             if (QNo < 15)
             {
                 QNo15.IsEnabled = false;
-            }
-            if (QNo < 20)
-            {
-                QNo20.IsEnabled = false;
             }
 
             rollQuestionsOrder();

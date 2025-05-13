@@ -96,9 +96,9 @@
                         Margin="0,0,0,5" />
                     
                     <Button
-                        x:Name="QNo20"
-                        Text="20"
-                        Clicked="onQNo20"
+                        x:Name="QNoCustom"
+                        Text="Custom"
+                        Clicked="onQNoCustom"
                         Margin="0,0,0,5" />
                 </VerticalStackLayout>
 

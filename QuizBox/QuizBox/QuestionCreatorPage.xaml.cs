@@ -120,7 +120,6 @@ public partial class QuestionCreatorPage : ContentPage
         if (QNo == LatestQNo)
         {
             compileQuestion();
-            LatestQNo++;
         }
         else
         {
@@ -213,6 +212,7 @@ public partial class QuestionCreatorPage : ContentPage
         {
             if (answer.IsCorrect)
             {
+                LatestQNo++;
                 isThereCorrectAnswer = true;
                 break;
             }
