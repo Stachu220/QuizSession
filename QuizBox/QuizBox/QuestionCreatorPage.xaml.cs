@@ -164,11 +164,11 @@ public partial class QuestionCreatorPage : ContentPage
     {
         //save question to json file then go to
         //main page
+        string json = File.ReadAllText(Path);
+        var quizData = JsonSerializer.Deserialize<Root>(json);
+        var quiz = quizData.Quiz.FirstOrDefault();
         if (!string.IsNullOrEmpty(QuestionEntry.Text))
         {
-            string json = File.ReadAllText(Path);
-            var quizData = JsonSerializer.Deserialize<Root>(json);
-            var quiz = quizData.Quiz.FirstOrDefault();
 
             var existingQuestion = quiz.Questions.FirstOrDefault(q => q.QuestionID == QNo.ToString());
             if (existingQuestion != null)
@@ -179,9 +179,14 @@ public partial class QuestionCreatorPage : ContentPage
             {
                 compileQuestion();
             }
+            await Toast.Make("Quiz was created successfully!", ToastDuration.Short).Show();
+        }
+        else if (quiz.Questions.Count == 0)
+        {
+            File.Delete(Path);
+            await DisplayAlert(quiz.Name, "Quiz not created, can't create empty quiz", "OK");
         }
 
-        await Toast.Make("Quiz was created successfully!", ToastDuration.Short).Show();
         await Shell.Current.GoToAsync($"///MainPage");
     }
 
