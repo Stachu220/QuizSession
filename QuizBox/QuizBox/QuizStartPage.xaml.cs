@@ -41,8 +41,7 @@ public partial class QuizStartPage : ContentPage
     private async void onQNoCustom(object sender, EventArgs e)
     {
         string temp = await DisplayPromptAsync("Tell us how long the quiz should be", "");
-        int.TryParse(temp, out SetOfQuestions);
-        if (SetOfQuestions < 1 && SetOfQuestions > QNo)
+        if (!int.TryParse(temp, out SetOfQuestions) || SetOfQuestions < 1 || SetOfQuestions > QNo)
         {
             await DisplayAlert("Error", "Please enter a valid number of questions.", "OK");
             return;

@@ -21,7 +21,6 @@ public partial class ImportPage : ContentPage
 	public async void onImportQuiz(object sender, EventArgs e)
 	{
         //import quiz from file -> in reality copy it to working folder
-        //for now read first json file from working folder
         string path = FileSystem.AppDataDirectory;
         try
         {

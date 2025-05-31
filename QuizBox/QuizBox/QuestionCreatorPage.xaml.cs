@@ -2,6 +2,7 @@
 using CommunityToolkit.Maui.Core;
 using QuizBox.Model;
 using System.Text.Json;
+using SkiaSharp;
 
 namespace QuizBox;
 
@@ -40,34 +41,34 @@ public partial class QuestionCreatorPage : ContentPage
     }
 
     //Somehow retrieve the image path from the file picker
-    private void onAddQuestionImage(object sender, EventArgs e)
+    private async void onAddQuestionImage(object sender, EventArgs e)
     {
-        QuestionImage = ImageToBase64();
-        //AddAnswerImage1.Text = QuestionImage;
+        QuestionImage = await ImageToBase64();
+        QuestionEntry.Text = QuestionImage;
     }
 
-    private void onAddAnswerImage1(object sender, EventArgs e)
+    private async void onAddAnswerImage1(object sender, EventArgs e)
     {
-        AnswerImage1 = ImageToBase64();
-        //AddAnswerImage1.Text = AnswerImage1;
+        AnswerImage1 = await ImageToBase64();
+        AnswerEntry1.Text = AnswerImage1;
     }
 
-    private void onAddAnswerImage2(object sender, EventArgs e)
+    private async void onAddAnswerImage2(object sender, EventArgs e)
     {
-        AnswerImage2 = ImageToBase64();
-        //AddAnswerImage2.Text = AnswerImage2;
+        AnswerImage2 = await ImageToBase64();
+        AnswerEntry2.Text = AnswerImage2;
     }
 
-    private void onAddAnswerImage3(object sender, EventArgs e)
+    private async void onAddAnswerImage3(object sender, EventArgs e)
     {
-        AnswerImage3 = ImageToBase64();
-       // AddAnswerImage3.Text = AnswerImage3;
+        AnswerImage3 = await ImageToBase64();
+        AnswerEntry3.Text = AnswerImage3;
     }
 
-    private void onAddAnswerImage4(object sender, EventArgs e)
+    private async void onAddAnswerImage4(object sender, EventArgs e)
     {
-        AnswerImage4 = ImageToBase64();
-        //AddAnswerImage4.Text = AnswerImage4;
+        AnswerImage4 = await ImageToBase64();
+        AnswerEntry4.Text = AnswerImage4;
     }
 
     private async void onPrevQuestionClicked(object sender, EventArgs e)
@@ -190,14 +191,54 @@ public partial class QuestionCreatorPage : ContentPage
         await Shell.Current.GoToAsync($"///MainPage");
     }
 
-    private string ImageToBase64()
+    private async Task<string> ImageToBase64()
     {
-        // Convert the image to a Base64 string
-        string imagePath = "path_to_your_image"; // Replace with the actual image path
-        byte[] imageBytes = File.ReadAllBytes(imagePath);
-        string base64String = Convert.ToBase64String(imageBytes);
-        return base64String;
+        var result = await FilePicker.PickAsync(new PickOptions
+        {
+            PickerTitle = "Select an image",
+            FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+            {
+                { DevicePlatform.Android, new[] { "image/*" } },
+                { DevicePlatform.iOS, new[] { "public.image" } },
+                { DevicePlatform.WinUI, new[] { ".jpg", ".jpeg", ".png", ".gif" } }
+            })
+        });
+
+        if (result != null)
+        {
+            try
+            {
+                using var inputStream = await result.OpenReadAsync();
+                using var original = SKBitmap.Decode(inputStream);
+
+                if (original == null)
+                    return string.Empty;
+
+                float widthRatio = 512f / original.Width;
+                float heightRatio = 512f / original.Height;
+                float scale = Math.Min(widthRatio, heightRatio);
+
+                int newWidth = (int)(original.Width * scale);
+                int newHeight = (int)(original.Height * scale);
+
+                using var resized = original.Resize(new SKImageInfo(newWidth, newHeight), SKFilterQuality.Medium);
+
+                using var image = SKImage.FromBitmap(resized);
+                using var data = image.Encode(SKEncodedImageFormat.Jpeg, 60);
+
+                return Convert.ToBase64String(data.ToArray());
+
+
+            } catch (Exception e)
+            {
+                Console.WriteLine($"Error processing image: {e.Message}");
+                return string.Empty;
+            }
+        }
+
+        return string.Empty;
     }
+
 
     private void compileQuestion()
     {

@@ -69,6 +69,13 @@
                            FontAttributes="Bold" 
                            HorizontalTextAlignment="Center" 
                            HorizontalOptions="Center"/>
+                    <Image
+                        x:Name="QuestionImage"
+                        Aspect="AspectFit"
+                        HeightRequest="200"
+                        WidthRequest="200"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
                 </StackLayout>
 
                 <VerticalStackLayout 
