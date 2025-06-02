@@ -14,9 +14,8 @@
     </ContentPage.Behaviors>
 
     <Grid RowDefinitions="Auto,*,Auto" Loaded="onStackLayout_Loaded">
-
         <Image
-            Source="background.jpg"
+            Source="background9.jpg"
             Aspect="AspectFill"
             IsVisible="True"
             Grid.RowSpan="3" />
@@ -29,34 +28,38 @@
                     <On Platform="WinUI" Value="25,25,25,0" />
                 </OnPlatform>
             </VerticalStackLayout.Margin>
-            
-            <Label Text="Quiz Creator" FontSize="20" FontAttributes="Bold" TextColor="White"/>
-            <Label Text="What you will create today?" TextColor="Gray"/>
+
+            <Label Text="Quiz Creator" FontSize="28" FontAttributes="Bold" TextColor="White" FontFamily="Ubuntu-Bold" Margin="0,0,0,2"/>
+            <Label Text="What you will create today?" FontSize="20" FontFamily="Ubuntu-Regular" TextColor="Gray"/>
         </VerticalStackLayout>
 
-        <Border Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Background="{StaticResource RichBlack}" StrokeThickness="0" StrokeShape="RoundRectangle 25,25,25,25" Padding="25">
+        <Border Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Background="{StaticResource RichBlack}" StrokeThickness="0" StrokeShape="RoundRectangle 25,25,25,25" Padding="25" Margin="25,0,25,0">
             <VerticalStackLayout Loaded="onStackLayout_Loaded">
-            <Label Text="Quiz Title" FontAttributes="Bold" TextColor="White"/>
-            <Entry x:Name="TitleEntry" Placeholder="Title" WidthRequest="300" TextColor="White"/>
-            
-            <Label Text="Quiz Description" FontAttributes="Bold" TextColor="White" Margin="0,25,0,0"/>
-            <Entry x:Name="DescriptionEntry" Placeholder="Description" TextColor="White"/>
+                <Label Text="Quiz Title" FontAttributes="Bold" TextColor="White" FontFamily="Ubuntu-Bold" FontSize="20" Margin="0,0,0,5"/>
+                <Border x:Name="TitleEntryBorder" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
+                    <Entry x:Name="TitleEntry" Placeholder="Title" WidthRequest="250" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
+                </Border>
+
+                <Label Text="Quiz Description" FontAttributes="Bold" TextColor="White" Margin="0,25,0,5" FontFamily="Ubuntu-Bold" FontSize="20"/>
+                <Border x:Name="DescriptionEntryBorder" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
+                    <Entry x:Name="DescriptionEntry" Placeholder="Description" TextColor="White" WidthRequest="250" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused">
+                        </Entry>
+                </Border>
 
                 <Frame
-                    x:Name="goToQuizListFrame"
+                    x:Name="addQuestionsFrame"
                     Padding="12"
-                    Margin="10,25,10,10"
-                    BackgroundColor="#2196F3"
-                    BorderColor="#1976D2"
+                    BackgroundColor="{StaticResource PictonBlue}"
+                    BorderColor="Transparent"
+                    Margin="10,35,10,10"
                     CornerRadius="12"
-                    HasShadow="True"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">
                     <Grid
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Center">
                         <HorizontalStackLayout
-                            Spacing="8"
+                            Spacing="10"
                             VerticalOptions="Center"
                             HorizontalOptions="Center">
                             <Label
@@ -69,15 +72,16 @@
                             <Label
                                 Text="Create Quiz"
                                 FontSize="18"
+                                FontFamily="Ubuntu-Regular"
                                 FontAttributes="Bold"
                                 TextColor="White"
-                                VerticalOptions="Center" />    
+                                VerticalOptions="Center" />
                         </HorizontalStackLayout>
-
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="onAddQuestionsClicked" />
-                        </Grid.GestureRecognizers>
                     </Grid>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onAddQuestionsClicked" />
+                    </Frame.GestureRecognizers>
                 </Frame>
             </VerticalStackLayout>
         </Border>
@@ -93,7 +97,12 @@
                 FontSize="30"
                 Padding="0"
                 FontFamily="MaterialDesignIcons" 
-                BackgroundColor="Red"
+                TextColor="White"
+                Background="#FF2400"
+                BorderWidth="0"
+                CornerRadius="12"
+                MinimumHeightRequest="50"
+                MinimumWidthRequest="50"
                 Text="{x:Static helpers:MaterialDesignIconsFonts.Close}"
             >
             </Button>

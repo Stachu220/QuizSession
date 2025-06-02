@@ -14,45 +14,26 @@ public partial class QuizStartPage : ContentPage
     public static Root RootToPass;
     public static List<Question> QuestionsRandomized = new List<Question>();
     private List<Question> questionList = new List<Question>();
+    public static List<AnsweredQuestion> AnsweredQuestions = new();
 
     public QuizStartPage()
 	{
 		InitializeComponent();
+        numberOfQuestionsEntry.Text = null;
 	}
 
-    private async void onQNo6(object sender, EventArgs e)
-	{
-        SetOfQuestions = 6;
-        await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
-        await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
-    }
-    private async void onQNo10(object sender, EventArgs e)
+    private async void onGoBack(object sender, EventArgs e)
     {
-        SetOfQuestions = 10;
-        await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
-        await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
-    }
-    private async void onQNo15(object sender, EventArgs e)
-    {
-        SetOfQuestions = 15;
-        await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
-        await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
-    }
-    private async void onQNoCustom(object sender, EventArgs e)
-    {
-        string temp = await DisplayPromptAsync("Tell us how long the quiz should be", "");
-        if (!int.TryParse(temp, out SetOfQuestions) || SetOfQuestions < 1 || SetOfQuestions > QNo)
-        {
-            await DisplayAlert("Error", "Please enter a valid number of questions.", "OK");
-            return;
-        }
-        await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
-        await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
-    }
+        backBtn.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        backBtn.Background = (Color)Application.Current.Resources["Cerulean"];
 
-    private void onGoBack(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync($"///QuizListPage");
+        await backBtn.ScaleTo(0.85, 180, Easing.CubicIn);
+        await backBtn.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        backBtn.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        backBtn.Background = (Color)Application.Current.Resources["PictonBlue"];
+
+        await Shell.Current.GoToAsync($"///QuizListPage");
     }
 
     private void VerticalStackLayout_Loaded(object sender, EventArgs e)
@@ -65,30 +46,16 @@ public partial class QuizStartPage : ContentPage
         QNo = 0;
         if (quiz != null)
         {
-            QNo6.IsEnabled = true;
-            QNo10.IsEnabled = true;
-            QNo15.IsEnabled = true;
-            QNoCustom.IsEnabled = true;
             QuizTitle.Text = quiz.Name;
             QuizDesc.Text = quiz.Description;
+
             foreach (var question in quiz.Questions)
             {
                 QNo++;
                 questionList.Add(question);
             }
-            if (QNo < 6)
-            {
-                QNo6.IsEnabled = false;
-            }
-            if (QNo < 10)
-            {
-                QNo10.IsEnabled = false;
-            }
-            if (QNo < 15)
-            {
-                QNo15.IsEnabled = false;
-            }
 
+            numberOfQuestions.Text = QNo.ToString();
             rollQuestionsOrder();
         }
 
@@ -109,19 +76,40 @@ public partial class QuizStartPage : ContentPage
         }
     }
 
-    private void onDeleteQuiz(object sender, EventArgs e)
+    private async void onDeleteQuiz(object sender, EventArgs e)
     {
-        //delete quiz from json file
-        File.Delete(Path);
-        Toast.Make("Selected Quiz was deleted!", ToastDuration.Short).Show();
-        Shell.Current.GoToAsync($"///QuizListPage");
+        DeleteFrame.BackgroundColor = Color.FromHex("#B31900");
+        DeleteFrame.Background = Color.FromHex("#B31900");
+
+        await DeleteFrame.ScaleTo(0.9, 180, Easing.CubicIn);
+        await DeleteFrame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        DeleteFrame.BackgroundColor = Color.FromHex("#FF2400");
+        DeleteFrame.Background = Color.FromHex("#FF2400");
+
+        bool answer = await DisplayAlert("INFO", "Do you want to delete this quiz?", "YES", "NO");
+        if (answer)
+        {
+            File.Delete(Path);
+            await Toast.Make("Selected Quiz was deleted!", ToastDuration.Short).Show();
+            await Shell.Current.GoToAsync($"///QuizListPage");
+        }
     }
 
     private async void onExport(object sender, EventArgs e)
     {
+        exportFrame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        exportFrame.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await exportFrame.ScaleTo(0.9, 180, Easing.CubicIn);
+        await exportFrame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        exportFrame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        exportFrame.Background = (Color)Application.Current.Resources["PictonBlue"];
+
         if (string.IsNullOrEmpty(Path) || !File.Exists(Path))
         {
-            await DisplayAlert("Error", "Quiz file not found.", "OK");
+            await DisplayAlert("ERROR", "Quiz file not found!", "OK");
             return;
         }
 
@@ -130,5 +118,65 @@ public partial class QuizStartPage : ContentPage
             Title = "Share Quiz JSON",
             File = new ShareFile(Path)
         });
+    }
+
+    protected override void OnNavigatingFrom(NavigatingFromEventArgs args)
+    {
+        numberOfQuestionsEntry.Text = "";
+        base.OnNavigatingFrom(args);
+    }
+
+    private async void onStart(object sender, EventArgs e)
+    {
+        startFrame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        startFrame.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await startFrame.ScaleTo(0.9, 180, Easing.CubicIn);
+        await startFrame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        startFrame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        startFrame.Background = (Color)Application.Current.Resources["PictonBlue"];
+
+        if(numberOfQuestionsEntry.Text != null || numberOfQuestionsEntry.Text != "")
+        {
+            try
+            {
+                SetOfQuestions = Int32.Parse(numberOfQuestionsEntry.Text);
+
+                if(SetOfQuestions > QNo || SetOfQuestions < 1)
+                {
+                    await DisplayAlert("ERROR", "Selected number of questions can't be equal to 0 or be out of range!", "OK");
+                }
+                else
+                {
+                    await Toast.Make("Starting the Quiz. Good luck!", ToastDuration.Short).Show();
+                    await Shell.Current.GoToAsync($"///QuestionPage?param={SetOfQuestions}&paramPath={Path}");
+                }
+            }
+            catch
+            {
+                await DisplayAlert("ERROR", "There was a problem with number of questions!", "OK");
+            }
+        }
+    }
+
+    private async void OnEntryFocused(object sender, FocusEventArgs e)
+    {
+        if (sender == numberOfQuestionsEntry)
+        {
+            numberOfQuestionsBorder.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
+            numberOfQuestionsBorder.StrokeThickness = 4;
+            await numberOfQuestionsBorder.ScaleTo(1.05, 120, Easing.CubicOut);
+        }
+    }
+
+    private async void OnEntryUnfocused(object sender, FocusEventArgs e)
+    {
+        if (sender == numberOfQuestionsEntry)
+        {
+            numberOfQuestionsBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            numberOfQuestionsBorder.StrokeThickness = 2;
+            await numberOfQuestionsBorder.ScaleTo(1.0, 120, Easing.CubicOut);
+        }
     }
 }

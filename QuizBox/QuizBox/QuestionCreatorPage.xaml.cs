@@ -43,39 +43,172 @@ public partial class QuestionCreatorPage : ContentPage
     //Somehow retrieve the image path from the file picker
     private async void onAddQuestionImage(object sender, EventArgs e)
     {
+        if (QuestionImage == null || QuestionImage == "")
+        {
+            addImageBorder.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
+            icon.TextColor = (Color)Application.Current.Resources["Cerulean"];
+            text1.TextColor = (Color)Application.Current.Resources["Cerulean"];
+        }
+        else
+        {
+            addImageBorder.Stroke = Color.FromHex("#45A049");
+            icon.TextColor = Color.FromHex("#45A049");
+            text1.TextColor = Color.FromHex("#45A049");
+        }
+
+        await addImageBorder.ScaleTo(0.9, 180, Easing.CubicIn);
+        await addImageBorder.ScaleTo(1.0, 180, Easing.CubicOut);
+
         QuestionImage = await ImageToBase64();
-        QuestionEntry.Text = QuestionImage;
+
+        if(QuestionImage == null | QuestionImage == "")
+        {
+            addImageBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            icon.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+            text1.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+        }
+        else
+        {
+            addImageBorder.Stroke = Color.FromHex("#4CAF50");
+            icon.TextColor = Color.FromHex("#4CAF50");
+            text1.TextColor = Color.FromHex("#4CAF50");
+        }
     }
 
     private async void onAddAnswerImage1(object sender, EventArgs e)
     {
+        if (AnswerImage1 == null || AnswerImage1 == "")
+        {
+            answerImage1Frame.Background = (Color)Application.Current.Resources["Cerulean"];
+            answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        }
+        else
+        {
+            answerImage1Frame.Background = Color.FromHex("#45A049");
+            answerImage1Frame.BackgroundColor = Color.FromHex("#45A049");
+        }
+
+        await answerImage1Frame.ScaleTo(0.85, 180, Easing.CubicIn);
+        await answerImage1Frame.ScaleTo(1.0, 180, Easing.CubicOut);
+
         AnswerImage1 = await ImageToBase64();
-        AnswerEntry1.Text = AnswerImage1;
+
+        if (AnswerImage1 == null | AnswerImage1 == "")
+        {
+            answerImage1Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        }
+        else
+        {
+            answerImage1Frame.Background = Color.FromHex("#4CAF50");
+            answerImage1Frame.BackgroundColor = Color.FromHex("#4CAF50");
+        }
     }
 
     private async void onAddAnswerImage2(object sender, EventArgs e)
     {
+        if (AnswerImage2 == null || AnswerImage2 == "")
+        {
+            answerImage2Frame.Background = (Color)Application.Current.Resources["Cerulean"];
+            answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        }
+        else
+        {
+            answerImage2Frame.Background = Color.FromHex("#45A049");
+            answerImage2Frame.BackgroundColor = Color.FromHex("#45A049");
+        }
+
+        await answerImage2Frame.ScaleTo(0.85, 180, Easing.CubicIn);
+        await answerImage2Frame.ScaleTo(1.0, 180, Easing.CubicOut);
+
         AnswerImage2 = await ImageToBase64();
-        AnswerEntry2.Text = AnswerImage2;
+
+        if (AnswerImage2 == null | AnswerImage2 == "")
+        {
+            answerImage2Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        }
+        else
+        {
+            answerImage2Frame.Background = Color.FromHex("#4CAF50");
+            answerImage2Frame.BackgroundColor = Color.FromHex("#4CAF50");
+        }
     }
 
     private async void onAddAnswerImage3(object sender, EventArgs e)
     {
+        if (AnswerImage3 == null || AnswerImage3 == "")
+        {
+            answerImage3Frame.Background = (Color)Application.Current.Resources["Cerulean"];
+            answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        }
+        else
+        {
+            answerImage3Frame.Background = Color.FromHex("#45A049");
+            answerImage3Frame.BackgroundColor = Color.FromHex("#45A049");
+        }
+
+        await answerImage3Frame.ScaleTo(0.85, 180, Easing.CubicIn);
+        await answerImage3Frame.ScaleTo(1.0, 180, Easing.CubicOut);
+
         AnswerImage3 = await ImageToBase64();
-        AnswerEntry3.Text = AnswerImage3;
+
+        if (AnswerImage3 == null | AnswerImage3 == "")
+        {
+            answerImage3Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        }
+        else
+        {
+            answerImage3Frame.Background = Color.FromHex("#4CAF50");
+            answerImage3Frame.BackgroundColor = Color.FromHex("#4CAF50");
+        }
     }
 
     private async void onAddAnswerImage4(object sender, EventArgs e)
     {
+        if (AnswerImage4 == null || AnswerImage4 == "")
+        {
+            answerImage4Frame.Background = (Color)Application.Current.Resources["Cerulean"];
+            answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        }
+        else
+        {
+            answerImage4Frame.Background = Color.FromHex("#45A049");
+            answerImage4Frame.BackgroundColor = Color.FromHex("#45A049");
+        }
+
+        await answerImage4Frame.ScaleTo(0.85, 180, Easing.CubicIn);
+        await answerImage4Frame.ScaleTo(1.0, 180, Easing.CubicOut);
+
         AnswerImage4 = await ImageToBase64();
-        AnswerEntry4.Text = AnswerImage4;
+
+        if (AnswerImage4 == null | AnswerImage4 == "")
+        {
+            answerImage4Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        }
+        else
+        {
+            answerImage4Frame.Background = Color.FromHex("#4CAF50");
+            answerImage4Frame.BackgroundColor = Color.FromHex("#4CAF50");
+        }
     }
 
     private async void onPrevQuestionClicked(object sender, EventArgs e)
     {
+        previousFrame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        previousFrame.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await previousFrame.ScaleTo(0.85, 180, Easing.CubicIn);
+        await previousFrame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        previousFrame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        previousFrame.Background = (Color)Application.Current.Resources["PictonBlue"];
+
         if (QNo <= 0)
         {
-            await DisplayAlert("Info", "To jest pierwsze pytanie.", "OK");
+            await DisplayAlert("INFO", "This is first question!", "OK");
             return;
         }
 
@@ -97,6 +230,7 @@ public partial class QuestionCreatorPage : ContentPage
             var question = quiz.Questions.FirstOrDefault(q => q.QuestionID == QNo.ToString());
             if (question != null)
             {
+                //Tu dodać sprawdzanie zdjęć, i wtedy na zielono/niebiesko
                 QuestionEntry.Text = question.QuestionText;
                 AnswerEntry1.Text = question.Answers[0].AnswerText;
                 CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
@@ -112,9 +246,18 @@ public partial class QuestionCreatorPage : ContentPage
 
     private async void onNextQuestionClicked(object sender, EventArgs e)
     {
+        nextFrame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        nextFrame.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await nextFrame.ScaleTo(0.85, 180, Easing.CubicIn);
+        await nextFrame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        nextFrame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        nextFrame.Background = (Color)Application.Current.Resources["PictonBlue"];
+
         if (string.IsNullOrEmpty(QuestionEntry.Text))
         {
-            await DisplayAlert("Error", "Please fill in the question text.", "OK");
+            await DisplayAlert("ERROR", "Please fill in the question text!", "OK");
             return;
         }
 
@@ -136,6 +279,7 @@ public partial class QuestionCreatorPage : ContentPage
 
         if (question != null)
         {
+            //Jak będzie zdjęcie, to zmiana koloru przycisków
             QuestionEntry.Text = question.QuestionText;
             AnswerEntry1.Text = question.Answers[0].AnswerText;
             CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
@@ -148,6 +292,7 @@ public partial class QuestionCreatorPage : ContentPage
         }
         else
         {
+            //Tu wszystko na niebiesko
             // Nowe pytanie - wyczyść pola
             QuestionEntry.Text = "";
             AnswerEntry1.Text = "";
@@ -163,8 +308,15 @@ public partial class QuestionCreatorPage : ContentPage
 
     private async void onFinishQuizClicked(object sender, EventArgs e)
     {
-        //save question to json file then go to
-        //main page
+        finishFrame.BackgroundColor = Color.FromHex("#45A049");
+        finishFrame.Background = Color.FromHex("#45A049");
+
+        await finishFrame.ScaleTo(0.85, 180, Easing.CubicIn);
+        await finishFrame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        finishFrame.BackgroundColor = Color.FromHex("#4CAF50");
+        finishFrame.Background = Color.FromHex("#4CAF50");
+
         string json = File.ReadAllText(Path);
         var quizData = JsonSerializer.Deserialize<Root>(json);
         var quiz = quizData.Quiz.FirstOrDefault();
@@ -185,7 +337,7 @@ public partial class QuestionCreatorPage : ContentPage
         else if (quiz.Questions.Count == 0)
         {
             File.Delete(Path);
-            await DisplayAlert(quiz.Name, "Quiz not created, can't create empty quiz", "OK");
+            await DisplayAlert(quiz.Name, "Quiz not created, can't create empty quiz!", "OK");
         }
 
         await Shell.Current.GoToAsync($"///MainPage");
@@ -269,7 +421,7 @@ public partial class QuestionCreatorPage : ContentPage
         }
         else
         {
-            DisplayAlert("Error", "Please select at least one correct answer.", "OK");
+            DisplayAlert("ERROR", "Please select at least one correct answer!", "OK");
         }
     }
 
@@ -288,7 +440,7 @@ public partial class QuestionCreatorPage : ContentPage
         }
         else
         {
-            await DisplayAlert("Error", "Can't find the quiz file. Please try again.", "OK");
+            await DisplayAlert("ERROR", "Can't find the quiz file! Please try again!", "OK");
         }
     }
 
@@ -333,7 +485,16 @@ public partial class QuestionCreatorPage : ContentPage
 
     private async void CancelButton_Clicked(object sender, EventArgs e)
     {
-        bool answer = await DisplayAlert("Cancel", "Would you like to cancel the creation of quiz?", "Yes", "No");
+        CancelButton.BackgroundColor = Color.FromHex("#B31900");
+        CancelButton.Background = Color.FromHex("#B31900");
+
+        await CancelButton.ScaleTo(0.85, 180, Easing.CubicIn);
+        await CancelButton.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        CancelButton.BackgroundColor = Color.FromHex("#FF2400");
+        CancelButton.Background = Color.FromHex("#FF2400");
+
+        bool answer = await DisplayAlert("CANCEL", "Would you like to cancel the creation of quiz?", "YES", "NO");
         if (answer)
         {
             AnswerEntry1.Text = "";
@@ -350,6 +511,74 @@ public partial class QuestionCreatorPage : ContentPage
             File.Delete(Path);
             await Shell.Current.GoToAsync("///MainPage");
             await Toast.Make("Canceling the creation of quiz!", ToastDuration.Short).Show();
+        }
+    }
+
+    private async void OnEntryFocused(object sender, FocusEventArgs e)
+    {
+        if (sender == QuestionEntry)
+        {
+            QuestionEntryBorder.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
+            QuestionEntryBorder.StrokeThickness = 4;
+            await QuestionEntryBorder.ScaleTo(1.05, 120, Easing.CubicOut);
+        }
+        else if(sender == AnswerEntry1)
+        {
+            AnswerEntry1Border.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
+            AnswerEntry1Border.StrokeThickness = 4;
+            await AnswerEntry1Border.ScaleTo(1.05, 120, Easing.CubicOut);
+        }
+        else if (sender == AnswerEntry2)
+        {
+            AnswerEntry2Border.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
+            AnswerEntry2Border.StrokeThickness = 4;
+            await AnswerEntry2Border.ScaleTo(1.05, 120, Easing.CubicOut);
+        }
+        else if (sender == AnswerEntry3)
+        {
+            AnswerEntry3Border.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
+            AnswerEntry3Border.StrokeThickness = 4;
+            await AnswerEntry3Border.ScaleTo(1.05, 120, Easing.CubicOut);
+        }
+        else if (sender == AnswerEntry4)
+        {
+            AnswerEntry4Border.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
+            AnswerEntry4Border.StrokeThickness = 4;
+            await AnswerEntry4Border.ScaleTo(1.05, 120, Easing.CubicOut);
+        }
+    }
+
+    private async void OnEntryUnfocused(object sender, FocusEventArgs e)
+    {
+        if (sender == QuestionEntry)
+        {
+            QuestionEntryBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            QuestionEntryBorder.StrokeThickness = 2;
+            await QuestionEntryBorder.ScaleTo(1.0, 120, Easing.CubicOut);
+        }
+        else if (sender == AnswerEntry1)
+        {
+            AnswerEntry1Border.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            AnswerEntry1Border.StrokeThickness = 2;
+            await AnswerEntry1Border.ScaleTo(1.0, 120, Easing.CubicOut);
+        }
+        else if (sender == AnswerEntry2)
+        {
+            AnswerEntry2Border.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            AnswerEntry2Border.StrokeThickness = 2;
+            await AnswerEntry2Border.ScaleTo(1.0, 120, Easing.CubicOut);
+        }
+        else if (sender == AnswerEntry3)
+        {
+            AnswerEntry3Border.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            AnswerEntry3Border.StrokeThickness = 2;
+            await AnswerEntry3Border.ScaleTo(1.0, 120, Easing.CubicOut);
+        }
+        else if (sender == AnswerEntry4)
+        {
+            AnswerEntry4Border.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            AnswerEntry4Border.StrokeThickness = 2;
+            await AnswerEntry4Border.ScaleTo(1.0, 120, Easing.CubicOut);
         }
     }
 }

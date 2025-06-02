@@ -1,4 +1,4 @@
-namespace QuizBox;
+﻿namespace QuizBox;
 
 public partial class QuizListPage : ContentPage
 {
@@ -25,23 +25,44 @@ public partial class QuizListPage : ContentPage
             var quizButton = new Button
             {
                 Text = fileName,
+                CornerRadius = 12,
                 CommandParameter = filePath,
-                BackgroundColor = Color.FromHex("#FFCC00"),
-                TextColor = Color.FromHex("#000000"),
-                Margin = new Thickness(5),
-                Padding = new Thickness(10)
+                BackgroundColor = (Color)Application.Current.Resources["PictonBlue"],
+                FontFamily = "Ubuntu-Regular",
+                FontSize=16,
+                FontAttributes=FontAttributes.Bold,
+                TextColor = Color.FromHex("#FFFFFF"),
+                Margin = new Thickness(10),
+                Padding = new Thickness(15)
             };
             quizButton.Clicked += async (s, e) =>
             {
-                // Navigate to the quiz page with the selected quiz file path
+                quizButton.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+                quizButton.Background = (Color)Application.Current.Resources["Cerulean"];
+
+                await quizButton.ScaleTo(0.9, 180, Easing.CubicIn);
+                await quizButton.ScaleTo(1.0, 180, Easing.CubicOut);
+
+                quizButton.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+                quizButton.Background = (Color)Application.Current.Resources["PictonBlue"];
+
                 await Shell.Current.GoToAsync($"///QuizStartPage?param={filePath}");
             };
             QuizListStack.Children.Add(quizButton);
         }
     }
 
-    private void onGoBack(object sender, EventArgs e)
+    private async void onGoBack(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync($"///MainPage");
+        backBtn.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        backBtn.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await backBtn.ScaleTo(0.85, 180, Easing.CubicIn);
+        await backBtn.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        backBtn.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        backBtn.Background = (Color)Application.Current.Resources["PictonBlue"];
+
+        await Shell.Current.GoToAsync($"///MainPage");
     }
 }

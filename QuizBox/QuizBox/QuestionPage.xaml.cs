@@ -21,40 +21,71 @@ public partial class QuestionPage : ContentPage
 
     private void onAnswer1_Clicked(object sender, EventArgs e)
     {
-        if (randomizedQuestions[currQuestion].Answers[0].IsCorrect)
+        var question = randomizedQuestions[currQuestion];
+        var selected = question.Answers[0];
+
+        QuizStartPage.AnsweredQuestions.Add(new AnsweredQuestion
         {
+            Question = question,
+            SelectedAnswer = selected
+        });
+
+        if (selected.IsCorrect)
             correctAnswers++;
-        }
+
         currQuestion++;
         NextQuestion();
     }
-
     private void onAnswer2_Clicked(object sender, EventArgs e)
     {
-        if (randomizedQuestions[currQuestion].Answers[1].IsCorrect)
+        var question = randomizedQuestions[currQuestion];
+        var selected = question.Answers[1];
+
+        QuizStartPage.AnsweredQuestions.Add(new AnsweredQuestion
         {
+            Question = question,
+            SelectedAnswer = selected
+        });
+
+        if (selected.IsCorrect)
             correctAnswers++;
-        }
+
         currQuestion++;
         NextQuestion();
     }
 
     private void onAnswer3_Clicked(object sender, EventArgs e)
     {
-        if (randomizedQuestions[currQuestion].Answers[2].IsCorrect)
+        var question = randomizedQuestions[currQuestion];
+        var selected = question.Answers[2];
+
+        QuizStartPage.AnsweredQuestions.Add(new AnsweredQuestion
         {
+            Question = question,
+            SelectedAnswer = selected
+        });
+
+        if (selected.IsCorrect)
             correctAnswers++;
-        }
+
         currQuestion++;
         NextQuestion();
     }
 
     private void onAnswer4_Clicked(object sender, EventArgs e)
     {
-        if (randomizedQuestions[currQuestion].Answers[3].IsCorrect)
+        var question = randomizedQuestions[currQuestion];
+        var selected = question.Answers[3];
+
+        QuizStartPage.AnsweredQuestions.Add(new AnsweredQuestion
         {
+            Question = question,
+            SelectedAnswer = selected
+        });
+
+        if (selected.IsCorrect)
             correctAnswers++;
-        }
+
         currQuestion++;
         NextQuestion();
     }

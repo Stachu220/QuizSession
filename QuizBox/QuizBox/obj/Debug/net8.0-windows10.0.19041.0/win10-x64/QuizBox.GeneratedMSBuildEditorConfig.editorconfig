@@ -8,77 +8,87 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QuizBox
-build_property.ProjectDir = C:\Users\stach\Documents\GitHub\QuizSession\QuizBox\QuizBox\
+build_property.ProjectDir = C:\Users\Chareq\Source\Repos\QuizSession\QuizBox\QuizBox\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotExportsEnabled = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
+build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
+build_property.CsWinRTMergeReferencedActivationFactories = 
+build_property.CsWinRTAotWarningLevel = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/App.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/AppShell.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/ImportPage.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/ImportPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.ImportPage.xaml
 build_metadata.AdditionalFiles.TargetPath = ImportPage.xaml
 build_metadata.AdditionalFiles.RelativePath = ImportPage.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/MainPage.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/QuestionCreatorPage.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/QuestionCreatorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.QuestionCreatorPage.xaml
 build_metadata.AdditionalFiles.TargetPath = QuestionCreatorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = QuestionCreatorPage.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/QuestionPage.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/QuestionPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.QuestionPage.xaml
 build_metadata.AdditionalFiles.TargetPath = QuestionPage.xaml
 build_metadata.AdditionalFiles.RelativePath = QuestionPage.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/QuizCreatorPage.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/QuizCreatorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.QuizCreatorPage.xaml
 build_metadata.AdditionalFiles.TargetPath = QuizCreatorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = QuizCreatorPage.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/QuizListPage.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/QuizListPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.QuizListPage.xaml
 build_metadata.AdditionalFiles.TargetPath = QuizListPage.xaml
 build_metadata.AdditionalFiles.RelativePath = QuizListPage.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/QuizStartPage.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/QuizStartPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.QuizStartPage.xaml
 build_metadata.AdditionalFiles.TargetPath = QuizStartPage.xaml
 build_metadata.AdditionalFiles.RelativePath = QuizStartPage.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/Resources/Styles/Colors.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/Resources/Styles/Styles.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/stach/Documents/GitHub/QuizSession/QuizBox/QuizBox/ResultPage.xaml]
+[C:/Users/Chareq/Source/Repos/QuizSession/QuizBox/QuizBox/ResultPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizBox.ResultPage.xaml
 build_metadata.AdditionalFiles.TargetPath = ResultPage.xaml

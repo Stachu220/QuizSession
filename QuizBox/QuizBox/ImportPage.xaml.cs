@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+using Microsoft.Maui.Graphics.Text;
 using QuizBox.Model;
 using System.Text.Json;
 
@@ -14,7 +15,14 @@ public partial class ImportPage : ContentPage
 
 	public async void onGoBack(object sender, EventArgs e)
     {
-        // Go back to the previous page
+        backBtn.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        backBtn.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await backBtn.ScaleTo(0.85, 180, Easing.CubicIn);
+        await backBtn.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        backBtn.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        backBtn.Background = (Color)Application.Current.Resources["PictonBlue"];
         await Shell.Current.GoToAsync("///MainPage");
     }
 
@@ -22,6 +30,24 @@ public partial class ImportPage : ContentPage
 	{
         //import quiz from file -> in reality copy it to working folder
         string path = FileSystem.AppDataDirectory;
+
+        importQuizBtnBorder.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
+        iconLabel.TextColor = (Color)Application.Current.Resources["Cerulean"];
+        text1.TextColor = (Color)Application.Current.Resources["Cerulean"];
+        text2.TextColor = (Color)Application.Current.Resources["Cerulean"];
+        text3.TextColor = (Color)Application.Current.Resources["Cerulean"];
+        text3.TextColor = (Color)Application.Current.Resources["Cerulean"];
+
+        await importQuizBtnBorder.ScaleTo(0.9, 180, Easing.CubicIn);
+        await importQuizBtnBorder.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        importQuizBtnBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+        iconLabel.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+        text1.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+        text2.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+        text3.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+        text3.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+
         try
         {
             var result = await FilePicker.PickAsync(new PickOptions
@@ -49,7 +75,7 @@ public partial class ImportPage : ContentPage
                 if (imported.Quiz.FirstOrDefault() == null || imported.Quiz.Count == 0 || imported.Quiz[0].Name == null || imported.Quiz[0].Description == null ||
                     imported.Quiz[0].Questions == null || imported.Quiz[0].Questions.Count == 0 || imported.Quiz[0].Questions[0].QuestionText == null || imported.Quiz[0].Questions[0].Answers == null)
                 {
-                    await DisplayAlert("Error", "Invalid quiz file format.", "OK");
+                    await DisplayAlert("ERROR", "Invalid quiz file format.", "OK");
                     return;
                 }
 
@@ -66,7 +92,7 @@ public partial class ImportPage : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
+            await DisplayAlert("ERROR", $"An error occurred: {ex.Message}", "OK");
         }
 
     }

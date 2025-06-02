@@ -15,7 +15,8 @@
 
     <Grid Padding="0,0,0,0">
         <Image
-        Source="background.jpg"
+        Source="background9.jpg"
+        Rotation="180"
         Aspect="AspectFill"
         IsVisible="True" />
 
@@ -46,17 +47,17 @@
                 </Grid.RowDefinitions>
                 
                 <VerticalStackLayout Grid.Row="0">
-                    <Label Text="THE END" TextColor="White" FontSize="48" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,0,0,25"/>
-                    <Image Source="trophy.png" WidthRequest="128" Margin="0,0,0,25"/>
+                    <Label Text="THE END" TextColor="White" FontFamily="Ubuntu-Bold" FontSize="48" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,0,0,25"/>
+                    <Image x:Name="trophyIcon" Source="trophy.png" WidthRequest="175" Margin="0,0,0,25"/>
                     <Label 
                         x:Name="CorrectNo"
                         Text=""
                         VerticalOptions="Center" 
                         TextColor="Gray"
-                        FontAttributes="Bold"
+                        FontFamily="Ubuntu-Bold"
                         FontSize="16"
                         HorizontalOptions="Center"
-                         Margin="0,0,0,25"/>
+                        Margin="0,0,0,25"/>
                 </VerticalStackLayout>
 
                 <ScrollView 
@@ -70,20 +71,19 @@
                     VerticalOptions="End" 
                     Grid.Row="2">
                     <Frame
-                       x:Name="GoBackFrame"
-                        Padding="12"
-                        Margin="5,25,5,5"
-                        BackgroundColor="#2196F3"
-                       BorderColor="#1976D2"
-                        CornerRadius="12"
-                        HasShadow="True"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                          x:Name="goBackFrame"
+                          Padding="12"
+                          Margin="5,25,5,5"
+                          BackgroundColor="{StaticResource PictonBlue}"
+                          BorderColor="Transparent"
+                          CornerRadius="12"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="Center">
                         <Grid
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="Center">
                             <HorizontalStackLayout
-                                Spacing="8"
+                                Spacing="10"
                                 VerticalOptions="Center"
                                 HorizontalOptions="Center">
                                 <Label
@@ -97,14 +97,15 @@
                                     Text="Go to the main page"
                                     FontSize="18"
                                     FontAttributes="Bold"
+                                    FontFamily="Ubuntu-Regular"
                                     TextColor="White"
                                     VerticalOptions="Center" />
                             </HorizontalStackLayout>
-
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="onGoBack" />
-                            </Grid.GestureRecognizers>
                         </Grid>
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="onGoBack" />
+                        </Frame.GestureRecognizers>
                     </Frame>
                 </StackLayout>
             </Grid>

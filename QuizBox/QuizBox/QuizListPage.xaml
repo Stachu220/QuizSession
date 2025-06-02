@@ -15,7 +15,8 @@
 
     <Grid Padding="0,0,0,0">
         <Image
-            Source="background.jpg"
+            Source="background9.jpg"
+            Rotation="180"
             Aspect="AspectFill"
             IsVisible="True"
             Grid.RowSpan="2" />
@@ -41,21 +42,20 @@
             </Border.Margin>
 
             <Grid RowDefinitions="Auto,*">
-                <!-- Header label, left-aligned -->
                 <Label
                     Text="Quiz List"
                     FontSize="24"
                     FontAttributes="Bold"
+                    FontFamily="Ubuntu-Bold"
                     TextColor="White"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     Margin="0,0,0,12"/>
-                <!-- Quiz list content in row 1 -->
+
                 <ScrollView Grid.Row="1"
                             VerticalOptions="FillAndExpand"
                             Loaded="ScrollView_Loaded">
                     <StackLayout x:Name="QuizListStack" Padding="10">
-                        <!-- Quiz items will be added here dynamically -->
                     </StackLayout>
                 </ScrollView>
             </Grid>
@@ -63,15 +63,22 @@
 
         <AbsoluteLayout Grid.Row="1" Margin="25">
             <Button
-                x:Name="GoBack"
+                x:Name="backBtn"
                 WidthRequest="50"
                 HeightRequest="50"
                 HorizontalOptions="Center"
+                BackgroundColor="{StaticResource PictonBlue}"
+                Background="{StaticResource PictonBlue}"
+                TextColor="White"
                 VerticalOptions="Center"
                 Clicked="onGoBack"
                 FontSize="30"
                 Padding="0"
                 FontFamily="MaterialDesignIcons" 
+                BorderWidth="0"
+                CornerRadius="12"
+                MinimumHeightRequest="50"
+                MinimumWidthRequest="50"
                 Text="{x:Static helpers:MaterialDesignIconsFonts.ArrowLeft}"
             >
             </Button>

@@ -15,7 +15,8 @@
 
     <Grid Padding="0,0,0,0" Loaded="VerticalStackLayout_Loaded">
         <Image
-            Source="background.jpg"
+            Source="background9.jpg"
+            Rotation="180"
             Aspect="AspectFill"
             IsVisible="True"
             Grid.RowSpan="2" />
@@ -48,7 +49,7 @@
                 </Grid.RowDefinitions>
 
                 
-                <VerticalStackLayout Grid.Row="0">
+                <VerticalStackLayout Grid.Row="0" Spacing="2">
                     <Label 
                         x:Name="QuizTitle"
                         Text=""
@@ -56,6 +57,7 @@
                         HorizontalOptions="Center" 
                         FontSize="24"
                         FontAttributes="Bold"
+                        FontFamily="Ubuntu-Bold"
                         TextColor="White"/>
                     
                     <Label
@@ -64,60 +66,116 @@
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         FontSize="18"
+                        FontFamily="Ubuntu-Italic"
                         FontAttributes="Italic"
                         TextColor="Gray"/>
                 </VerticalStackLayout>
-                
+
                 <VerticalStackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                    <Label
-                        Text="Number of questions"
-                        HorizontalTextAlignment="Center"
-                        TextColor="White"
-                        Margin="0,0,0,10"
-                        FontAttributes="Bold"
-                    />
-                    
-                    <Button
-                        x:Name="QNo6"
-                        Text="6"
-                        Clicked="onQNo6"
-                        Margin="0,0,0,5" />
-                
-                    <Button
-                        x:Name="QNo10"
-                        Text="10"
-                        Clicked="onQNo10" 
-                        Margin="0,0,0,5" />
-                    
-                    <Button
-                        x:Name="QNo15"
-                        Text="15"
-                        Clicked="onQNo15"
-                        Margin="0,0,0,5" />
-                    
-                    <Button
-                        x:Name="QNoCustom"
-                        Text="Custom"
-                        Clicked="onQNoCustom"
-                        Margin="0,0,0,5" />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Grid.Row="2">
+                    <Label
+                      Text="Number of questions"
+                      HorizontalTextAlignment="Center"
+                      TextColor="White"
+                      Margin="0,0,0,10"
+                      FontAttributes="Bold"
+                      FontFamily="Ubuntu-Regular"
+                      FontSize="20"
+                    />
+                    
+                    <HorizontalStackLayout  
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,25">
+                        <Border x:Name="numberOfQuestionsBorder" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Margin="10,0,10,0" HorizontalOptions="Center">
+                            <Entry x:Name="numberOfQuestionsEntry" Placeholder="No." WidthRequest="35" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="18" Margin="5,0,5,0" Keyboard="Numeric" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused">
+                                <Entry.Behaviors>
+                                    <toolkit:NumericValidationBehavior Flags="ValidateOnValueChanged" MinimumValue="0" MaximumDecimalPlaces="0"/>
+                                </Entry.Behaviors>
+                            </Entry>
+                        </Border>
+                        
+                        <Label
+                          Text="from"
+                          FontSize="18"
+                          HorizontalTextAlignment="Center"
+                          VerticalTextAlignment="Center"
+                          FontFamily="Ubuntu-Bold"
+                          FontAttributes="Bold"
+                          TextColor="White"
+                          VerticalOptions="Center" 
+                          HorizontalOptions="Center"/>
+
+                        <Border StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="{StaticResource PictonBlue}" Margin="10,0,10,0" HorizontalOptions="Center">
+                            <Label
+                           x:Name="numberOfQuestions"
+                           Text=""
+                                HorizontalTextAlignment="Center"
+                           FontSize="18"
+                           FontFamily="Ubuntu-Bold"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                                WidthRequest="35"
+                                 Margin="5,0,5,0"/>
+                        </Border>
+                    </HorizontalStackLayout>
+                    
                     <Frame
-                        x:Name="exportFrame"
+                         x:Name="startFrame"
                          Padding="12"
                          Margin="5"
-                         BackgroundColor="#2196F3"
-                         BorderColor="#1976D2"
+                         BackgroundColor="{StaticResource PictonBlue}"
+                         BorderColor="Transparent"
                          CornerRadius="12"
-                         HasShadow="True"
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="Center">
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center">
+                            <HorizontalStackLayout
+                                 Spacing="10"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center">
+                                <Label
+                                      FontFamily="MaterialDesignIcons"
+                                      Text="{x:Static helpers:MaterialDesignIconsFonts.GamepadCircle}"
+                                      FontSize="24"
+                                      TextColor="White"
+                                      VerticalOptions="Center" />
+
+                                <Label
+                                     Text="Start Quiz"
+                                     FontSize="18"
+                                     FontFamily="Ubuntu-Regular"
+                                     FontAttributes="Bold"
+                                     TextColor="White"
+                                     VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                        </Grid>
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="onStart" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame
+                        x:Name="exportFrame"
+                        Padding="12"
+                        Margin="5,25,5,5"
+                        BackgroundColor="{StaticResource PictonBlue}"
+                        BorderColor="Transparent"
+                        CornerRadius="12"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
                         <Grid
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="Center">
                             <HorizontalStackLayout
-                                 Spacing="8"
+                                 Spacing="10"
                                  VerticalOptions="Center"
                                  HorizontalOptions="Center">
                                 <Label
@@ -128,34 +186,34 @@
                                      VerticalOptions="Center" />
 
                                 <Label
-                                     Text="Export Quiz"
-                                     FontSize="18"
-                                     FontAttributes="Bold"
-                                     TextColor="White"
-                                     VerticalOptions="Center" />
+                                    Text="Export Quiz"
+                                    FontSize="18"
+                                    FontFamily="Ubuntu-Regular"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    VerticalOptions="Center" />
                             </HorizontalStackLayout>
-
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="onExport" />
-                            </Grid.GestureRecognizers>
                         </Grid>
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="onExport" />
+                        </Frame.GestureRecognizers>
                     </Frame>
                     
                     <Frame
                         x:Name="DeleteFrame"
-                         Padding="12"
-                         Margin="5"
-                         BackgroundColor="Red"
-                         BorderColor="DarkRed"
-                         CornerRadius="12"
-                         HasShadow="True"
-                         HorizontalOptions="FillAndExpand"
-                         VerticalOptions="Center">
+                        Padding="12"
+                        Margin="5"
+                        BackgroundColor="#FF2400"
+                        BorderColor="Transparent"
+                        CornerRadius="12"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
                         <Grid
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="Center">
                             <HorizontalStackLayout
-                                 Spacing="8"
+                                 Spacing="10"
                                  VerticalOptions="Center"
                                  HorizontalOptions="Center">
                                 <Label
@@ -166,17 +224,18 @@
                                      VerticalOptions="Center" />
 
                                 <Label
-                                     Text="Delete Quiz"
-                                     FontSize="18"
-                                     FontAttributes="Bold"
-                                     TextColor="White"
+                                    Text="Delete Quiz"
+                                    FontSize="18"
+                                    FontFamily="Ubuntu-Regular"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
                                      VerticalOptions="Center" />
                             </HorizontalStackLayout>
-
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="onDeleteQuiz" />
-                            </Grid.GestureRecognizers>
                         </Grid>
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="onDeleteQuiz" />
+                        </Frame.GestureRecognizers>
                     </Frame>
                 </VerticalStackLayout>
             </Grid>
@@ -184,17 +243,24 @@
 
         <AbsoluteLayout Grid.Row="1" Margin="25">
             <Button
-        x:Name="GoBack"
-        WidthRequest="50"
-        HeightRequest="50"
-        HorizontalOptions="Center"
-        VerticalOptions="Center"
-        Clicked="onGoBack"
-        FontSize="30"
-        Padding="0"
-        FontFamily="MaterialDesignIcons" 
-        Text="{x:Static helpers:MaterialDesignIconsFonts.ArrowLeft}"
-    >
+                x:Name="backBtn"
+                WidthRequest="50"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                BackgroundColor="{StaticResource PictonBlue}"
+                Background="{StaticResource PictonBlue}"
+                TextColor="White"
+                VerticalOptions="Center"
+                Clicked="onGoBack"
+                FontSize="30"
+                Padding="0"
+                FontFamily="MaterialDesignIcons" 
+                BorderWidth="0"
+                CornerRadius="12"
+                MinimumHeightRequest="50"
+                MinimumWidthRequest="50"
+                Text="{x:Static helpers:MaterialDesignIconsFonts.ArrowLeft}"
+            >
             </Button>
         </AbsoluteLayout>
     </Grid>

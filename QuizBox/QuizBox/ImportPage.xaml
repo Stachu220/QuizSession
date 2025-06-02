@@ -15,7 +15,8 @@
 
     <Grid Padding="0,0,0,0">
         <Image
-            Source="background.jpg"
+            Source="background9.jpg"
+            Rotation="180"
             Aspect="AspectFill"
             IsVisible="True"
             Grid.RowSpan="2" />
@@ -46,19 +47,22 @@
                     Text="Import Quiz"
                     FontSize="24"
                     FontAttributes="Bold"
+                    FontFamily="Ubuntu-Bold"
                     TextColor="White"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     Margin="0,0,0,12"/>
 
-                <Frame
-                    x:Name="importQuizFrame"
+                <Border
+                    x:Name="importQuizBtnBorder"
                     Padding="12"
                     Margin="10"
-                    BackgroundColor="#2196F3"
-                    BorderColor="#1976D2"
-                    CornerRadius="12"
-                    HasShadow="True"
+                    StrokeThickness="5"
+                    BackgroundColor="{StaticResource RichBlack}"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    StrokeDashArray="1,1"
+                    StrokeDashOffset="5"
+                    Stroke="{StaticResource PictonBlue}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     Grid.Row="1">
@@ -66,31 +70,56 @@
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Center">
                         <VerticalStackLayout
-                            Spacing="8"
                             VerticalOptions="Center"
+                            Spacing="0"
                             HorizontalOptions="Center">
                             <Label
+                                x:Name="iconLabel"
                                 FontFamily="MaterialDesignIcons"
-                                Text="{x:Static helpers:MaterialDesignIconsFonts.Import}"
-                                FontSize="24"
-                                TextColor="White"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.CloudArrowUp}"
+                                FontSize="96"
+                                TextColor="{StaticResource PictonBlue}"
+                                Margin="0,0,0,16"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center" />
 
                             <Label
-                                Text="Import Quiz from the device"
-                                FontSize="18"
+                                x:Name="text1"
+                                Text="Import Quiz"
+                                FontFamily="Ubuntu-Bold"
+                                FontSize="20"
                                 FontAttributes="Bold"
-                                TextColor="White"
+                                TextColor="{StaticResource PictonBlue}"
+                                Margin="0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                            
+                            <Label
+                                x:Name="text2"
+                                Text="from the device"
+                                FontFamily="Ubuntu-Regular"
+                                FontSize="16"
+                                TextColor="{StaticResource PictonBlue}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" 
+                                Margin="0,0,0,2"/>
+                            
+                            <Label
+                                Text="(File extensions allowed: JSON)"
+                                x:Name="text3"
+                                FontSize="12"
+                                FontFamily="Ubuntu-Light"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource PictonBlue}"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center" />
                         </VerticalStackLayout>
-
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="onImportQuiz" />
-                        </Grid.GestureRecognizers>
                     </Grid>
-                </Frame>
+
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onImportQuiz" />
+                    </Border.GestureRecognizers>
+                </Border>
             </Grid>
         </Border>
 
@@ -100,11 +129,18 @@
                     WidthRequest="50"
                     HeightRequest="50"
                     HorizontalOptions="Center"
+                    BackgroundColor="{StaticResource PictonBlue}"
+                    Background="{StaticResource PictonBlue}"
+                    TextColor="White"
                     VerticalOptions="Center"
                     Clicked="onGoBack"
                     FontSize="30"
                     Padding="0"
                     FontFamily="MaterialDesignIcons" 
+                    BorderWidth="0"
+                    CornerRadius="12"
+                    MinimumHeightRequest="50"
+                    MinimumWidthRequest="50"
                     Text="{x:Static helpers:MaterialDesignIconsFonts.ArrowLeft}"
                 >
                 </Button>
