@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\questionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\questionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\questionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\questionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\resultpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\resultpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\resultpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\resultpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\questionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\questionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\model\\answeredquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\model\\answeredquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\questioncreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,12 +31,16 @@
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\questioncreatorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\quizcreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizcreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\model\\root.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\model\\root.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\quizstartpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizstartpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\quizcreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizcreatorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\quizstartpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -35,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\helpers\\materialdesigniconsfonts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\model\\answeredquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\model\\answeredquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -47,20 +59,8 @@
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\resultpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\resultpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\quizlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\questionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\questionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\quizstartpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|solutionrelative:quizbox\\quizstartpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA550CD2-EB34-434C-A84F-06181CFC01A5}|QuizBox\\QuizBox.csproj|c:\\users\\chareq\\source\\repos\\quizsession\\quizbox\\quizbox\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,24 +102,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 240,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Root.cs",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\Model\\Root.cs",
               "RelativeDocumentMoniker": "QuizBox\\Model\\Root.cs",
               "ToolTip": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\Model\\Root.cs",
               "RelativeToolTip": "QuizBox\\Model\\Root.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T20:52:40.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "MaterialDesignIconsFonts.cs",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\Helpers\\MaterialDesignIconsFonts.cs",
               "RelativeDocumentMoniker": "QuizBox\\Helpers\\MaterialDesignIconsFonts.cs",
@@ -127,12 +127,11 @@
               "RelativeToolTip": "QuizBox\\Helpers\\MaterialDesignIconsFonts.cs",
               "ViewState": "AgIAANAFAAAAAAAAAAD4v+YFAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T20:29:26.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T20:29:26.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "AnsweredQuestion.cs",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\Model\\AnsweredQuestion.cs",
               "RelativeDocumentMoniker": "QuizBox\\Model\\AnsweredQuestion.cs",
@@ -145,46 +144,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "QuestionPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuestionPage.xaml.cs",
               "RelativeDocumentMoniker": "QuizBox\\QuestionPage.xaml.cs",
               "ToolTip": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuestionPage.xaml.cs",
               "RelativeToolTip": "QuizBox\\QuestionPage.xaml.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAAAKoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T17:49:04.132Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
               "Title": "QuestionPage.xaml",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuestionPage.xaml",
               "RelativeDocumentMoniker": "QuizBox\\QuestionPage.xaml",
               "ToolTip": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuestionPage.xaml",
               "RelativeToolTip": "QuizBox\\QuestionPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-06-02T17:48:58.524Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ResultPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\ResultPage.xaml.cs",
               "RelativeDocumentMoniker": "QuizBox\\ResultPage.xaml.cs",
               "ToolTip": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\ResultPage.xaml.cs",
               "RelativeToolTip": "QuizBox\\ResultPage.xaml.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAADYAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAHkAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T15:28:41.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "ResultPage.xaml",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\ResultPage.xaml",
               "RelativeDocumentMoniker": "QuizBox\\ResultPage.xaml",
@@ -197,20 +196,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 8,
               "Title": "QuizStartPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuizStartPage.xaml.cs",
               "RelativeDocumentMoniker": "QuizBox\\QuizStartPage.xaml.cs",
               "ToolTip": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuizStartPage.xaml.cs",
               "RelativeToolTip": "QuizBox\\QuizStartPage.xaml.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAAAKoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAKoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T13:34:07.252Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "QuizStartPage.xaml",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuizStartPage.xaml",
               "RelativeDocumentMoniker": "QuizBox\\QuizStartPage.xaml",
@@ -218,12 +217,11 @@
               "RelativeToolTip": "QuizBox\\QuizStartPage.xaml",
               "ViewState": "AgIAAEQAAAAAAAAAAAAAAEkAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-02T13:32:29.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T13:32:29.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "QuizListPage.xaml",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuizListPage.xaml",
               "RelativeDocumentMoniker": "QuizBox\\QuizListPage.xaml",
@@ -231,8 +229,7 @@
               "RelativeToolTip": "QuizBox\\QuizListPage.xaml",
               "ViewState": "AgIAAA0AAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-02T11:08:30.38Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T11:08:30.38Z"
             },
             {
               "$type": "Document",
@@ -248,20 +245,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "QuestionCreatorPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Chareq\\Source\\Repos\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml.cs",
               "RelativeDocumentMoniker": "QuizBox\\QuestionCreatorPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Chareq\\Source\\Repos\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml.cs",
               "RelativeToolTip": "QuizBox\\QuestionCreatorPage.xaml.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAAANgBAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAH0BAAAAAAAAAAAAAPkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T08:21:51.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "QuestionCreatorPage.xaml",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuestionCreatorPage.xaml",
               "RelativeDocumentMoniker": "QuizBox\\QuestionCreatorPage.xaml",
@@ -286,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\MauiProgram.cs",
               "RelativeDocumentMoniker": "QuizBox\\MauiProgram.cs",
@@ -294,8 +291,7 @@
               "RelativeToolTip": "QuizBox\\MauiProgram.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T18:46:53.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T18:46:53.603Z"
             },
             {
               "$type": "Document",
@@ -324,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "QuizCreatorPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\QuizCreatorPage.xaml.cs",
               "RelativeDocumentMoniker": "QuizBox\\QuizCreatorPage.xaml.cs",
@@ -332,8 +328,7 @@
               "RelativeToolTip": "QuizBox\\QuizCreatorPage.xaml.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAAAGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T17:52:46.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T17:52:46.752Z"
             },
             {
               "$type": "Document",
@@ -357,8 +352,7 @@
               "RelativeToolTip": "QuizBox\\MainPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T14:28:45.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T14:28:45.04Z"
             },
             {
               "$type": "Document",
@@ -386,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Chareq\\source\\repos\\QuizSession\\QuizBox\\QuizBox\\MainPage.xaml",
               "RelativeDocumentMoniker": "QuizBox\\MainPage.xaml",
@@ -394,8 +388,7 @@
               "RelativeToolTip": "QuizBox\\MainPage.xaml",
               "ViewState": "AgIAAAUAAAAAAAAAAAAmwB0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-08T10:17:16.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T10:17:16.625Z"
             }
           ]
         }

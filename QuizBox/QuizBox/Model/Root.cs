@@ -33,6 +33,9 @@ namespace QuizBox.Model
         [JsonPropertyName("question")]
         public string QuestionText { get; set; }
 
+        [JsonPropertyName("questionImage")]
+        public string QuestionImage { get; set; }
+
         [JsonPropertyName("answers")]
         public List<Answer> Answers { get; set; }
 
@@ -42,6 +45,9 @@ namespace QuizBox.Model
     {
         [JsonPropertyName("answer")]
         public string AnswerText { get; set; }
+
+        [JsonPropertyName("answerImage")]
+        public string AnswerImage { get; set; }
 
         [JsonPropertyName("isCorrect")]
         public bool IsCorrect { get; set; }

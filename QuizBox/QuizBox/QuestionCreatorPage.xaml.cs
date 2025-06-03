@@ -29,21 +29,46 @@ public partial class QuestionCreatorPage : ContentPage
     {
         QNo = 0;
         LatestQNo = 0;
+
+        QuestionImage = null;
+        QuestionEntry.Text = "";
+
         AnswerEntry1.Text = "";
         AnswerEntry2.Text = "";
         AnswerEntry3.Text = "";
         AnswerEntry4.Text = "";
-        QuestionEntry.Text = "";
+
+        AnswerImage1 = null;
+        AnswerImage2 = null;
+        AnswerImage3 = null;
+        AnswerImage4 = null;
+
         CorrectAnswer1.IsChecked = false;
         CorrectAnswer2.IsChecked = false;
         CorrectAnswer3.IsChecked = false;
         CorrectAnswer4.IsChecked = false;
+
+        addImageBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+        icon.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+        text1.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+
+        answerImage1Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+        answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+        answerImage2Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+        answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+        answerImage3Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+        answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+        answerImage4Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+        answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
     }
 
     //Somehow retrieve the image path from the file picker
     private async void onAddQuestionImage(object sender, EventArgs e)
     {
-        if (QuestionImage == null || QuestionImage == "")
+        if (String.IsNullOrEmpty(QuestionImage))
         {
             addImageBorder.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
             icon.TextColor = (Color)Application.Current.Resources["Cerulean"];
@@ -61,7 +86,7 @@ public partial class QuestionCreatorPage : ContentPage
 
         QuestionImage = await ImageToBase64();
 
-        if(QuestionImage == null | QuestionImage == "")
+        if(String.IsNullOrEmpty(QuestionImage))
         {
             addImageBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
             icon.TextColor = (Color)Application.Current.Resources["PictonBlue"];
@@ -77,7 +102,7 @@ public partial class QuestionCreatorPage : ContentPage
 
     private async void onAddAnswerImage1(object sender, EventArgs e)
     {
-        if (AnswerImage1 == null || AnswerImage1 == "")
+        if (String.IsNullOrEmpty(AnswerImage1))
         {
             answerImage1Frame.Background = (Color)Application.Current.Resources["Cerulean"];
             answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
@@ -93,7 +118,7 @@ public partial class QuestionCreatorPage : ContentPage
 
         AnswerImage1 = await ImageToBase64();
 
-        if (AnswerImage1 == null | AnswerImage1 == "")
+        if (String.IsNullOrEmpty(AnswerImage1))
         {
             answerImage1Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
             answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
@@ -107,7 +132,7 @@ public partial class QuestionCreatorPage : ContentPage
 
     private async void onAddAnswerImage2(object sender, EventArgs e)
     {
-        if (AnswerImage2 == null || AnswerImage2 == "")
+        if (String.IsNullOrEmpty(AnswerImage2))
         {
             answerImage2Frame.Background = (Color)Application.Current.Resources["Cerulean"];
             answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
@@ -123,7 +148,7 @@ public partial class QuestionCreatorPage : ContentPage
 
         AnswerImage2 = await ImageToBase64();
 
-        if (AnswerImage2 == null | AnswerImage2 == "")
+        if (String.IsNullOrEmpty(AnswerImage2))
         {
             answerImage2Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
             answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
@@ -137,7 +162,7 @@ public partial class QuestionCreatorPage : ContentPage
 
     private async void onAddAnswerImage3(object sender, EventArgs e)
     {
-        if (AnswerImage3 == null || AnswerImage3 == "")
+        if (String.IsNullOrEmpty(AnswerImage3))
         {
             answerImage3Frame.Background = (Color)Application.Current.Resources["Cerulean"];
             answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
@@ -153,7 +178,7 @@ public partial class QuestionCreatorPage : ContentPage
 
         AnswerImage3 = await ImageToBase64();
 
-        if (AnswerImage3 == null | AnswerImage3 == "")
+        if (String.IsNullOrEmpty(AnswerImage3))
         {
             answerImage3Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
             answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
@@ -167,7 +192,7 @@ public partial class QuestionCreatorPage : ContentPage
 
     private async void onAddAnswerImage4(object sender, EventArgs e)
     {
-        if (AnswerImage4 == null || AnswerImage4 == "")
+        if (String.IsNullOrEmpty(AnswerImage4))
         {
             answerImage4Frame.Background = (Color)Application.Current.Resources["Cerulean"];
             answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
@@ -183,7 +208,7 @@ public partial class QuestionCreatorPage : ContentPage
 
         AnswerImage4 = await ImageToBase64();
 
-        if (AnswerImage4 == null | AnswerImage4 == "")
+        if (String.IsNullOrEmpty(AnswerImage4))
         {
             answerImage4Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
             answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
@@ -214,10 +239,34 @@ public partial class QuestionCreatorPage : ContentPage
 
         if (!string.IsNullOrEmpty(QuestionEntry.Text))
         {
-            if (QNo == LatestQNo)
-                compileQuestion();
-            else
-                updateQuestion();
+
+            try
+            {
+                var answers = GetCurrentAnswers();
+
+                if (QNo == LatestQNo)
+                    compileQuestion();
+                else
+                    updateQuestion();
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "not_enough_answers")
+                {
+                    await DisplayAlert("ERROR", "You must provide at least two answers (text or image)!", "OK");
+                    return;
+                }
+                else if (ex.Message == "no_correct_answer")
+                {
+                    await DisplayAlert("ERROR", "Please select at least one correct answer!", "OK");
+                    return;
+                }
+                else if (ex.Message == "images_error")
+                {
+                    await DisplayAlert("ERROR", "All answers must have images or none of them!", "OK");
+                    return;
+                }
+            }
         }
 
         QNo--;
@@ -230,16 +279,92 @@ public partial class QuestionCreatorPage : ContentPage
             var question = quiz.Questions.FirstOrDefault(q => q.QuestionID == QNo.ToString());
             if (question != null)
             {
-                //Tu dodać sprawdzanie zdjęć, i wtedy na zielono/niebiesko
                 QuestionEntry.Text = question.QuestionText;
-                AnswerEntry1.Text = question.Answers[0].AnswerText;
-                CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
-                AnswerEntry2.Text = question.Answers[1].AnswerText;
-                CorrectAnswer2.IsChecked = question.Answers[1].IsCorrect;
-                AnswerEntry3.Text = question.Answers[2].AnswerText;
-                CorrectAnswer3.IsChecked = question.Answers[2].IsCorrect;
-                AnswerEntry4.Text = question.Answers[3].AnswerText;
-                CorrectAnswer4.IsChecked = question.Answers[3].IsCorrect;
+                QuestionImage = question.QuestionImage;
+
+                for(int i=0;i< question.Answers.Count; i++)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            AnswerEntry1.Text = question.Answers[0].AnswerText;
+                            AnswerImage1 = question.Answers[0].AnswerImage;
+                            CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
+                            break;
+                        case 1:
+                            AnswerEntry2.Text = question.Answers[1].AnswerText;
+                            AnswerImage2 = question.Answers[1].AnswerImage;
+                            CorrectAnswer2.IsChecked = question.Answers[1].IsCorrect;
+                            break;
+                        case 2:
+                            AnswerEntry3.Text = question.Answers[2].AnswerText;
+                            AnswerImage3 = question.Answers[2].AnswerImage;
+                            CorrectAnswer3.IsChecked = question.Answers[2].IsCorrect;
+                            break;
+                        case 3:
+                            AnswerEntry4.Text = question.Answers[3].AnswerText;
+                            AnswerImage4 = question.Answers[3].AnswerImage;
+                            CorrectAnswer4.IsChecked = question.Answers[3].IsCorrect;
+                            break;
+                    }
+                }
+
+                if(String.IsNullOrEmpty(QuestionImage))
+                {
+                    addImageBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+                    icon.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+                    text1.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+                }
+                else
+                {
+                    addImageBorder.Stroke = Color.FromHex("#4CAF50");
+                    icon.TextColor = Color.FromHex("#4CAF50");
+                    text1.TextColor = Color.FromHex("#4CAF50");
+                }
+
+                if (String.IsNullOrEmpty(AnswerImage1))
+                {
+                    answerImage1Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+                    answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+                }
+                else
+                {
+                    answerImage1Frame.Background = Color.FromHex("#4CAF50");
+                    answerImage1Frame.BackgroundColor = Color.FromHex("#4CAF50");
+                }
+
+                if (String.IsNullOrEmpty(AnswerImage2))
+                {
+                    answerImage2Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+                    answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+                }
+                else
+                {
+                    answerImage2Frame.Background = Color.FromHex("#4CAF50");
+                    answerImage2Frame.BackgroundColor = Color.FromHex("#4CAF50");
+                }
+
+                if (String.IsNullOrEmpty(AnswerImage3))
+                {
+                    answerImage3Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+                    answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+                }
+                else
+                {
+                    answerImage3Frame.Background = Color.FromHex("#4CAF50");
+                    answerImage3Frame.BackgroundColor = Color.FromHex("#4CAF50");
+                }
+
+                if (String.IsNullOrEmpty(AnswerImage4))
+                {
+                    answerImage4Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+                    answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+                }
+                else
+                {
+                    answerImage4Frame.Background = Color.FromHex("#4CAF50");
+                    answerImage4Frame.BackgroundColor = Color.FromHex("#4CAF50");
+                }
             }
         }
     }
@@ -261,6 +386,29 @@ public partial class QuestionCreatorPage : ContentPage
             return;
         }
 
+        try
+        {
+            var answers = GetCurrentAnswers();
+        }
+        catch (Exception ex)
+        {
+            if(ex.Message == "not_enough_answers")
+            {
+                await DisplayAlert("ERROR", "You must provide at least two answers (text or image)!", "OK");
+                return;
+            }
+            else if (ex.Message == "no_correct_answer")
+            {
+                await DisplayAlert("ERROR", "Please select at least one correct answer!", "OK");
+                return;
+            }
+            else if (ex.Message == "images_error")
+            {
+                await DisplayAlert("ERROR", "All answers must have images or none of them!", "OK");
+                return;
+            }
+        }
+
         if (QNo == LatestQNo)
         {
             compileQuestion();
@@ -279,30 +427,131 @@ public partial class QuestionCreatorPage : ContentPage
 
         if (question != null)
         {
-            //Jak będzie zdjęcie, to zmiana koloru przycisków
             QuestionEntry.Text = question.QuestionText;
-            AnswerEntry1.Text = question.Answers[0].AnswerText;
-            CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
-            AnswerEntry2.Text = question.Answers[1].AnswerText;
-            CorrectAnswer2.IsChecked = question.Answers[1].IsCorrect;
-            AnswerEntry3.Text = question.Answers[2].AnswerText;
-            CorrectAnswer3.IsChecked = question.Answers[2].IsCorrect;
-            AnswerEntry4.Text = question.Answers[3].AnswerText;
-            CorrectAnswer4.IsChecked = question.Answers[3].IsCorrect;
+            QuestionImage = question.QuestionImage;
+
+            for(int i=0; i<question.Answers.Count; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        AnswerEntry1.Text = question.Answers[0].AnswerText;
+                        AnswerImage1 = question.Answers[0].AnswerImage;
+                        CorrectAnswer1.IsChecked = question.Answers[0].IsCorrect;
+                        break;
+                    case 1:
+                        AnswerEntry2.Text = question.Answers[1].AnswerText;
+                        AnswerImage2 = question.Answers[1].AnswerImage;
+                        CorrectAnswer2.IsChecked = question.Answers[1].IsCorrect;
+                        break;
+                    case 2:
+                        AnswerEntry3.Text = question.Answers[2].AnswerText;
+                        AnswerImage3 = question.Answers[2].AnswerImage;
+                        CorrectAnswer3.IsChecked = question.Answers[2].IsCorrect;
+                        break;
+                    case 3:
+                        AnswerEntry4.Text = question.Answers[3].AnswerText;
+                        AnswerImage4 = question.Answers[3].AnswerImage;
+                        CorrectAnswer4.IsChecked = question.Answers[3].IsCorrect;
+                        break;
+                }
+            }
+
+            if (String.IsNullOrEmpty(QuestionImage))
+            {
+                addImageBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+                icon.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+                text1.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+            }
+            else
+            {
+                addImageBorder.Stroke = Color.FromHex("#4CAF50");
+                icon.TextColor = Color.FromHex("#4CAF50");
+                text1.TextColor = Color.FromHex("#4CAF50");
+            }
+
+            if (String.IsNullOrEmpty(AnswerImage1))
+            {
+                answerImage1Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+                answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+            }
+            else
+            {
+                answerImage1Frame.Background = Color.FromHex("#4CAF50");
+                answerImage1Frame.BackgroundColor = Color.FromHex("#4CAF50");
+            }
+
+            if (String.IsNullOrEmpty(AnswerImage2))
+            {
+                answerImage2Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+                answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+            }
+            else
+            {
+                answerImage2Frame.Background = Color.FromHex("#4CAF50");
+                answerImage2Frame.BackgroundColor = Color.FromHex("#4CAF50");
+            }
+
+            if (String.IsNullOrEmpty(AnswerImage3))
+            {
+                answerImage3Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+                answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+            }
+            else
+            {
+                answerImage3Frame.Background = Color.FromHex("#4CAF50");
+                answerImage3Frame.BackgroundColor = Color.FromHex("#4CAF50");
+            }
+
+            if (String.IsNullOrEmpty(AnswerImage4))
+            {
+                answerImage4Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+                answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+            }
+            else
+            {
+                answerImage4Frame.Background = Color.FromHex("#4CAF50");
+                answerImage4Frame.BackgroundColor = Color.FromHex("#4CAF50");
+            }
+
         }
         else
         {
-            //Tu wszystko na niebiesko
-            // Nowe pytanie - wyczyść pola
             QuestionEntry.Text = "";
+            QuestionImage = null;
+
             AnswerEntry1.Text = "";
+            AnswerImage1 = null;
+
             AnswerEntry2.Text = "";
+            AnswerImage2 = null;
+
             AnswerEntry3.Text = "";
+            AnswerImage3 = null;
+
             AnswerEntry4.Text = "";
+            AnswerImage4 = null;
+
             CorrectAnswer1.IsChecked = false;
             CorrectAnswer2.IsChecked = false;
             CorrectAnswer3.IsChecked = false;
             CorrectAnswer4.IsChecked = false;
+
+            addImageBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            icon.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+            text1.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+
+            answerImage1Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+            answerImage2Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+            answerImage3Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+            answerImage4Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
         }
     }
 
@@ -391,37 +640,101 @@ public partial class QuestionCreatorPage : ContentPage
         return string.Empty;
     }
 
+    private List<Answer> GetCurrentAnswers()
+    {
+        var answers = new List<Answer>();
+
+        if (!string.IsNullOrWhiteSpace(AnswerEntry1.Text) || !string.IsNullOrWhiteSpace(AnswerImage1))
+            answers.Add(new Answer
+            {
+                AnswerText = AnswerEntry1.Text,
+                AnswerImage = AnswerImage1,
+                IsCorrect = CorrectAnswer1.IsChecked == true
+            });
+
+        if (!string.IsNullOrWhiteSpace(AnswerEntry2.Text) || !string.IsNullOrWhiteSpace(AnswerImage2))
+            answers.Add(new Answer
+            {
+                AnswerText = AnswerEntry2.Text,
+                AnswerImage = AnswerImage2,
+                IsCorrect = CorrectAnswer2.IsChecked == true
+            });
+
+        if (!string.IsNullOrWhiteSpace(AnswerEntry3.Text) || !string.IsNullOrWhiteSpace(AnswerImage3))
+            answers.Add(new Answer
+            {
+                AnswerText = AnswerEntry3.Text,
+                AnswerImage = AnswerImage3,
+                IsCorrect = CorrectAnswer3.IsChecked == true
+            });
+
+        if (!string.IsNullOrWhiteSpace(AnswerEntry4.Text) || !string.IsNullOrWhiteSpace(AnswerImage4))
+            answers.Add(new Answer
+            {
+                AnswerText = AnswerEntry4.Text,
+                AnswerImage = AnswerImage4,
+                IsCorrect = CorrectAnswer4.IsChecked == true
+            });
+
+        bool anyHasImage = answers.Any(a => !string.IsNullOrWhiteSpace(a.AnswerImage));
+        bool allHaveImage = answers.All(a => !string.IsNullOrWhiteSpace(a.AnswerImage));
+
+        if (answers.Count < 2)
+            throw new InvalidOperationException("not_enough_answers");
+
+        if (!answers.Any(a => a.IsCorrect))
+            throw new InvalidOperationException("no_correct_answer");
+
+        if (anyHasImage && !allHaveImage)
+        {
+            throw new InvalidOperationException("images_error");
+        }
+
+        return answers;
+    }
 
     private void compileQuestion()
     {
-        var question = new Question
+        try
         {
-            QuestionID = QNo.ToString(),
-            QuestionText = QuestionEntry.Text,
-            Answers = new List<Answer>
+            var question = new Question
             {
-                new Answer { AnswerText = AnswerEntry1.Text, IsCorrect = CorrectAnswer1.IsChecked == true },
-                new Answer { AnswerText = AnswerEntry2.Text, IsCorrect = CorrectAnswer2.IsChecked == true },
-                new Answer { AnswerText = AnswerEntry3.Text, IsCorrect = CorrectAnswer3.IsChecked == true },
-                new Answer { AnswerText = AnswerEntry4.Text, IsCorrect = CorrectAnswer4.IsChecked == true }
-            }
-        };
-        foreach (var answer in question.Answers)
-        {
-            if (answer.IsCorrect)
+                QuestionID = QNo.ToString(),
+                QuestionText = QuestionEntry.Text,
+                QuestionImage = QuestionImage,
+                Answers = GetCurrentAnswers()
+            };
+
+            foreach (var answer in question.Answers)
             {
-                LatestQNo++;
-                isThereCorrectAnswer = true;
-                break;
+                if (answer.IsCorrect)
+                {
+                    LatestQNo++;
+                    isThereCorrectAnswer = true;
+                    break;
+                }
             }
-        }
-        if (isThereCorrectAnswer)
-        {
+
             pushToJson(question);
         }
-        else
+        catch (Exception ex)
         {
-            DisplayAlert("ERROR", "Please select at least one correct answer!", "OK");
+            if (ex.Message == "not_enough_answers")
+            {
+                DisplayAlert("ERROR", "You must provide at least two answers (text or image)!", "OK");
+            }
+            else if (ex.Message == "no_correct_answer")
+            {
+                DisplayAlert("ERROR", "Please select at least one correct answer!", "OK");
+            }
+            else if (ex.Message == "images_error")
+            {
+                DisplayAlert("ERROR", "All answers must have images or none of them!", "OK");
+            }
+            else
+            {
+                DisplayAlert("ERROR", ex.Message, "OK");
+            }
         }
     }
 
@@ -469,14 +782,34 @@ public partial class QuestionCreatorPage : ContentPage
         if (existingQuestion != null)
         {
             existingQuestion.QuestionText = QuestionEntry.Text;
-            existingQuestion.Answers[0].AnswerText = AnswerEntry1.Text;
-            existingQuestion.Answers[0].IsCorrect = CorrectAnswer1.IsChecked == true;
-            existingQuestion.Answers[1].AnswerText = AnswerEntry2.Text;
-            existingQuestion.Answers[1].IsCorrect = CorrectAnswer2.IsChecked == true;
-            existingQuestion.Answers[2].AnswerText = AnswerEntry3.Text;
-            existingQuestion.Answers[2].IsCorrect = CorrectAnswer3.IsChecked == true;
-            existingQuestion.Answers[3].AnswerText = AnswerEntry4.Text;
-            existingQuestion.Answers[3].IsCorrect = CorrectAnswer4.IsChecked == true;
+            existingQuestion.QuestionImage = QuestionImage;
+
+            for(int i=0; i < existingQuestion.Answers.Count; i++)
+            {
+                switch(i)
+                {
+                    case 0:
+                        existingQuestion.Answers[i].AnswerText = AnswerEntry1.Text;
+                        existingQuestion.Answers[i].AnswerImage = AnswerImage1;
+                        existingQuestion.Answers[i].IsCorrect = CorrectAnswer1.IsChecked == true;
+                        break;
+                    case 1:
+                        existingQuestion.Answers[i].AnswerText = AnswerEntry2.Text;
+                        existingQuestion.Answers[i].AnswerImage = AnswerImage2;
+                        existingQuestion.Answers[i].IsCorrect = CorrectAnswer2.IsChecked == true;
+                        break;
+                    case 2:
+                        existingQuestion.Answers[i].AnswerText = AnswerEntry3.Text;
+                        existingQuestion.Answers[i].AnswerImage = AnswerImage3;
+                        existingQuestion.Answers[i].IsCorrect = CorrectAnswer3.IsChecked == true;
+                        break;
+                    case 3:
+                        existingQuestion.Answers[i].AnswerText = AnswerEntry4.Text;
+                        existingQuestion.Answers[i].AnswerImage = AnswerImage4;
+                        existingQuestion.Answers[i].IsCorrect = CorrectAnswer4.IsChecked == true;
+                        break;
+                }
+            }
         }
 
         string updatedJson = JsonSerializer.Serialize(quizData, new JsonSerializerOptions { WriteIndented = true });
@@ -503,10 +836,32 @@ public partial class QuestionCreatorPage : ContentPage
             AnswerEntry4.Text = "";
             QuestionEntry.Text = "";
 
+            QuestionImage = null;
+            AnswerImage1 = null;
+            AnswerImage2 = null;
+            AnswerImage3 = null;
+            AnswerImage4 = null;
+
             CorrectAnswer1.IsChecked = false;
             CorrectAnswer2.IsChecked = false;
             CorrectAnswer3.IsChecked = false;
             CorrectAnswer4.IsChecked = false;
+
+            addImageBorder.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
+            icon.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+            text1.TextColor = (Color)Application.Current.Resources["PictonBlue"];
+
+            answerImage1Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage1Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+            answerImage2Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage2Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+            answerImage3Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage3Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+
+            answerImage4Frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+            answerImage4Frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
 
             File.Delete(Path);
             await Shell.Current.GoToAsync("///MainPage");

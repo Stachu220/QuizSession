@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuizBox")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ec35b62c09dbe7ba85a35afcff349950ed891c08")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+686850dd33b92258913b2a40c91acad9a343505f")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuizBox")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuizBox")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

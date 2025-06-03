@@ -13,14 +13,26 @@ public partial class QuestionPage : ContentPage
     public static int currQuestion = 0;
     public static int correctAnswers = 0;
     private int imageContainer = 0;
+
     public QuestionPage()
     {
         InitializeComponent();
         randomizedQuestions = QuizStartPage.QuestionsRandomized;
     }
 
-    private void onAnswer1_Clicked(object sender, EventArgs e)
+    private async void onAnswer1_Clicked(object sender, EventArgs e)
     {
+        var frame = (Frame)sender;
+
+        frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        frame.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await frame.ScaleTo(0.9, 180, Easing.CubicIn);
+        await frame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+
         var question = randomizedQuestions[currQuestion];
         var selected = question.Answers[0];
 
@@ -36,8 +48,20 @@ public partial class QuestionPage : ContentPage
         currQuestion++;
         NextQuestion();
     }
-    private void onAnswer2_Clicked(object sender, EventArgs e)
+
+    private async void onAnswer2_Clicked(object sender, EventArgs e)
     {
+        var frame = (Frame)sender;
+
+        frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        frame.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await frame.ScaleTo(0.9, 180, Easing.CubicIn);
+        await frame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+
         var question = randomizedQuestions[currQuestion];
         var selected = question.Answers[1];
 
@@ -54,8 +78,19 @@ public partial class QuestionPage : ContentPage
         NextQuestion();
     }
 
-    private void onAnswer3_Clicked(object sender, EventArgs e)
+    private async void onAnswer3_Clicked(object sender, EventArgs e)
     {
+        var frame = (Frame)sender;
+
+        frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        frame.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await frame.ScaleTo(0.9, 180, Easing.CubicIn);
+        await frame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+
         var question = randomizedQuestions[currQuestion];
         var selected = question.Answers[2];
 
@@ -72,8 +107,19 @@ public partial class QuestionPage : ContentPage
         NextQuestion();
     }
 
-    private void onAnswer4_Clicked(object sender, EventArgs e)
+    private async void onAnswer4_Clicked(object sender, EventArgs e)
     {
+        var frame = (Frame)sender;
+
+        frame.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+        frame.Background = (Color)Application.Current.Resources["Cerulean"];
+
+        await frame.ScaleTo(0.9, 180, Easing.CubicIn);
+        await frame.ScaleTo(1.0, 180, Easing.CubicOut);
+
+        frame.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+        frame.Background = (Color)Application.Current.Resources["PictonBlue"];
+
         var question = randomizedQuestions[currQuestion];
         var selected = question.Answers[3];
 
@@ -98,41 +144,102 @@ public partial class QuestionPage : ContentPage
             correctAnswers = 0;
             imageContainer = 0;
         }
-        if (!CheckForImage(randomizedQuestions[currQuestion].QuestionText))
-            QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
-        imageContainer++;
-        if (!CheckForImage(randomizedQuestions[currQuestion].Answers[0].AnswerText))
-            Answer1.Text = randomizedQuestions[currQuestion].Answers[0].AnswerText;
-        imageContainer++;
-        if (!CheckForImage(randomizedQuestions[currQuestion].Answers[1].AnswerText))
-            Answer2.Text = randomizedQuestions[currQuestion].Answers[1].AnswerText;
-        imageContainer++;
-        if (!CheckForImage(randomizedQuestions[currQuestion].Answers[2].AnswerText))
-            Answer3.Text = randomizedQuestions[currQuestion].Answers[2].AnswerText;
-        imageContainer++;
-        if (!CheckForImage(randomizedQuestions[currQuestion].Answers[3].AnswerText))
-            Answer4.Text = randomizedQuestions[currQuestion].Answers[3].AnswerText;
+
+        var question = randomizedQuestions[currQuestion];
+
+        // Wyświetl obraz pytania jeśli jest
+        if (!string.IsNullOrEmpty(question.QuestionImage))
+        {
+            try
+            {
+                byte[] imageBytes = Convert.FromBase64String(question.QuestionImage);
+                QuestionImage.Source = ImageSource.FromStream(() => new MemoryStream(imageBytes));
+                QuestionImage.IsVisible = true;
+                imageBorder.IsVisible = true;
+                QuestionImagePlaceholder.IsVisible = false;
+            }
+            catch
+            {
+                QuestionImage.IsVisible = false;
+                imageBorder.IsVisible = false;
+                QuestionImagePlaceholder.IsVisible = true;
+            }
+        }
+        else
+        {
+            QuestionImage.IsVisible = false;
+            imageBorder.IsVisible = false;
+            QuestionImagePlaceholder.IsVisible = true;
+        }
+
+        QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
+
+        ShowAnswersGrid();
+
+        /*
+        for (int i = 0; i < randomizedQuestions[currQuestion].Answers.Count; i++)
+        {
+            switch(i)
+            {
+                case 0:
+                    if(!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[0].AnswerText))
+                        Answer1.Text = randomizedQuestions[currQuestion].Answers[0].AnswerText;
+
+                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[0].AnswerImage)) { }
+                    break;
+                case 1:
+                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[1].AnswerText))
+                        Answer2.Text = randomizedQuestions[currQuestion].Answers[1].AnswerText;
+
+                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[1].AnswerImage)) { }
+                    break;
+                case 2:
+                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[2].AnswerText))
+                        Answer1.Text = randomizedQuestions[currQuestion].Answers[2].AnswerText;
+
+                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[2].AnswerImage)) { }
+                    break;
+                case 3:
+                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[3].AnswerText))
+                        Answer1.Text = randomizedQuestions[currQuestion].Answers[3].AnswerText;
+
+                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[3].AnswerImage)) { }
+                    break;
+
+            }
+        }
+        */
     }
 
     private async void NextQuestion()
     {
         if (currQuestion < QNo)
         {
-            imageContainer = 0;
-            if (!CheckForImage(randomizedQuestions[currQuestion].QuestionText))
-                QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
-            imageContainer++;
-            if (!CheckForImage(randomizedQuestions[currQuestion].Answers[0].AnswerText))
-                Answer1.Text = randomizedQuestions[currQuestion].Answers[0].AnswerText;
-            imageContainer++;
-            if (!CheckForImage(randomizedQuestions[currQuestion].Answers[1].AnswerText))
-                Answer2.Text = randomizedQuestions[currQuestion].Answers[1].AnswerText;
-            imageContainer++;
-            if (!CheckForImage(randomizedQuestions[currQuestion].Answers[2].AnswerText))
-                Answer3.Text = randomizedQuestions[currQuestion].Answers[2].AnswerText;
-            imageContainer++;
-            if (!CheckForImage(randomizedQuestions[currQuestion].Answers[3].AnswerText))
-                Answer4.Text = randomizedQuestions[currQuestion].Answers[3].AnswerText;
+            var question = randomizedQuestions[currQuestion];
+
+            // Wyświetl obraz pytania jeśli jest
+            if (!string.IsNullOrEmpty(question.QuestionImage))
+            {
+                try
+                {
+                    byte[] imageBytes = Convert.FromBase64String(question.QuestionImage);
+                    QuestionImage.Source = ImageSource.FromStream(() => new MemoryStream(imageBytes));
+                    QuestionImage.IsVisible = true;
+                }
+                catch
+                {
+                    QuestionImage.IsVisible = false;
+                }
+            }
+            else
+            {
+                QuestionImage.IsVisible = false;
+            }
+
+
+            QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
+
+            ShowAnswersGrid();
         }
         else
         {
@@ -140,50 +247,108 @@ public partial class QuestionPage : ContentPage
         }
     }
 
-    private void base64ToImage(string base64String)
+    private void ShowAnswersGrid()
     {
-        if (string.IsNullOrEmpty(base64String)) return;
-        try
+        AnswersGrid.Children.Clear();
+        AnswersGrid.RowDefinitions.Clear();
+        AnswersGrid.ColumnDefinitions.Clear();
+
+        var answers = randomizedQuestions[currQuestion].Answers;
+        int count = answers.Count;
+
+        AnswersGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
+        AnswersGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
+
+        int rows = (count + 1) / 2;
+        for (int i = 0; i < rows; i++)
+            AnswersGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+
+        for (int i = 0; i < count; i++)
         {
-            byte[] imageBytes = Convert.FromBase64String(base64String);
-            var imageSource = ImageSource.FromStream(() => new MemoryStream(imageBytes));
-            switch (imageContainer)
+            var answer = answers[i];
+
+            var stack = new VerticalStackLayout
             {
-                case 0:
-                    QuestionImage.Source = imageSource;
-                    break;
-                case 1:
-                    //Answer1Image.Source = imageSource;
-                    break;
-                case 2:
-                    //Answer2Image.Source = imageSource;
-                    break;
-                case 3:
-                    //Answer3Image.Source = imageSource;
-                    break;
-                case 4:
-                    //Answer4Image.Source = imageSource;
-                    break;
+                Spacing = 8,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            if (!string.IsNullOrEmpty(answer.AnswerImage))
+            {
+                var height = 0;
+
+                if (string.IsNullOrEmpty(answer.AnswerText))
+                {
+                    height = 150;
+                }
+                else
+                {
+                    height = 90;
+                }
+                    try
+                    {
+                        var img = new Image
+                        {
+                            Source = ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(answer.AnswerImage))),
+                            MaximumHeightRequest = height,
+                            MaximumWidthRequest = 150,
+                            Aspect = Aspect.AspectFit,
+                            HorizontalOptions = LayoutOptions.Center,
+                            VerticalOptions = LayoutOptions.Center
+                        };
+                        stack.Children.Add(img);
+                    }
+                    catch { /* ignoruj błędy dekodowania */ }
             }
-        }
-        catch (FormatException)
-        {
-            // Handle the case where the base64 string is not valid
-            //QuestionImage.Source = null; // or set a default image
-        }
-    }
 
-    private bool CheckForImage(string str)
-    {
-        if (string.IsNullOrEmpty(str)) return false;
+            if (!string.IsNullOrEmpty(answer.AnswerText))
+            {
+                stack.Children.Add(new Label
+                {
+                    Text = answer.AnswerText,
+                    FontSize = 16,
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    HorizontalOptions = LayoutOptions.Center,
+                    VerticalOptions = LayoutOptions.Center,
+                    FontFamily = "Ubuntu-Regular",
+                    FontAttributes = FontAttributes.Bold,
+                    TextColor = Colors.White
+                });
+            }
 
-        string firstFourSymbols = str.Length >= 4 ? str.Substring(0, 4) : str;
-        if (firstFourSymbols == "/9j/")
-        {
-            base64ToImage(str);
-            return true;
+            var frame = new Frame
+            {
+                Content = stack,
+                BackgroundColor = (Color)Application.Current.Resources["PictonBlue"],
+                BorderColor = Colors.Transparent,
+                CornerRadius = 12,
+                HeightRequest = 150,
+                WidthRequest = 150,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Padding = 8
+            };
+
+            var tapGesture = new TapGestureRecognizer();
+
+            switch (i)
+            {
+                case 0: tapGesture.Tapped += onAnswer1_Clicked; break;
+                case 1: tapGesture.Tapped += onAnswer2_Clicked; break;
+                case 2: tapGesture.Tapped += onAnswer3_Clicked; break;
+                case 3: tapGesture.Tapped += onAnswer4_Clicked; break;
+            }
+
+            frame.GestureRecognizers.Add(tapGesture);
+
+            int row = i / 2;
+            int col = i % 2;
+
+            Grid.SetRow(frame, row);
+            Grid.SetColumn(frame, col);
+
+            AnswersGrid.Children.Add(frame);
         }
-
-        return false;
     }
 }

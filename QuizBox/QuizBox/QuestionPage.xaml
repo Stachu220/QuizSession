@@ -62,47 +62,40 @@
                         HorizontalOptions="Center"/>
                 </VerticalStackLayout>
 
-                <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
-                    <Label Text="There will be image (if they will work)!" 
-                           TextColor="White" 
-                           FontSize="20" 
-                           FontAttributes="Bold" 
-                           HorizontalTextAlignment="Center" 
-                           HorizontalOptions="Center"/>
-                    <Image
-                        x:Name="QuestionImage"
-                        Aspect="AspectFit"
-                        HeightRequest="200"
-                        WidthRequest="200"
+                <StackLayout Grid.Row="1" x:Name="imageStackLayout" HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
+                    <Border
+                        x:Name="imageBorder"
+                        StrokeThickness="5"
+                        Stroke="White"
+                        StrokeShape="RoundRectangle 12"
+                        BackgroundColor="Transparent"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center"/>
+                        VerticalOptions="Center"
+                        IsVisible="False">
+                        <Image
+                            x:Name="QuestionImage"
+                            Aspect="AspectFit"
+                            MaximumHeightRequest="325"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                    </Border>
+                    <Label
+                            x:Name="QuestionImagePlaceholder"
+                            Text="{x:Static helpers:MaterialDesignIconsFonts.CommentQuestionOutline}"
+                            FontFamily="MaterialDesignIcons"
+                            FontSize="175"
+                            TextColor="{StaticResource PictonBlue}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            IsVisible="False"/>
                 </StackLayout>
 
-                <VerticalStackLayout 
-                    HorizontalOptions="Fill"
-                    VerticalOptions="End" 
-                    Spacing="10" 
-                    Grid.Row="2">
-                    <Button
-                        x:Name="Answer1"
-                        Text=""
-                        Clicked="onAnswer1_Clicked" />
-                    
-                    <Button
-                        x:Name="Answer2"
-                        Text=""
-                        Clicked="onAnswer2_Clicked" />
-                    
-                    <Button
-                        x:Name="Answer3"
-                        Text=""
-                        Clicked="onAnswer3_Clicked" />
-                    
-                    <Button
-                        x:Name="Answer4"
-                        Text=""
-                        Clicked="onAnswer4_Clicked" />
-                </VerticalStackLayout>
+                <Grid x:Name="AnswersGrid"
+                    Grid.Row="2"
+                    RowSpacing="8"
+                    ColumnSpacing="8"
+                    Margin="0,16,0,0">
+                </Grid>
             </Grid>
         </Border>
     </Grid>
