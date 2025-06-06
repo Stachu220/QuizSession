@@ -127,5 +127,18 @@ public partial class QuizCreatorPage : ContentPage
             await DescriptionEntryBorder.ScaleTo(1.0, 120, Easing.CubicOut);
         }
     }
+
+    private void OnEntryCompleted(object sender, EventArgs e)
+    {
+        if (sender is Entry entry)
+            entry.Unfocus();
+    }
+
+    protected override bool OnBackButtonPressed()
+    {
+        TitleEntry.Unfocus();
+        DescriptionEntry.Unfocus();
+        return true;
+    }
 }
 

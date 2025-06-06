@@ -146,6 +146,8 @@ public partial class QuestionPage : ContentPage
         }
 
         var question = randomizedQuestions[currQuestion];
+        QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
+        ShowAnswersGrid();
 
         // Wyświetl obraz pytania jeśli jest
         if (!string.IsNullOrEmpty(question.QuestionImage))
@@ -171,44 +173,6 @@ public partial class QuestionPage : ContentPage
             imageBorder.IsVisible = false;
             QuestionImagePlaceholder.IsVisible = true;
         }
-
-        QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
-
-        ShowAnswersGrid();
-
-        /*
-        for (int i = 0; i < randomizedQuestions[currQuestion].Answers.Count; i++)
-        {
-            switch(i)
-            {
-                case 0:
-                    if(!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[0].AnswerText))
-                        Answer1.Text = randomizedQuestions[currQuestion].Answers[0].AnswerText;
-
-                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[0].AnswerImage)) { }
-                    break;
-                case 1:
-                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[1].AnswerText))
-                        Answer2.Text = randomizedQuestions[currQuestion].Answers[1].AnswerText;
-
-                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[1].AnswerImage)) { }
-                    break;
-                case 2:
-                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[2].AnswerText))
-                        Answer1.Text = randomizedQuestions[currQuestion].Answers[2].AnswerText;
-
-                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[2].AnswerImage)) { }
-                    break;
-                case 3:
-                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[3].AnswerText))
-                        Answer1.Text = randomizedQuestions[currQuestion].Answers[3].AnswerText;
-
-                    if (!String.IsNullOrEmpty(randomizedQuestions[currQuestion].Answers[3].AnswerImage)) { }
-                    break;
-
-            }
-        }
-        */
     }
 
     private async void NextQuestion()
@@ -216,6 +180,8 @@ public partial class QuestionPage : ContentPage
         if (currQuestion < QNo)
         {
             var question = randomizedQuestions[currQuestion];
+            QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
+            ShowAnswersGrid();
 
             // Wyświetl obraz pytania jeśli jest
             if (!string.IsNullOrEmpty(question.QuestionImage))
@@ -225,21 +191,22 @@ public partial class QuestionPage : ContentPage
                     byte[] imageBytes = Convert.FromBase64String(question.QuestionImage);
                     QuestionImage.Source = ImageSource.FromStream(() => new MemoryStream(imageBytes));
                     QuestionImage.IsVisible = true;
+                    imageBorder.IsVisible = true;
+                    QuestionImagePlaceholder.IsVisible = false;
                 }
                 catch
                 {
                     QuestionImage.IsVisible = false;
+                    imageBorder.IsVisible = false;
+                    QuestionImagePlaceholder.IsVisible = true;
                 }
             }
             else
             {
                 QuestionImage.IsVisible = false;
+                imageBorder.IsVisible = false;
+                QuestionImagePlaceholder.IsVisible = true;
             }
-
-
-            QuestionLabel.Text = randomizedQuestions[currQuestion].QuestionText;
-
-            ShowAnswersGrid();
         }
         else
         {
@@ -284,7 +251,7 @@ public partial class QuestionPage : ContentPage
                 }
                 else
                 {
-                    height = 90;
+                    height = 80;
                 }
                     try
                     {
@@ -302,12 +269,17 @@ public partial class QuestionPage : ContentPage
                     catch { /* ignoruj błędy dekodowania */ }
             }
 
-            if (!string.IsNullOrEmpty(answer.AnswerText))
-            {
+            if (!string.IsNullOrEmpty(answer.AnswerText)) {
+                var fontSize = 16;
+
+                if (!string.IsNullOrEmpty(answer.AnswerImage)) {
+                    fontSize = 10;
+                }
+
                 stack.Children.Add(new Label
                 {
                     Text = answer.AnswerText,
-                    FontSize = 16,
+                    FontSize = fontSize,
                     HorizontalTextAlignment = TextAlignment.Center,
                     HorizontalOptions = LayoutOptions.Center,
                     VerticalOptions = LayoutOptions.Center,
@@ -350,5 +322,10 @@ public partial class QuestionPage : ContentPage
 
             AnswersGrid.Children.Add(frame);
         }
+    }
+
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
     }
 }

@@ -20,6 +20,7 @@ public partial class QuizListPage : ContentPage
         foreach (string file in files)
         {
             string fileName = Path.GetFileNameWithoutExtension(file);
+
             string filePath = Path.Combine(path, file);
             //add child to QuizListStack
             var quizButton = new Button
@@ -29,12 +30,15 @@ public partial class QuizListPage : ContentPage
                 CommandParameter = filePath,
                 BackgroundColor = (Color)Application.Current.Resources["PictonBlue"],
                 FontFamily = "Ubuntu-Regular",
-                FontSize=16,
-                FontAttributes=FontAttributes.Bold,
+                FontSize = 16,
+                LineBreakMode = LineBreakMode.WordWrap,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                FontAttributes = FontAttributes.Bold,
                 TextColor = Color.FromHex("#FFFFFF"),
                 Margin = new Thickness(10),
                 Padding = new Thickness(15)
             };
+
             quizButton.Clicked += async (s, e) =>
             {
                 quizButton.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
@@ -64,5 +68,10 @@ public partial class QuizListPage : ContentPage
         backBtn.Background = (Color)Application.Current.Resources["PictonBlue"];
 
         await Shell.Current.GoToAsync($"///MainPage");
+    }
+
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
     }
 }

@@ -24,6 +24,7 @@
         </Grid.RowDefinitions>
 
         <Border StrokeThickness="0"
+                x:Name="mainBorder"
                 StrokeShape="RoundRectangle 25,25,25,25"
                 BackgroundColor="{StaticResource RichBlack}"
                 Grid.Row="0"
@@ -45,8 +46,9 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <VerticalStackLayout Grid.Row="0">
+                <VerticalStackLayout Grid.Row="0" Margin="0,0,0,15">
                     <Label
+                        x:Name="iconQuestionLabel"
                         FontFamily="MaterialDesignIcons"
                         Text="{x:Static helpers:MaterialDesignIconsFonts.ProgressQuestion}"
                         TextColor="White"
@@ -56,7 +58,7 @@
                     <Label
                         x:Name="QuestionLabel"
                         Text="Question"
-                        FontSize="20"
+                        FontSize="18"
                         TextColor="White"
                         FontAttributes="Bold"
                         HorizontalOptions="Center"/>
@@ -70,14 +72,13 @@
                         StrokeShape="RoundRectangle 12"
                         BackgroundColor="Transparent"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center"
+                        VerticalOptions="FillAndExpand"
                         IsVisible="False">
                         <Image
                             x:Name="QuestionImage"
                             Aspect="AspectFit"
-                            MaximumHeightRequest="325"
                             HorizontalOptions="Center"
-                            VerticalOptions="Center"/>
+                            VerticalOptions="FillAndExpand"/>
                     </Border>
                     <Label
                             x:Name="QuestionImagePlaceholder"
@@ -94,7 +95,7 @@
                     Grid.Row="2"
                     RowSpacing="8"
                     ColumnSpacing="8"
-                    Margin="0,16,0,0">
+                    Margin="0,15,0,0">
                 </Grid>
             </Grid>
         </Border>

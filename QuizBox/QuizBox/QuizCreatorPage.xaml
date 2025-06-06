@@ -37,12 +37,12 @@
             <VerticalStackLayout Loaded="onStackLayout_Loaded">
                 <Label Text="Quiz Title" FontAttributes="Bold" TextColor="White" FontFamily="Ubuntu-Bold" FontSize="20" Margin="0,0,0,5"/>
                 <Border x:Name="TitleEntryBorder" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
-                    <Entry x:Name="TitleEntry" Placeholder="Title" WidthRequest="250" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
+                    <Entry x:Name="TitleEntry" Completed="OnEntryCompleted" MaxLength="64" Placeholder="Title" WidthRequest="250" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
                 </Border>
 
                 <Label Text="Quiz Description" FontAttributes="Bold" TextColor="White" Margin="0,25,0,5" FontFamily="Ubuntu-Bold" FontSize="20"/>
                 <Border x:Name="DescriptionEntryBorder" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
-                    <Entry x:Name="DescriptionEntry" Placeholder="Description" TextColor="White" WidthRequest="250" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused">
+                    <Entry x:Name="DescriptionEntry" Completed="OnEntryCompleted" MaxLength="255" Placeholder="Description" TextColor="White" WidthRequest="250" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused">
                         </Entry>
                 </Border>
 

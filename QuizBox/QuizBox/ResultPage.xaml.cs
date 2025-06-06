@@ -123,4 +123,9 @@ public partial class ResultPage : ContentPage
 
         await Shell.Current.GoToAsync($"///MainPage");
     }
+
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
+    }
 }

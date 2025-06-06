@@ -94,6 +94,10 @@ public partial class ImportPage : ContentPage
         {
             await DisplayAlert("ERROR", $"An error occurred: {ex.Message}", "OK");
         }
+    }
 
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
     }
 }

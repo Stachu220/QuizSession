@@ -93,6 +93,10 @@
               "version": "[8.0.13, )",
               "autoReferenced": true
             },
+            "Plugin.Maui.Audio": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",
               "version": "[3.119.0, )"
@@ -170,6 +174,10 @@
               "version": "[8.0.13, )",
               "autoReferenced": true
             },
+            "Plugin.Maui.Audio": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",
               "version": "[3.119.0, )"
@@ -235,6 +243,10 @@
               "version": "[8.0.13, )",
               "autoReferenced": true
             },
+            "Plugin.Maui.Audio": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",
               "version": "[3.119.0, )"
@@ -294,6 +306,10 @@
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
               "version": "[8.0.100, )"
+            },
+            "Plugin.Maui.Audio": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             },
             "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",

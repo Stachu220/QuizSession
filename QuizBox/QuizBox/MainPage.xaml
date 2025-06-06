@@ -83,6 +83,9 @@
                     Source="quiz.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnIconClicked" />
+            </Border.GestureRecognizers>
         </Border>
 
         <Border StrokeThickness="0"
@@ -96,43 +99,6 @@
                 Spacing="10"
                 HorizontalOptions="Fill"
                 VerticalOptions="End">
-                <Frame
-                    x:Name="goToQuizListFrame"
-                    Padding="12"
-                    Margin="5"
-                    BackgroundColor="{StaticResource PictonBlue}"
-                    BorderColor="Transparent"
-                    CornerRadius="12"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Center">
-                    <Grid
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
-                        <HorizontalStackLayout
-                            Spacing="10"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center">
-                            <Label
-                                FontFamily="MaterialDesignIcons"
-                                Text="{x:Static helpers:MaterialDesignIconsFonts.ListBoxOutline}"
-                                FontSize="24"
-                                TextColor="White"
-                                VerticalOptions="Center" />
-
-                            <Label
-                                Text="Quiz List"
-                                FontFamily="Ubuntu-Regular"
-                                FontSize="18"
-                                FontAttributes="Bold"
-                                TextColor="White"
-                                VerticalOptions="Center" />
-                        </HorizontalStackLayout>
-                    </Grid>
-                    
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="goToQuizList" />
-                    </Frame.GestureRecognizers>
-                </Frame>
 
                 <Frame
                     x:Name="goToQuizCreatorFrame"
@@ -169,6 +135,44 @@
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="goToQuizCreator" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame
+                    x:Name="goToQuizListFrame"
+                    Padding="12"
+                    Margin="5,5,5,25"
+                    BackgroundColor="{StaticResource PictonBlue}"
+                    BorderColor="Transparent"
+                    CornerRadius="12"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                        <HorizontalStackLayout
+                            Spacing="10"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ListBoxOutline}"
+                                FontSize="24"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Text="Quiz List"
+                                FontFamily="Ubuntu-Regular"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </Grid>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="goToQuizList" />
                     </Frame.GestureRecognizers>
                 </Frame>
 
@@ -213,6 +217,27 @@
         </Border>
 
         <AbsoluteLayout Grid.Row="3" Margin="25" AbsoluteLayout.LayoutBounds="0.5, 1, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Button
+                x:Name="musicBtn"
+                WidthRequest="50"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                BackgroundColor="{StaticResource PictonBlue}"
+                Background="{StaticResource PictonBlue}"
+                TextColor="White"
+                VerticalOptions="Center"
+                Clicked="OnMusicButtonClicked"
+                FontSize="30"
+                Padding="0"
+                FontFamily="MaterialDesignIcons" 
+                BorderWidth="0"
+                CornerRadius="12"
+                MinimumHeightRequest="50"
+                MinimumWidthRequest="50"
+                Text=""
+            >
+            </Button>
+
             <Button
                 x:Name="exitBtn"
                 WidthRequest="50"

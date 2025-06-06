@@ -179,4 +179,16 @@ public partial class QuizStartPage : ContentPage
             await numberOfQuestionsBorder.ScaleTo(1.0, 120, Easing.CubicOut);
         }
     }
+
+    private void OnEntryCompleted(object sender, EventArgs e)
+    {
+        if (sender is Entry entry)
+            entry.Unfocus();
+    }
+
+    protected override bool OnBackButtonPressed()
+    {
+        numberOfQuestionsEntry.Unfocus();
+        return true;
+    }
 }

@@ -48,7 +48,6 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                
                 <VerticalStackLayout Grid.Row="0" Spacing="2">
                     <Label 
                         x:Name="QuizTitle"
@@ -66,7 +65,7 @@
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         FontSize="18"
-                        FontFamily="Ubuntu-Italic"
+                        FontFamily="Ubuntu-Regular"
                         FontAttributes="Italic"
                         TextColor="Gray"/>
                 </VerticalStackLayout>
@@ -90,7 +89,7 @@
                         HorizontalOptions="Center"
                         Margin="0,0,0,25">
                         <Border x:Name="numberOfQuestionsBorder" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Margin="10,0,10,0" HorizontalOptions="Center">
-                            <Entry x:Name="numberOfQuestionsEntry" Placeholder="No." WidthRequest="35" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="18" Margin="5,0,5,0" Keyboard="Numeric" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused">
+                            <Entry x:Name="numberOfQuestionsEntry" Completed="OnEntryCompleted" Placeholder="No." WidthRequest="35" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="18" Margin="5,0,5,0" Keyboard="Numeric" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused">
                                 <Entry.Behaviors>
                                     <toolkit:NumericValidationBehavior Flags="ValidateOnValueChanged" MinimumValue="0" MaximumDecimalPlaces="0"/>
                                 </Entry.Behaviors>
@@ -110,17 +109,17 @@
 
                         <Border StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="{StaticResource PictonBlue}" Margin="10,0,10,0" HorizontalOptions="Center">
                             <Label
-                           x:Name="numberOfQuestions"
-                           Text=""
+                                x:Name="numberOfQuestions"
+                                Text=""
                                 HorizontalTextAlignment="Center"
-                           FontSize="18"
-                           FontFamily="Ubuntu-Bold"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           VerticalOptions="Center"
-                           HorizontalOptions="Center"
+                                FontSize="18"
+                                FontFamily="Ubuntu-Bold"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
                                 WidthRequest="35"
-                                 Margin="5,0,5,0"/>
+                                Margin="5,0,5,0"/>
                         </Border>
                     </HorizontalStackLayout>
                     

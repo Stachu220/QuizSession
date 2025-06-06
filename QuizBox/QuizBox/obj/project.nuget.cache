@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3k1zMUN3qMk=",
+  "dgSpecHash": "CIq7v1Z4EuU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Chareq\\Source\\Repos\\QuizSession\\QuizBox\\QuizBox\\QuizBox.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\Chareq\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.13\\microsoft.net.illink.tasks.8.0.13.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240802000\\microsoft.windowsappsdk.1.5.240802000.nupkg.sha512",
+    "C:\\Users\\Chareq\\.nuget\\packages\\plugin.maui.audio\\3.1.1\\plugin.maui.audio.3.1.1.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\skiasharp\\3.119.0\\skiasharp.3.119.0.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\skiasharp.nativeassets.android\\3.119.0\\skiasharp.nativeassets.android.3.119.0.nupkg.sha512",
     "C:\\Users\\Chareq\\.nuget\\packages\\skiasharp.nativeassets.ios\\3.119.0\\skiasharp.nativeassets.ios.3.119.0.nupkg.sha512",

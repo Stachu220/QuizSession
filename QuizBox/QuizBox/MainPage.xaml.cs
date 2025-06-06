@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
 using System.Runtime.CompilerServices;
+using Plugin.Maui.Audio;
+using QuizBox.Helpers;
 
 namespace QuizBox
 {
@@ -9,13 +11,14 @@ namespace QuizBox
         public MainPage()
         {
             InitializeComponent();
+            _ = MusicService.Instance.InitAsync();
         }
 
         protected async override void OnAppearing()
         {
-
             base.OnAppearing();
             await Task.Delay(100);
+            UpdateButtonLabel();
 
             titleCard.Opacity = 0;
             titleCard.TranslationY = -titleCard.Height;
@@ -95,6 +98,42 @@ namespace QuizBox
                 Application.Current.Quit();
                 await Toast.Make("Exiting the app!", ToastDuration.Short).Show();
             }
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+
+        private async void OnMusicButtonClicked(object sender, EventArgs e)
+        {
+            musicBtn.BackgroundColor = (Color)Application.Current.Resources["Cerulean"];
+            musicBtn.Background = (Color)Application.Current.Resources["Cerulean"];
+
+            await musicBtn.ScaleTo(0.85, 180, Easing.CubicIn);
+            await musicBtn.ScaleTo(1.0, 180, Easing.CubicOut);
+
+            musicBtn.BackgroundColor = (Color)Application.Current.Resources["PictonBlue"];
+            musicBtn.Background = (Color)Application.Current.Resources["PictonBlue"];
+
+            MusicService.Instance.ToggleMusic();
+            UpdateButtonLabel();
+        }
+
+        private void UpdateButtonLabel()
+        {
+            var isEnabled = MusicService.Instance.IsEnabled;
+            musicBtn.Text = isEnabled ? MaterialDesignIconsFonts.VolumeHigh : MaterialDesignIconsFonts.VolumeOff;
+        }
+
+        private async void OnIconClicked(object sender, EventArgs e)
+        {
+            string[] _messages = new[] { "Oh.. You found the most stupid easter egg ever!", "Hello there! General Kenobi!", "They're taking the Hobbits to Isengard!", "I have a bad feeling about this!", "What are you doing? Stop that!", "Nothing to see here! Keep moving!", "This isn't an easter egg that you're looking for!" };
+            var random = new Random();
+            int index = random.Next(_messages.Length);
+            string message = _messages[index];
+
+            await Toast.Make(message, ToastDuration.Short).Show();
         }
     }
 

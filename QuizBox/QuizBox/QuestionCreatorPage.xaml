@@ -13,7 +13,6 @@
      />
     </ContentPage.Behaviors>
 
-
     <Grid RowDefinitions="Auto,*,Auto" Loaded="onStackLayout_loaded">
         <Image
             Source="background9.jpg"
@@ -33,12 +32,13 @@
             <Label Text="Quiz Creator" FontSize="28" FontAttributes="Bold" TextColor="White" FontFamily="Ubuntu-Bold" Margin="0,0,0,2"/>
             <Label Text="What you will create today?" FontSize="20" FontFamily="Ubuntu-Regular" TextColor="Gray"/>
         </VerticalStackLayout>
-        
-        <Border Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Background="{StaticResource RichBlack}" StrokeThickness="0" StrokeShape="RoundRectangle 25,25,25,25" Padding="25">
+
+        <Border Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Background="{StaticResource RichBlack}" StrokeThickness="0" StrokeShape="RoundRectangle 25,25,25,25" Padding="25" Margin="25,0,25,0">
             <VerticalStackLayout>
                 <Border x:Name="QuestionEntryBorder" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,10,10,0">
                     <Entry x:Name="QuestionEntry" WidthRequest="250" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0"
-                       Placeholder="Enter your question here"  Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"
+                       MaxLength="64"
+                       Placeholder="Enter your question here"  Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" Completed="OnEntryCompleted"
                 />
                 </Border>
 
@@ -92,66 +92,34 @@
                 </Border>
 
                 <Label Text="Answers"  FontAttributes="Bold" TextColor="White" FontFamily="Ubuntu-Bold" FontSize="20" Margin="0,0,0,10"/>
-                <Grid ColumnSpacing="8" RowSpacing="8">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
+                <ScrollView x:Name="answersScrollView" HeightRequest="285" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-                    <!-- Answer 1 -->
-                    <Border x:Name="AnswerEntry1Border" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
-                        <Entry x:Name="AnswerEntry1"
-                           Placeholder="Answer 1"
-                           Grid.Row="0" Grid.Column="0" WidthRequest="155" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
-                    </Border>
-                    
-                    <Frame
+                        <Label Grid.Row="0" Grid.Column="2" FontFamily="Ubuntu-Regular" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="labelCorrect" Margin="0,0,0,5">Correct</Label>
+
+                        <!-- Answer 1 -->
+                        <Border  Grid.Row="1" Grid.Column="0"  x:Name="AnswerEntry1Border" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,10">
+                            <Entry x:Name="AnswerEntry1"
+                               MaxLength="64"
+                               Placeholder="Answer 1"
+                               Completed="OnEntryCompleted"
+                               WidthRequest="155" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
+                        </Border>
+
+                        <Frame
                         x:Name="answerImage1Frame"
-                        Grid.Row="0" Grid.Column="1" 
-                        Padding="0"
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        BackgroundColor="{StaticResource PictonBlue}"
-                        CornerRadius="12"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center">
-                        <Grid>
-                            <Label
-                                FontFamily="MaterialDesignIcons"
-                                Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
-                                FontSize="24"
-                                TextColor="White"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center" />
-                        </Grid>
-
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="onAddAnswerImage1" />
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                    
-                    <CheckBox x:Name="CorrectAnswer1"
-                              Grid.Row="0" Grid.Column="2"
-                              CheckedChanged="correctAnswer_CheckedChanged"
-                         Style="{StaticResource CustomCheckBoxStyle}"
-                        />
-
-                        <!-- Answer 2 -->
-                    <Border Grid.Row="1" Grid.Column="0" x:Name="AnswerEntry2Border" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
-                        <Entry x:Name="AnswerEntry2"
-                                Placeholder="Answer 2"
-                                WidthRequest="155" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
-                    </Border>
-
-                    <Frame
-                        x:Name="answerImage2Frame"
                         Grid.Row="1" Grid.Column="1" 
                         Padding="0"
                         WidthRequest="50"
@@ -160,35 +128,38 @@
                         CornerRadius="12"
                         HorizontalOptions="Center"
                         VerticalOptions="Center">
-                        <Grid>
-                            <Label
+                            <Grid>
+                                <Label
                                 FontFamily="MaterialDesignIcons"
                                 Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
                                 FontSize="24"
                                 TextColor="White"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center" />
-                        </Grid>
+                            </Grid>
 
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="onAddAnswerImage2" />
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                    
-                    <CheckBox x:Name="CorrectAnswer2"
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onAddAnswerImage1" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <CheckBox x:Name="CorrectAnswer1"
                               Grid.Row="1" Grid.Column="2"
                               CheckedChanged="correctAnswer_CheckedChanged"
-                              Style="{StaticResource CustomCheckBoxStyle}"/>
+                         Style="{StaticResource CustomCheckBoxStyle}"
+                        />
 
-                    <!-- Answer 3 -->
-                    <Border Grid.Row="2" Grid.Column="0" x:Name="AnswerEntry3Border" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
-                        <Entry x:Name="AnswerEntry3"
-                                Placeholder="Answer 3"
+                        <!-- Answer 2 -->
+                        <Border Grid.Row="2" Grid.Column="0" x:Name="AnswerEntry2Border" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,10">
+                            <Entry x:Name="AnswerEntry2"
+                               MaxLength="64"
+                                Placeholder="Answer 2"
+                               Completed="OnEntryCompleted"
                                 WidthRequest="155" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
-                    </Border>
-                    
-                    <Frame
-                        x:Name="answerImage3Frame"
+                        </Border>
+
+                        <Frame
+                        x:Name="answerImage2Frame"
                         Grid.Row="2" Grid.Column="1" 
                         Padding="0"
                         WidthRequest="50"
@@ -197,36 +168,38 @@
                         CornerRadius="12"
                         HorizontalOptions="Center"
                         VerticalOptions="Center">
-                        <Grid>
-                            <Label
+                            <Grid>
+                                <Label
                                 FontFamily="MaterialDesignIcons"
                                 Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
                                 FontSize="24"
                                 TextColor="White"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center" />
-                        </Grid>
+                            </Grid>
 
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="onAddAnswerImage3" />
-                        </Frame.GestureRecognizers>
-                    </Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onAddAnswerImage2" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
 
-                    <CheckBox x:Name="CorrectAnswer3"
+                        <CheckBox x:Name="CorrectAnswer2"
                               Grid.Row="2" Grid.Column="2"
                               CheckedChanged="correctAnswer_CheckedChanged"
-                              Style="{StaticResource CustomCheckBoxStyle}" />
+                              Style="{StaticResource CustomCheckBoxStyle}"/>
 
-                    <!-- Answer 4 -->
-                    <Border Grid.Row="3" Grid.Column="0" x:Name="AnswerEntry4Border" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
-                        <Entry x:Name="AnswerEntry4"
-                                Placeholder="Answer 4"
-                                WidthRequest="155" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
-                    </Border>
+                        <!-- Answer 3 -->
+                        <Border Grid.Row="3" Grid.Column="0" x:Name="AnswerEntry3Border" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,10">
+                            <Entry x:Name="AnswerEntry3"
+                               Placeholder="Answer 3"
+                               MaxLength="64"
+                               Completed="OnEntryCompleted"
+                               WidthRequest="155" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
+                        </Border>
 
-                    <Frame
+                        <Frame
+                        x:Name="answerImage3Frame"
                         Grid.Row="3" Grid.Column="1" 
-                        x:Name="answerImage4Frame"
                         Padding="0"
                         WidthRequest="50"
                         HeightRequest="50"
@@ -234,28 +207,68 @@
                         CornerRadius="12"
                         HorizontalOptions="Center"
                         VerticalOptions="Center">
-                        <Grid>
-                            <Label
+                            <Grid>
+                                <Label
                                 FontFamily="MaterialDesignIcons"
                                 Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
                                 FontSize="24"
                                 TextColor="White"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center" />
-                        </Grid>
+                            </Grid>
 
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="onAddAnswerImage4" />
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                    
-                    <CheckBox x:Name="CorrectAnswer4"
-                             Grid.Row="3" Grid.Column="2"
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onAddAnswerImage3" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <CheckBox x:Name="CorrectAnswer3"
+                              Grid.Row="3" Grid.Column="2"
+                              CheckedChanged="correctAnswer_CheckedChanged"
+                              Style="{StaticResource CustomCheckBoxStyle}" />
+
+                        <!-- Answer 4 -->
+                        <Border Grid.Row="4" Grid.Column="0" x:Name="AnswerEntry4Border" StrokeShape="RoundRectangle 150,150,150,150" StrokeThickness="2" Stroke="{StaticResource PictonBlue}" Background="#002937" Padding="5" Margin="10,0,10,0">
+                            <Entry x:Name="AnswerEntry4"
+                               Placeholder="Answer 4"
+                               MaxLength="64"
+                               Completed="OnEntryCompleted"
+                               WidthRequest="155" TextColor="White" FontFamily="Ubuntu-Regular" FontSize="16" Margin="5,0,5,0" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"/>
+                        </Border>
+
+                        <Frame
+                        Grid.Row="4" Grid.Column="1" 
+                        x:Name="answerImage4Frame"
+                        Padding="0"
+                        WidthRequest="50"
+                        CornerRadius="12"
+                        HeightRequest="50"
+                        BackgroundColor="{StaticResource PictonBlue}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                            <Grid>
+                                <Label
+                                FontFamily="MaterialDesignIcons"
+                                Text="{x:Static helpers:MaterialDesignIconsFonts.ImagePlus}"
+                                FontSize="24"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                            </Grid>
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onAddAnswerImage4" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <CheckBox x:Name="CorrectAnswer4"
+                             Grid.Row="4" Grid.Column="2"
                              CheckedChanged="correctAnswer_CheckedChanged"
                              Style="{StaticResource CustomCheckBoxStyle}"/>
-                </Grid>
+                    </Grid>
+                </ScrollView>
 
-                <HorizontalStackLayout Spacing="24" Margin="0,24,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+                <HorizontalStackLayout Spacing="24" Margin="0,25,0,0" HorizontalOptions="Center" VerticalOptions="Center">
                     <Frame
                         x:Name="previousFrame"
                         Padding="0"

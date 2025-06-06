@@ -23,7 +23,6 @@ namespace QuizBox
                     fonts.AddFont("Ubuntu-Italic.ttf", "Ubuntu-Italic");
                 });
 
-            
 
 #if DEBUG
             builder.Logging.AddDebug();

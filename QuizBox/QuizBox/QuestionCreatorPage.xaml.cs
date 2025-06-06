@@ -882,25 +882,103 @@ public partial class QuestionCreatorPage : ContentPage
             AnswerEntry1Border.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
             AnswerEntry1Border.StrokeThickness = 4;
             await AnswerEntry1Border.ScaleTo(1.05, 120, Easing.CubicOut);
+
+            AnswerEntry4.IsVisible = false;
+            AnswerEntry4Border.IsVisible = false;
+            CorrectAnswer4.IsVisible = false;
+            answerImage4Frame.IsVisible = false;
+
+            AnswerEntry2.IsVisible = false;
+            AnswerEntry2Border.IsVisible = false;
+            CorrectAnswer2.IsVisible = false;
+            answerImage2Frame.IsVisible = false;
+
+            AnswerEntry3.IsVisible = false;
+            AnswerEntry3Border.IsVisible = false;
+            CorrectAnswer3.IsVisible = false;
+            answerImage3Frame.IsVisible = false;
+
+            await answersScrollView.ScrollToAsync(AnswerEntry1, ScrollToPosition.Start, true);
         }
         else if (sender == AnswerEntry2)
         {
             AnswerEntry2Border.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
             AnswerEntry2Border.StrokeThickness = 4;
             await AnswerEntry2Border.ScaleTo(1.05, 120, Easing.CubicOut);
+
+            AnswerEntry1.IsVisible = false;
+            AnswerEntry1Border.IsVisible = false;
+            CorrectAnswer1.IsVisible = false;
+            answerImage1Frame.IsVisible = false;
+
+            AnswerEntry4.IsVisible = false;
+            AnswerEntry4Border.IsVisible = false;
+            CorrectAnswer4.IsVisible = false;
+            answerImage4Frame.IsVisible = false;
+
+            AnswerEntry3.IsVisible = false;
+            AnswerEntry3Border.IsVisible = false;
+            CorrectAnswer3.IsVisible = false;
+            answerImage3Frame.IsVisible = false;
+
+            await answersScrollView.ScrollToAsync(AnswerEntry2, ScrollToPosition.Start, true);
         }
         else if (sender == AnswerEntry3)
         {
             AnswerEntry3Border.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
             AnswerEntry3Border.StrokeThickness = 4;
             await AnswerEntry3Border.ScaleTo(1.05, 120, Easing.CubicOut);
+
+            AnswerEntry1.IsVisible = false;
+            AnswerEntry1Border.IsVisible = false;
+            CorrectAnswer1.IsVisible = false;
+            answerImage1Frame.IsVisible = false;
+
+            AnswerEntry2.IsVisible = false;
+            AnswerEntry2Border.IsVisible = false;
+            CorrectAnswer2.IsVisible = false;
+            answerImage2Frame.IsVisible = false;
+
+            AnswerEntry4.IsVisible = false;
+            AnswerEntry4Border.IsVisible = false;
+            CorrectAnswer4.IsVisible = false;
+            answerImage4Frame.IsVisible = false;
+
+            await answersScrollView.ScrollToAsync(AnswerEntry3, ScrollToPosition.Start, true);
         }
         else if (sender == AnswerEntry4)
         {
             AnswerEntry4Border.Stroke = (Brush?)Application.Current.Resources["CeruleanBrush"];
             AnswerEntry4Border.StrokeThickness = 4;
             await AnswerEntry4Border.ScaleTo(1.05, 120, Easing.CubicOut);
+
+            AnswerEntry1.IsVisible = false;
+            AnswerEntry1Border.IsVisible = false;
+            CorrectAnswer1.IsVisible = false;
+            answerImage1Frame.IsVisible = false;
+
+            AnswerEntry2.IsVisible = false;
+            AnswerEntry2Border.IsVisible = false;
+            CorrectAnswer2.IsVisible = false;
+            answerImage2Frame.IsVisible = false;
+
+            AnswerEntry3.IsVisible = false;
+            AnswerEntry3Border.IsVisible = false;
+            CorrectAnswer3.IsVisible = false;
+            answerImage3Frame.IsVisible = false;
+
+            await answersScrollView.ScrollToAsync(AnswerEntry4, ScrollToPosition.Start, true);
         }
+    }
+
+    protected override bool OnBackButtonPressed()
+    {
+        QuestionEntry.Unfocus();
+        AnswerEntry1.Unfocus();
+        AnswerEntry2.Unfocus();
+        AnswerEntry3.Unfocus();
+        AnswerEntry4.Unfocus();
+        return true;
     }
 
     private async void OnEntryUnfocused(object sender, FocusEventArgs e)
@@ -916,24 +994,98 @@ public partial class QuestionCreatorPage : ContentPage
             AnswerEntry1Border.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
             AnswerEntry1Border.StrokeThickness = 2;
             await AnswerEntry1Border.ScaleTo(1.0, 120, Easing.CubicOut);
+
+            AnswerEntry4.IsVisible = true;
+            AnswerEntry4Border.IsVisible = true;
+            CorrectAnswer4.IsVisible = true;
+            answerImage4Frame.IsVisible = true;
+
+            AnswerEntry2.IsVisible = true;
+            AnswerEntry2Border.IsVisible = true;
+            CorrectAnswer2.IsVisible = true;
+            answerImage2Frame.IsVisible = true;
+
+            AnswerEntry3.IsVisible = true;
+            AnswerEntry3Border.IsVisible = true;
+            CorrectAnswer3.IsVisible = true;
+            answerImage3Frame.IsVisible = true;
+
+            await answersScrollView.ScrollToAsync(AnswerEntry1, ScrollToPosition.Start, true);
         }
         else if (sender == AnswerEntry2)
         {
             AnswerEntry2Border.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
             AnswerEntry2Border.StrokeThickness = 2;
             await AnswerEntry2Border.ScaleTo(1.0, 120, Easing.CubicOut);
+
+            AnswerEntry1.IsVisible = true;
+            AnswerEntry1Border.IsVisible = true;
+            CorrectAnswer1.IsVisible = true;
+            answerImage1Frame.IsVisible = true;
+
+            AnswerEntry4.IsVisible = true;
+            AnswerEntry4Border.IsVisible = true;
+            CorrectAnswer4.IsVisible = true;
+            answerImage4Frame.IsVisible = true;
+
+            AnswerEntry3.IsVisible = true;
+            AnswerEntry3Border.IsVisible = true;
+            CorrectAnswer3.IsVisible = true;
+            answerImage3Frame.IsVisible = true;
+
+            await answersScrollView.ScrollToAsync(AnswerEntry1, ScrollToPosition.Start, true);
         }
         else if (sender == AnswerEntry3)
         {
             AnswerEntry3Border.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
             AnswerEntry3Border.StrokeThickness = 2;
             await AnswerEntry3Border.ScaleTo(1.0, 120, Easing.CubicOut);
+
+            AnswerEntry1.IsVisible = true;
+            AnswerEntry1Border.IsVisible = true;
+            CorrectAnswer1.IsVisible = true;
+            answerImage1Frame.IsVisible = true;
+
+            AnswerEntry2.IsVisible = true;
+            AnswerEntry2Border.IsVisible = true;
+            CorrectAnswer2.IsVisible = true;
+            answerImage2Frame.IsVisible = true;
+
+            AnswerEntry4.IsVisible = true;
+            AnswerEntry4Border.IsVisible = true;
+            CorrectAnswer4.IsVisible = true;
+            answerImage4Frame.IsVisible = true;
+
+            await answersScrollView.ScrollToAsync(AnswerEntry1, ScrollToPosition.Start, true);
         }
         else if (sender == AnswerEntry4)
         {
             AnswerEntry4Border.Stroke = (Brush?)Application.Current.Resources["PictonBlueBrush"];
             AnswerEntry4Border.StrokeThickness = 2;
             await AnswerEntry4Border.ScaleTo(1.0, 120, Easing.CubicOut);
+
+            AnswerEntry1.IsVisible = true;
+            AnswerEntry1Border.IsVisible = true;
+            CorrectAnswer1.IsVisible = true;
+            answerImage1Frame.IsVisible = true;
+
+            AnswerEntry2.IsVisible = true;
+            AnswerEntry2Border.IsVisible = true;
+            CorrectAnswer2.IsVisible = true;
+            answerImage2Frame.IsVisible = true;
+
+            AnswerEntry3.IsVisible = true;
+            AnswerEntry3Border.IsVisible = true;
+            CorrectAnswer3.IsVisible = true;
+            answerImage3Frame.IsVisible = true;
+
+            await answersScrollView.ScrollToAsync(AnswerEntry1, ScrollToPosition.Start, true);
         }
+    }
+
+    private void OnEntryCompleted(object sender, EventArgs e)
+    {
+        if (sender is Entry entry)
+            entry.Unfocus();
     }
 }
